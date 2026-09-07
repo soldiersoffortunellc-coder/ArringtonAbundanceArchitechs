@@ -1,0 +1,13 @@
+{
+  "name": "revenue-os",
+  "version": "0.1.0",
+  "description": "White-label AI Revenue Operating System built on GoHighLevel — core engine (revenue math, onboarding state machine, dry-run provisioning, profitability guardrails).",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

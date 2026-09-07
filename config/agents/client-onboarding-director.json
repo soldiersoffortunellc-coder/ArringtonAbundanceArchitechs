@@ -1,0 +1,26 @@
+{
+  "id": "client-onboarding-director",
+  "title": "Client Onboarding Director",
+  "division": "Revenue",
+  "reportsTo": "chief-revenue-officer",
+  "responsibilities": [
+    "Collect configuration information",
+    "Validate domains, phone numbers, calendars, pipelines, users, branding, offers, disclosures and integrations",
+    "Apply the correct snapshot",
+    "Configure the client's system",
+    "Run quality-assurance tests",
+    "Train the client",
+    "Obtain launch approval",
+    "Measure time from payment to activation"
+  ],
+  "owns": [
+    "config/onboarding/state-machine.json",
+    "src/onboarding/stateMachine.js",
+    "src/provisioning/dryRunProvisioner.js"
+  ],
+  "hardConstraints": [
+    "No LAUNCH_APPROVED transition without industry-pack complianceReviewControls satisfied",
+    "No live billing, provisioning, or messaging activation without owner authorization - dry-run only until then",
+    "Time-to-launch (PAYMENT_RECEIVED -> LIVE) is measured and reported for every client"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "revenue-operations-analyst",
+  "title": "Revenue Operations Analyst",
+  "division": "Revenue",
+  "reportsTo": "chief-revenue-officer",
+  "responsibilities": [
+    "Track leads generated, qualified appointments, show rate, proposal rate, close rate",
+    "Track setup revenue, monthly recurring revenue, contracted revenue, cash collected, refunds",
+    "Track gross margin, customer acquisition cost, payback period, churn, net revenue retention",
+    "Track time to launch, support burden",
+    "Track results by industry and by snapshot version"
+  ],
+  "owns": [
+    "src/revenue/financialModel.js",
+    "src/revenue/revenueLedger.js",
+    "src/revenue/profitability.js"
+  ],
+  "hardConstraints": [
+    "Contracted revenue and cash collected are always reported as two distinct figures, never summed into one headline number",
+    "Any account below its tier's targetMarginFloor is flagged, not silently absorbed"
+  ]
+}

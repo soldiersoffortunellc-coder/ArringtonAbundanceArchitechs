@@ -1,0 +1,30 @@
+{
+  "$schema": "state-machine.v1",
+  "name": "Client Onboarding State Machine",
+  "owner": "client-onboarding-director",
+  "mainSequence": [
+    "PAYMENT_RECEIVED",
+    "AGREEMENT_CONFIRMED",
+    "INTAKE_SENT",
+    "INTAKE_COMPLETED",
+    "CREDENTIALS_PENDING",
+    "SNAPSHOT_SELECTED",
+    "SUBACCOUNT_CREATED",
+    "SNAPSHOT_APPLIED",
+    "CONFIGURATION",
+    "INTEGRATION_TESTING",
+    "CLIENT_REVIEW",
+    "LAUNCH_APPROVED",
+    "LIVE",
+    "OPTIMIZATION"
+  ],
+  "exceptionStates": ["BLOCKED", "PAUSED", "CANCELED", "REFUND_REVIEW", "OFFBOARDED"],
+  "rules": {
+    "exceptionStatesReachableFromAnyMainState": true,
+    "reentryAllowedFromBlockedOrPaused": true,
+    "terminalStates": ["CANCELED", "OFFBOARDED"],
+    "gatingChecks": {
+      "LAUNCH_APPROVED": "industry pack complianceReviewControls.requiredBeforeLaunch must all be true"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "live-pilot-status.v1",
+  "pilotId": "ODFG_GHL_OS_v1",
+  "client": "Open Doors Financial Group, LLC",
+  "industryPack": "insurance-agency",
+  "ghl": {
+    "locationId": "62DWBpRjrgKxACPpgIsQ",
+    "environment": "live sub-account (built directly in GHL, outside this repo's dry-run provisioner)"
+  },
+  "workflowFolders": {
+    "total": 9,
+    "known": {
+      "00": "SYSTEM",
+      "80": "LEADERSHIP"
+    },
+    "unknown": "Folders 10-70 not yet enumerated by the build session - update as status reports name them (REC=Recruiting and LIC=Licensing are confirmed prefixes in use, folder numbers TBD)."
+  },
+  "totalWorkflowsPlanned": 28,
+  "workflows": {
+    "SYS-001": { "status": "published", "folder": "00 SYSTEM" },
+    "SYS-002": { "status": "published", "folder": "00 SYSTEM" },
+    "REC-001": { "status": "published", "folder": "unknown - Recruiting" },
+    "REC-002": { "status": "planned", "folder": "unknown - Recruiting" },
+    "REC-003": { "status": "published", "folder": "unknown - Recruiting" },
+    "REC-004": { "status": "planned", "folder": "unknown - Recruiting" },
+    "REC-005": { "status": "planned", "folder": "unknown - Recruiting" },
+    "LIC-001": { "status": "published", "folder": "unknown - Licensing" },
+    "LIC-002": {
+      "status": "published",
+      "folder": "unknown - Licensing",
+      "name": "Exam Scheduled & Reminder",
+      "structure": "Dual trigger (tag lic-exam-scheduled OR Contact Changed on Exam Date) -> If/Else 'Exam Date Set?' -> Yes: Confirmation Email -> Wait 3 days -> 72h Reminder SMS -> Wait 1 day -> 24h Reminder SMS -> Wait until exam date -> Exam Day SMS -> Wait 4h -> Post-Exam Outcome Request SMS -> END. No: END.",
+      "knownGap": "gap-6",
+      "recommendedFix": "Add an If/Else gate immediately before each of the 4 remaining send steps (72h, 24h, Exam Day, Post-Exam) checking 'Outcome field is empty'; route to END if not empty instead of sending. Reuses the If/Else pattern already proven in this workflow - no native Goal/exit-condition feature needed.",
+      "fixStatus": "recommended by CRO review 2026-09-07, not yet confirmed applied"
+    },
+    "LIC-003": { "status": "planned", "name": "Exam Passed -> State Submission", "folder": "unknown - Licensing" },
+    "LIC-004": { "status": "published", "folder": "unknown - Licensing" }
+  },
+  "progressSummary": { "completed": 7, "total": 28, "asOf": "2026-09-07" },
+  "platformGaps": [
+    {
+      "id": "gap-1",
+      "title": "No staff/users configured",
+      "impact": "Every Create Task / Assign User step is unavailable",
+      "workaround": "Substitute an Internal Notification (Type=Notification, To User Type=All users, Redirect Page=Contact)",
+      "upgradePath": "Convert to real assigned tasks once staff are added in Settings > My Staff"
+    },
+    {
+      "id": "gap-2",
+      "title": "No calendars configured",
+      "impact": "Any workflow with a 'Customer booked appointment' trigger can't set calendar filters",
+      "workaround": "Deferred until calendars exist",
+      "upgradePath": "Add calendar filters once calendars are created"
+    },
+    {
+      "id": "gap-3",
+      "title": "No native Filter action or custom-object-change trigger",
+      "impact": "Cannot filter mid-workflow on arbitrary object changes",
+      "workaround": "Use If/Else gates and tag-based conditions instead"
+    },
+    {
+      "id": "gap-4",
+      "title": "No native 'Custom Field Changed' trigger",
+      "impact": "Cannot trigger directly off a specific custom field update",
+      "workaround": "Use the 'Contact changed' trigger (search 'changed', not 'custom field', in the trigger picker), filtered to the specific field"
+    },
+    {
+      "id": "gap-5",
+      "title": "Wait action 'hours' field caps/misbehaves above 23",
+      "impact": "Typing 72 hours silently becomes 23",
+      "workaround": "Use the 'days' field for exact offsets (3 days = 72h, 1 day = 24h)"
+    },
+    {
+      "id": "gap-6",
+      "title": "No native Goal or field-based exit condition on a running workflow",
+      "impact": "Cannot cleanly exit a reminder sequence once an outcome field (e.g. Pass/Fail) updates mid-sequence; 'Stop on response' exits on any reply, not a specific field, and breaks reminder cadence",
+      "workaround": "recommendedFix in LIC-002 entry above: per-step If/Else gate checking the outcome field before each send",
+      "status": "open - recommendation given, not yet confirmed applied by the build session"
+    },
+    {
+      "id": "gap-7",
+      "title": "Missing custom fields must be created directly in the data model",
+      "impact": "A tag/text workaround isn't viable for typed values like dates",
+      "workaround": "Create the real typed field via Settings > Custom Fields when a workflow structurally requires it (e.g. 'Exam Date' as a Date-picker field on Contact)"
+    }
+  ],
+  "howThisFeedsBackIntoTheRepo": [
+    "docs/09-saas-provisioning-architecture.md - Platform Gaps section mirrors this list so every future client (any industry) inherits these workarounds instead of rediscovering them",
+    "docs/06-industry-pack-insurance.md - workflow naming convention (SYS-/REC-/LIC- prefixes, numbered folders) should become the standard for config/snapshots/industry-pack-insurance.json once all 28 are enumerated",
+    "docs/13-fulfillment-workflow.md - QA test list should include a 'field-gated exit' check wherever a reminder sequence depends on an outcome field"
+  ]
+}

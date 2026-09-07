@@ -1,0 +1,95 @@
+{
+  "$schema": "offer-ladder.v1",
+  "status": "DRAFT - NOT APPROVED FOR PUBLICATION",
+  "note": "All prices are target ranges pending owner approval. Do not publish, quote, or contract against these numbers until approved. See docs/03-offer-ladder.md.",
+  "currency": "USD",
+  "tiers": [
+    {
+      "id": "starter-saas",
+      "name": "Starter SaaS",
+      "tagline": "White-labeled CRM infrastructure, standard onboarding.",
+      "setupFee": { "min": 0, "max": 500, "typical": 0 },
+      "monthly": { "min": 497, "max": 997, "typical": 697 },
+      "includes": [
+        "White-labeled CRM",
+        "Basic pipeline",
+        "Calendar",
+        "Forms",
+        "Basic workflows",
+        "Missed-call text-back",
+        "Reputation management",
+        "Standard onboarding"
+      ],
+      "snapshotLayer": ["universal-core"],
+      "targetMarginFloor": 0.55
+    },
+    {
+      "id": "ai-growth-system",
+      "name": "AI Growth System",
+      "tagline": "Industry snapshot plus AI conversation and voice agents.",
+      "setupFee": { "min": 2500, "max": 7500, "typical": 4500 },
+      "monthly": { "min": 997, "max": 2500, "typical": 1497 },
+      "includes": [
+        "Industry snapshot",
+        "AI Conversation Agent",
+        "Voice AI",
+        "Advanced workflows",
+        "Lead qualification",
+        "Appointment booking",
+        "Database reactivation",
+        "Reporting",
+        "Monthly optimization"
+      ],
+      "snapshotLayer": ["universal-core", "industry-pack"],
+      "targetMarginFloor": 0.5
+    },
+    {
+      "id": "ai-revenue-operating-system",
+      "name": "AI Revenue Operating System",
+      "tagline": "Complete industry system with custom implementation.",
+      "setupFee": { "min": 10000, "max": 25000, "typical": 20000 },
+      "monthly": { "min": 2500, "max": 5000, "typical": 3500 },
+      "includes": [
+        "Complete industry system",
+        "Custom implementation",
+        "iDecide presentation",
+        "AI receptionist",
+        "AI lead qualification",
+        "Custom pipeline",
+        "Recruiting or sales automation",
+        "Database reactivation campaign",
+        "Executive reporting",
+        "Team training",
+        "Priority support"
+      ],
+      "snapshotLayer": ["universal-core", "industry-pack", "client-configuration"],
+      "targetMarginFloor": 0.45,
+      "financialModelRole": "premium-implementation"
+    },
+    {
+      "id": "enterprise-agency-license",
+      "name": "Enterprise / Agency License",
+      "tagline": "Multi-location or multi-agent white-label / licensing deployment.",
+      "setupFee": { "min": 25000, "max": 100000, "typical": 40000 },
+      "monthly": { "min": 5000, "max": 15000, "typical": 7500 },
+      "perLocationOrPerAgent": "optional - defined per contract",
+      "includes": [
+        "Multiple locations or subaccounts",
+        "Snapshot deployment",
+        "Central reporting",
+        "Role-based permissions",
+        "Custom integrations",
+        "Compliance controls",
+        "Team onboarding",
+        "Dedicated success management",
+        "White-label or licensing rights defined by contract"
+      ],
+      "snapshotLayer": ["universal-core", "industry-pack", "client-configuration", "multi-tenant-rollup"],
+      "targetMarginFloor": 0.4
+    }
+  ],
+  "financialModelMapping": {
+    "premium-implementation": "ai-revenue-operating-system",
+    "standardized-saas": "starter-saas"
+  }
+}

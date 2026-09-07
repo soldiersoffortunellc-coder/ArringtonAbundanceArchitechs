@@ -1,0 +1,53 @@
+{
+  "$schema": "snapshot.v1",
+  "layer": "industry-pack",
+  "industry": "insurance-agency",
+  "version": "1.0.0",
+  "extends": "universal-core",
+  "pipelines": [
+    { "name": "Licensed Agent Recruiting", "stages": ["Sourced", "Contacted", "Interview Booked", "Interviewed", "Contracting", "Onboarding", "Active", "Inactive"] },
+    { "name": "Licensing-Interest (Unlicensed Recruits)", "stages": ["Inquiry", "Career Presentation Sent", "Info Session Booked", "Enrolled in Licensing", "Licensed - Move to Recruiting", "Dropped"] },
+    { "name": "Consumer Financial Education", "stages": ["Lead", "Educated", "Appointment Booked", "Policy Sold", "Nurture"] }
+  ],
+  "workflows": [
+    "licensed-agent-recruiting-funnel",
+    "licensing-interest-funnel",
+    "ai-recruiting-conversation-agent",
+    "voice-ai-recruiting-agent",
+    "candidate-scoring",
+    "interview-reminders-and-no-show-recovery",
+    "licensing-follow-up",
+    "contracting-workflow",
+    "agent-onboarding",
+    "training-delivery-drip",
+    "inactive-agent-reactivation"
+  ],
+  "forms": ["licensed-agent-application", "licensing-interest-intake", "consumer-financial-education-opt-in"],
+  "funnels": ["career-presentation-funnel", "consumer-financial-education-funnel"],
+  "calendars": ["interview-calendar", "licensing-info-session-calendar"],
+  "presentations": ["idecide-recruiting-presentation", "idecide-career-presentation"],
+  "aiPrompts": {
+    "recruitingConversationAgent": "config/ai-prompts/insurance-recruiting-conversation-agent.md",
+    "voiceRecruitingAgent": "config/ai-prompts/insurance-voice-recruiting-agent.md"
+  },
+  "knowledgeBaseTopics": [
+    "licensing requirements by state (outline only - verify current state DOI rules before use)",
+    "contracting/appointment process",
+    "compensation and commission structure (client-supplied, not assumed)",
+    "carrier appointments offered"
+  ],
+  "dashboards": ["recruiting-activity-dashboard", "agent-production-dashboard"],
+  "disclosures": [
+    "TCPA consent capture required before any AI/voice outreach",
+    "State-specific insurance recruiting disclosures (client/attorney supplied)",
+    "E&O and licensing-status verification before contracting workflow completes"
+  ],
+  "complianceReviewControls": {
+    "requiredBeforeLaunch": [
+      "TCPA consent language reviewed and present on every intake form",
+      "State licensing disclosure language reviewed by client's compliance/legal contact",
+      "AI conversation agent scripts reviewed for licensing/compensation claims (no guaranteed-income language)"
+    ],
+    "gatingOnboardingState": "CLIENT_REVIEW"
+  }
+}

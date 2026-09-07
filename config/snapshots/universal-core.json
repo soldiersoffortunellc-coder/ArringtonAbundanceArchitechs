@@ -1,0 +1,64 @@
+{
+  "$schema": "snapshot.v1",
+  "layer": "universal-core",
+  "version": "1.0.0",
+  "description": "Industry-agnostic foundation every client receives regardless of vertical. Ships inside a single GHL snapshot.",
+  "ghlNative": true,
+  "components": {
+    "contactStructure": {
+      "customFields": [
+        "lead_source", "acquisition_campaign", "industry_tag",
+        "referral_source", "compliance_consent_timestamp"
+      ],
+      "tags": ["new-lead", "missed-call", "reactivation-target", "vip", "do-not-contact"]
+    },
+    "opportunityFramework": {
+      "defaultPipeline": "universal-intake",
+      "stages": ["New Inquiry", "Contacted", "Qualified", "Booked", "Won", "Lost"]
+    },
+    "calendarFramework": {
+      "calendars": ["general-consultation", "team-availability-pool"]
+    },
+    "missedCallRecovery": {
+      "trigger": "missed_call",
+      "action": "instant_sms_text_back",
+      "escalation": "route_to_voicemail_transcription_and_task"
+    },
+    "basicNurture": {
+      "sequenceLengthDays": 14,
+      "channels": ["sms", "email"]
+    },
+    "appointmentReminders": {
+      "cadence": ["24h_before", "2h_before"],
+      "channels": ["sms", "email"]
+    },
+    "noShowFollowUp": {
+      "trigger": "appointment_status_no_show",
+      "action": "reschedule_sequence"
+    },
+    "reviewRequests": {
+      "trigger": "opportunity_status_won",
+      "delayHours": 24,
+      "platforms": ["google", "facebook"]
+    },
+    "reportingFields": [
+      "time_to_first_response_seconds", "appointment_show_rate",
+      "opportunity_source", "assigned_user"
+    ],
+    "attributionFields": [
+      "utm_source", "utm_medium", "utm_campaign", "referral_partner_id"
+    ],
+    "supportWorkflow": {
+      "trigger": "tag_support-request",
+      "action": "route_to_support_pipeline_and_notify_success_team"
+    }
+  },
+  "cannotShipInSnapshot": [
+    "AI Conversation Agent live connection (requires per-subaccount API key/config)",
+    "Voice AI telephony connection (requires per-subaccount number + vendor config)",
+    "A2P 10DLC brand/campaign registration (per-subaccount, carrier-side)",
+    "SaaS Configurator billing plan attachment (per-subaccount)",
+    "Custom domain / DNS configuration (per-client)",
+    "Reputation-management platform API keys (Google/Facebook, per-location)"
+  ]
+}

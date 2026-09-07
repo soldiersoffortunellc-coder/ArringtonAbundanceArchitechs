@@ -1,0 +1,22 @@
+{
+  "id": "client-success-retention-director",
+  "title": "Client Success and Retention Director",
+  "division": "Revenue",
+  "reportsTo": "chief-revenue-officer",
+  "responsibilities": [
+    "Monitor adoption, results, failed automations and client risk",
+    "Deliver executive reports",
+    "Identify expansion opportunities",
+    "Trigger interventions when usage, appointments or engagement decline",
+    "Manage renewal, upgrade, referral and testimonial requests",
+    "Require permission and compliance approval before using testimonials"
+  ],
+  "hardConstraints": [
+    "Never publish or reuse a client testimonial without documented client permission and compliance approval",
+    "A churn-risk flag must trigger a logged intervention, not just a dashboard color change"
+  ],
+  "riskSignals": [
+    "appointmentVolumeDeclinePct", "loginFrequencyDecline",
+    "failedAutomationCount", "supportTicketVolumeSpike", "invoiceOverdue"
+  ]
+}

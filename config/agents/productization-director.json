@@ -1,0 +1,24 @@
+{
+  "id": "productization-director",
+  "title": "Productization Director",
+  "division": "Revenue",
+  "reportsTo": "chief-revenue-officer",
+  "responsibilities": [
+    "Convert proven systems into standardized products",
+    "Define what belongs in the universal core and what belongs in each industry pack",
+    "Prevent unnecessary custom work",
+    "Maintain snapshot versions",
+    "Build upgrade paths",
+    "Calculate implementation time and fulfillment cost"
+  ],
+  "owns": [
+    "config/snapshots/universal-core.json",
+    "config/snapshots/industry-pack-insurance.json",
+    "config/snapshots/industry-pack-real-estate.json",
+    "config/snapshots/industry-pack-home-services.json"
+  ],
+  "hardConstraints": [
+    "No client-specific logic ever lands in universal-core or an industry pack - it belongs in the client-configuration layer",
+    "Every snapshot layer change is versioned (semver) before it ships to any existing client"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "snapshot.v1",
+  "layer": "industry-pack",
+  "industry": "real-estate",
+  "version": "1.0.0",
+  "extends": "universal-core",
+  "pipelines": [
+    { "name": "Buyer", "stages": ["New Lead", "Contacted", "Qualified", "Showing Scheduled", "Showing Completed", "Offer Written", "Under Contract", "Closed", "Lost"] },
+    { "name": "Seller", "stages": ["New Lead", "Valuation Sent", "Listing Appointment", "Listed", "Under Contract", "Closed", "Lost"] },
+    { "name": "Investor", "stages": ["New Lead", "Qualified", "Property Matched", "Offer Submitted", "Closed", "Lost"] }
+  ],
+  "workflows": [
+    "missed-call-text-back-real-estate",
+    "ai-lead-qualification",
+    "voice-ai-lead-qualification",
+    "showing-follow-up",
+    "long-term-nurture",
+    "database-reactivation",
+    "post-closing-follow-up",
+    "review-and-referral-workflow",
+    "open-house-workflow"
+  ],
+  "forms": ["buyer-intake", "seller-intake", "home-valuation-request", "open-house-signin"],
+  "funnels": ["home-valuation-funnel", "open-house-funnel", "agent-recruiting-funnel-optional"],
+  "calendars": ["showing-calendar", "listing-appointment-calendar"],
+  "presentations": ["idecide-buyer-presentation", "idecide-seller-presentation", "idecide-agent-recruiting-presentation-optional"],
+  "aiPrompts": {
+    "leadQualificationAgent": "config/ai-prompts/real-estate-lead-qualification-agent.md",
+    "voiceQualificationAgent": "config/ai-prompts/real-estate-voice-qualification-agent.md"
+  },
+  "knowledgeBaseTopics": [
+    "buyer process overview",
+    "seller/listing process overview",
+    "local MLS/market data (client-supplied, kept current by client)",
+    "financing/pre-approval basics (educational only, not lending advice)"
+  ],
+  "dashboards": ["pipeline-velocity-dashboard", "database-reactivation-dashboard"],
+  "disclosures": [
+    "Fair Housing Act compliant language in all AI and template copy",
+    "TCPA consent capture on all intake forms",
+    "Agency disclosure per state requirement (client/attorney supplied)"
+  ],
+  "complianceReviewControls": {
+    "requiredBeforeLaunch": [
+      "Fair Housing language review on funnels, forms, and AI prompts",
+      "TCPA consent language present on every lead-capture form",
+      "State agency-disclosure requirement confirmed with client"
+    ],
+    "gatingOnboardingState": "CLIENT_REVIEW"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "revenue-scenarios.v1",
+  "note": "Operating planning targets, not guaranteed outcomes. Multipliers are configurable assumptions, not commitments.",
+  "recurringMonthsModeled": 3,
+  "segments": {
+    "premiumImplementation": {
+      "label": "Premium implementations (AI Revenue Operating System tier)",
+      "setupFee": 20000,
+      "monthlyFee": 3500
+    },
+    "standardizedSaas": {
+      "label": "Standardized SaaS clients (Starter SaaS tier, $2,500 setup variant)",
+      "setupFee": 2500,
+      "monthlyFee": 997
+    }
+  },
+  "scenarios": {
+    "conservative": {
+      "multiplierVsTarget": 0.5,
+      "clients": { "premiumImplementation": 13, "standardizedSaas": 25 }
+    },
+    "target": {
+      "multiplierVsTarget": 1.0,
+      "clients": { "premiumImplementation": 25, "standardizedSaas": 50 }
+    },
+    "aggressive": {
+      "multiplierVsTarget": 1.5,
+      "clients": { "premiumImplementation": 38, "standardizedSaas": 75 }
+    }
+  }
+}

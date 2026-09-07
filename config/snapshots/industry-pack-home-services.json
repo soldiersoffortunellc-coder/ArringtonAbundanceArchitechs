@@ -1,0 +1,58 @@
+{
+  "$schema": "snapshot.v1",
+  "layer": "industry-pack",
+  "industry": "home-services",
+  "subVerticals": ["hvac", "plumbing", "roofing", "electrical", "general-contracting", "remodeling", "restoration"],
+  "version": "1.0.0",
+  "extends": "universal-core",
+  "pipelines": [
+    { "name": "Service Request", "stages": ["New Call/Lead", "Qualified", "Estimate Scheduled", "Estimate Completed", "Proposal Sent", "Sold", "Job Scheduled", "Job Completed", "Invoiced", "Paid", "Lost"] },
+    { "name": "Maintenance Plan", "stages": ["Enrolled", "Reminder Due", "Service Scheduled", "Service Completed", "Renewal Due", "Cancelled"] }
+  ],
+  "workflows": [
+    "missed-call-recovery",
+    "ai-receptionist",
+    "voice-ai-qualification",
+    "emergency-service-routing",
+    "estimate-reminder-workflow",
+    "unsold-estimate-follow-up",
+    "financing-interest-capture",
+    "job-status-communication",
+    "review-generation-workflow",
+    "seasonal-service-campaigns",
+    "maintenance-reminders",
+    "customer-reactivation"
+  ],
+  "forms": ["service-request-intake", "financing-interest-form", "service-area-qualification-form"],
+  "funnels": ["emergency-service-funnel", "financing-interest-funnel", "seasonal-promotion-funnel"],
+  "calendars": ["estimate-calendar", "job-scheduling-calendar"],
+  "presentations": ["idecide-estimate-presentation-optional"],
+  "aiPrompts": {
+    "receptionistAgent": "config/ai-prompts/home-services-ai-receptionist.md",
+    "voiceQualificationAgent": "config/ai-prompts/home-services-voice-qualification-agent.md"
+  },
+  "knowledgeBaseTopics": [
+    "service area boundaries (client-supplied)",
+    "emergency vs. non-emergency triage rules (client-supplied)",
+    "financing partner options (client-supplied)",
+    "seasonal service calendar (HVAC tune-ups, roof inspections, etc.)"
+  ],
+  "dashboards": ["estimate-conversion-dashboard", "revenue-attribution-dashboard"],
+  "disclosures": [
+    "Licensing/contractor-number disclosure per state/municipality (client-supplied)",
+    "TCPA consent capture on all intake forms",
+    "Financing-partner disclosure language (client/lender supplied)"
+  ],
+  "complianceReviewControls": {
+    "requiredBeforeLaunch": [
+      "Contractor license number confirmed and displayed per local requirement",
+      "TCPA consent language present on every lead-capture form",
+      "Financing-interest capture routes to licensed financing partner only, never in-house credit decisioning"
+    ],
+    "gatingOnboardingState": "CLIENT_REVIEW"
+  },
+  "serviceAreaQualification": {
+    "required": true,
+    "rejectOutOfAreaLeadsTo": "referral-partner-network-or-polite-decline"
+  }
+}

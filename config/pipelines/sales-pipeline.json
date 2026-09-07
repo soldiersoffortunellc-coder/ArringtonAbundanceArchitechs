@@ -1,0 +1,26 @@
+{
+  "$schema": "pipeline.v1",
+  "name": "Internal Sales Pipeline",
+  "owner": "sales-director",
+  "stages": [
+    { "id": "target_account", "name": "Target Account", "probability": 0.02 },
+    { "id": "contacted", "name": "Contacted", "probability": 0.05 },
+    { "id": "engaged", "name": "Engaged", "probability": 0.10 },
+    { "id": "discovery_booked", "name": "Discovery Booked", "probability": 0.15 },
+    { "id": "discovery_completed", "name": "Discovery Completed", "probability": 0.20 },
+    { "id": "qualified", "name": "Qualified", "probability": 0.30 },
+    { "id": "demo_booked", "name": "Demo Booked", "probability": 0.35 },
+    { "id": "demo_completed", "name": "Demo Completed", "probability": 0.45 },
+    { "id": "proposal_sent", "name": "Proposal Sent", "probability": 0.55 },
+    { "id": "verbal_commitment", "name": "Verbal Commitment", "probability": 0.70 },
+    { "id": "payment_pending", "name": "Payment Pending", "probability": 0.85 },
+    { "id": "closed_won", "name": "Closed Won", "probability": 1.0, "terminal": true },
+    { "id": "onboarding", "name": "Onboarding", "probability": 1.0 },
+    { "id": "implementation", "name": "Implementation", "probability": 1.0 },
+    { "id": "quality_assurance", "name": "Quality Assurance", "probability": 1.0 },
+    { "id": "live", "name": "Live", "probability": 1.0 },
+    { "id": "expansion_opportunity", "name": "Expansion Opportunity", "probability": 0.25 },
+    { "id": "nurture", "name": "Nurture", "probability": 0.05 },
+    { "id": "closed_lost", "name": "Closed Lost", "probability": 0.0, "terminal": true, "requiresLossReason": true }
+  ]
+}
