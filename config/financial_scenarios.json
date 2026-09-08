@@ -1,0 +1,18 @@
+{
+  "_note": "MODELED SCENARIOS ONLY. These are planning inputs, not guaranteed outcomes. Never present as a promise of results.",
+  "recurring_months_modeled": 3,
+  "scenarios": {
+    "conservative": {
+      "premium": { "clients": 10, "setup_fee": 20000, "monthly_fee": 3500 },
+      "standardized": { "clients": 20, "setup_fee": 2500, "monthly_fee": 997 }
+    },
+    "target": {
+      "premium": { "clients": 25, "setup_fee": 20000, "monthly_fee": 3500 },
+      "standardized": { "clients": 50, "setup_fee": 2500, "monthly_fee": 997 }
+    },
+    "aggressive": {
+      "premium": { "clients": 40, "setup_fee": 20000, "monthly_fee": 3500 },
+      "standardized": { "clients": 80, "setup_fee": 2500, "monthly_fee": 997 }
+    }
+  }
+}

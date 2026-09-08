@@ -1,0 +1,34 @@
+{
+  "primary_path": [
+    "PAYMENT_RECEIVED",
+    "AGREEMENT_CONFIRMED",
+    "INTAKE_SENT",
+    "INTAKE_COMPLETED",
+    "CREDENTIALS_PENDING",
+    "SNAPSHOT_SELECTED",
+    "SUBACCOUNT_CREATED",
+    "SNAPSHOT_APPLIED",
+    "CONFIGURATION",
+    "INTEGRATION_TESTING",
+    "CLIENT_REVIEW",
+    "LAUNCH_APPROVED",
+    "LIVE",
+    "OPTIMIZATION"
+  ],
+  "side_states": ["BLOCKED", "PAUSED", "CANCELED", "REFUND_REVIEW", "OFFBOARDED"],
+  "side_state_entry_allowed_from": {
+    "BLOCKED": ["INTAKE_SENT", "INTAKE_COMPLETED", "CREDENTIALS_PENDING", "SNAPSHOT_SELECTED", "SUBACCOUNT_CREATED", "SNAPSHOT_APPLIED", "CONFIGURATION", "INTEGRATION_TESTING", "CLIENT_REVIEW"],
+    "PAUSED": ["LIVE", "OPTIMIZATION", "CLIENT_REVIEW", "CONFIGURATION"],
+    "CANCELED": ["PAYMENT_RECEIVED", "AGREEMENT_CONFIRMED", "INTAKE_SENT", "INTAKE_COMPLETED", "CREDENTIALS_PENDING", "SNAPSHOT_SELECTED", "BLOCKED", "PAUSED"],
+    "REFUND_REVIEW": ["LIVE", "OPTIMIZATION", "BLOCKED", "PAUSED", "CANCELED"],
+    "OFFBOARDED": ["PAUSED", "CANCELED", "REFUND_REVIEW", "LIVE", "OPTIMIZATION"]
+  },
+  "side_state_resume_target": {
+    "BLOCKED": "resume_previous",
+    "PAUSED": "resume_previous",
+    "CANCELED": null,
+    "REFUND_REVIEW": "resume_previous_or_offboard",
+    "OFFBOARDED": null
+  },
+  "notes": "Primary path is strictly forward-only (no skipping stages). Side-states are reachable from the listed states only, and (other than CANCELED/OFFBOARDED) return to the state the client was in when they entered the side-state."
+}

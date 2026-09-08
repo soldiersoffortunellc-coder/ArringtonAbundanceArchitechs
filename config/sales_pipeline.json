@@ -1,0 +1,37 @@
+{
+  "pipeline_name": "Revenue OS Sales Pipeline",
+  "stages": [
+    "Target Account",
+    "Contacted",
+    "Engaged",
+    "Discovery Booked",
+    "Discovery Completed",
+    "Qualified",
+    "Demo Booked",
+    "Demo Completed",
+    "Proposal Sent",
+    "Verbal Commitment",
+    "Payment Pending",
+    "Closed Won",
+    "Onboarding",
+    "Implementation",
+    "Quality Assurance",
+    "Live",
+    "Expansion Opportunity",
+    "Nurture",
+    "Closed Lost"
+  ],
+  "terminal_stages": ["Closed Lost"],
+  "loss_reason_required_for": ["Closed Lost"],
+  "loss_reasons": [
+    "no_budget",
+    "no_decision_authority",
+    "chose_competitor",
+    "chose_diy",
+    "bad_timing",
+    "unresponsive",
+    "not_a_fit",
+    "compliance_blocker",
+    "other"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "_note": "Monthly AI interaction caps per offer tier, used to prevent runaway AI usage cost from eroding margin. Configurable.",
+  "limits_by_tier": {
+    "starter_saas": { "ai_conversations_per_month": 0, "voice_minutes_per_month": 0 },
+    "ai_growth_system": { "ai_conversations_per_month": 1500, "voice_minutes_per_month": 300 },
+    "ai_revenue_operating_system": { "ai_conversations_per_month": 5000, "voice_minutes_per_month": 1200 },
+    "enterprise_agency_license": { "ai_conversations_per_month": 20000, "voice_minutes_per_month": 6000 }
+  },
+  "overage_behavior": "alert_and_queue",
+  "hard_stop_multiplier": 1.5
+}

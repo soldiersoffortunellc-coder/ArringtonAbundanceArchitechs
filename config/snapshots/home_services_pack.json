@@ -1,0 +1,26 @@
+{
+  "snapshot_id": "home_services_pack",
+  "version": "1.0.0",
+  "layer": "industry_pack",
+  "industry": "home_services",
+  "sub_verticals": ["hvac", "plumbing", "roofing", "electrical", "general_contracting", "remodeling", "restoration"],
+  "extends": "universal_core",
+  "problems_solved": [
+    "missed_calls", "slow_estimate_response", "unqualified_leads", "unscheduled_estimates",
+    "unsold_estimates", "missed_appointments", "weak_review_generation",
+    "no_maintenance_reminders", "no_customer_reactivation"
+  ],
+  "components": {
+    "pipelines": ["estimate_pipeline", "job_pipeline"],
+    "workflows": [
+      "missed_call_recovery", "emergency_service_routing", "estimate_reminder_workflow",
+      "unsold_estimate_follow_up", "financing_interest_capture", "job_status_communication",
+      "review_generation_workflow", "seasonal_service_campaigns", "maintenance_reminders",
+      "customer_reactivation", "service_area_qualification"
+    ],
+    "ai_agents": ["ai_receptionist", "voice_ai_qualification"],
+    "calendars": ["estimate_calendar", "job_scheduling_calendar"],
+    "dashboards": ["revenue_attribution_dashboard", "technician_production_dashboard"],
+    "service_area_qualification": "zip-code / radius based routing before booking an estimate"
+  }
+}

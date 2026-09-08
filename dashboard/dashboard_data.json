@@ -1,0 +1,816 @@
+{
+  "generated_by": "scripts/run_demo.py",
+  "mode": "DRY_RUN",
+  "agent_roster": [
+    {
+      "name": "ceo",
+      "title": "Chief Executive Officer",
+      "mission": "Set strategic direction, resolve cross-functional conflicts, and protect the business from unauthorized risk.",
+      "kpis_owned": [
+        "90_day_target_progress_pct",
+        "open_executive_escalations"
+      ]
+    },
+    {
+      "name": "cro",
+      "title": "Chief Revenue Officer",
+      "mission": "Identify urgent, profitable industry problems; design offers, pricing, onboarding and expansion; coordinate marketing, sales, fulfillment, client success and finance agents; track revenue truthfully.",
+      "kpis_owned": [
+        "contracted_revenue",
+        "cash_collected",
+        "mrr",
+        "gross_margin",
+        "cac",
+        "retention",
+        "churn"
+      ]
+    },
+    {
+      "name": "cmo",
+      "title": "Chief Marketing Officer",
+      "mission": "Drive top-of-funnel demand across outbound, inbound, referral, webinar, and database-reactivation channels.",
+      "kpis_owned": [
+        "campaigns_published",
+        "leads_generated_by_channel",
+        "cost_per_lead"
+      ]
+    },
+    {
+      "name": "coo",
+      "title": "Chief Operating Officer",
+      "mission": "Protect implementation capacity, delivery quality, and time-to-launch across every active onboarding.",
+      "kpis_owned": [
+        "implementation_capacity_used_pct",
+        "avg_time_to_launch_days",
+        "qa_pass_rate"
+      ]
+    },
+    {
+      "name": "cfo",
+      "title": "Chief Financial Officer",
+      "mission": "Protect gross margin per account and keep contracted, invoiced, and collected revenue clearly separated.",
+      "kpis_owned": [
+        "accounts_below_margin",
+        "average_gross_margin_pct",
+        "accounts_receivable"
+      ]
+    },
+    {
+      "name": "cto",
+      "title": "Chief Technology Officer",
+      "mission": "Own the GHL technical architecture: snapshot integrity, tenant isolation, credentials, and AI usage limits.",
+      "kpis_owned": [
+        "snapshot_validation_failures",
+        "tenant_isolation_violations_blocked",
+        "usage_over_cap_accounts"
+      ]
+    },
+    {
+      "name": "cco",
+      "title": "Chief Client Officer",
+      "mission": "Own the client experience end-to-end: escalate systemic retention risk and approve reputation-facing asks.",
+      "kpis_owned": [
+        "net_revenue_retention_signal",
+        "clients_requiring_executive_intervention"
+      ]
+    },
+    {
+      "name": "market_opportunity_analyst",
+      "title": "Market Opportunity Analyst",
+      "mission": "Research and score industries; separate urgent problems from optional improvements.",
+      "kpis_owned": [
+        "vertical_normalized_score",
+        "verticals_activated",
+        "verticals_rejected"
+      ],
+      "reports_to": "cro"
+    },
+    {
+      "name": "productization_director",
+      "title": "Productization Director",
+      "mission": "Convert proven systems into standardized products; prevent unnecessary custom work.",
+      "kpis_owned": [
+        "snapshot_versions_current",
+        "industries_productized",
+        "avg_implementation_hours"
+      ],
+      "reports_to": "cro"
+    },
+    {
+      "name": "sales_director",
+      "title": "Sales Director",
+      "mission": "Build campaigns, route opportunities, and track conversion by source and rep.",
+      "kpis_owned": [
+        "pipeline_value",
+        "close_rate",
+        "opportunities_by_stage"
+      ],
+      "reports_to": "cro"
+    },
+    {
+      "name": "client_onboarding_director",
+      "title": "Client Onboarding Director",
+      "mission": "Configure the client's system, run QA, train the client, and obtain launch approval.",
+      "kpis_owned": [
+        "time_to_launch",
+        "onboarding_blocked_count",
+        "onboarding_live_count"
+      ],
+      "reports_to": "cro"
+    },
+    {
+      "name": "client_success_retention_director",
+      "title": "Client Success and Retention Director",
+      "mission": "Monitor adoption and results, trigger interventions on decline, manage renewal/expansion/referrals.",
+      "kpis_owned": [
+        "clients_at_risk",
+        "clients_healthy",
+        "expansion_opportunities"
+      ],
+      "reports_to": "cro"
+    },
+    {
+      "name": "revenue_operations_analyst",
+      "title": "Revenue Operations Analyst",
+      "mission": "Track every revenue, pipeline, and retention metric without conflating contracted and collected revenue.",
+      "kpis_owned": [
+        "leads_generated",
+        "qualified_appointments",
+        "show_rate",
+        "proposal_rate",
+        "close_rate",
+        "setup_revenue",
+        "monthly_recurring_revenue",
+        "contracted_revenue",
+        "cash_collected",
+        "refunds",
+        "gross_margin",
+        "customer_acquisition_cost",
+        "payback_period",
+        "churn",
+        "net_revenue_retention",
+        "time_to_launch",
+        "support_burden"
+      ],
+      "reports_to": "cro"
+    }
+  ],
+  "cycle_result": {
+    "ceo": {
+      "agent": "ceo",
+      "title": "Chief Executive Officer",
+      "decisions": [
+        "Cash collected of $0.00 represents 0.0% of the $1,037,050.00 modeled 90-day target (a planning benchmark, not a guarantee).",
+        "6 open cross-functional escalations this cycle \u2014 convening C-suite review before approving new client acquisition volume."
+      ],
+      "directives_issued": [],
+      "kpis": {
+        "open_executive_escalations": 6,
+        "90_day_target_progress_pct": 0.0
+      },
+      "escalations": [
+        "[CRO] [client_onboarding_director] Tenant 'tenant_ironclad_hvac' is BLOCKED during onboarding: Missing required client configuration fields: ['branding', 'domain', 'phone_numbers', 'email', 'calendars', 'users', 'services', 'service_areas', 'pricing', 'disclosures', 'integrations', 'escalation_contacts']",
+        "[CRO] [client_success_retention_director] Tenant 'tenant_legacy_realty' is at churn risk: ['low_adoption', 'low_appointment_volume', 'low_engagement', 'failed_automations']",
+        "[COO] QA failed for tenant 'tenant_ironclad_hvac' \u2014 launch blocked until resolved.",
+        "[CFO] Tenant 'tenant_thin_margin_client' gross margin -3.5% is below the required 50.0% threshold.",
+        "[CTO] Tenant 'tenant_ironclad_hvac' snapshot cannot be validated \u2014 missing: ['branding', 'domain', 'phone_numbers', 'email', 'calendars', 'users', 'services', 'service_areas', 'pricing', 'disclosures', 'integrations', 'escalation_contacts']",
+        "[CCO] EXECUTIVE ESCALATION: tenant 'tenant_legacy_realty' has 4 concurrent risk signals (['low_adoption', 'low_appointment_volume', 'low_engagement', 'failed_automations']) \u2014 requires CCO-level intervention plan, not just a team alert."
+      ],
+      "warnings": []
+    },
+    "cro": {
+      "agent": "cro",
+      "title": "Chief Revenue Officer",
+      "decisions": [
+        "Coordinated 6 revenue subordinate agents this cycle: market_opportunity_analyst, productization_director, sales_director, client_onboarding_director, client_success_retention_director, revenue_operations_analyst."
+      ],
+      "directives_issued": [
+        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "6c806ccd-7517-4636-8710-a783506e00e7",
+        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "6c806ccd-7517-4636-8710-a783506e00e7",
+        "4f096757-6ff2-4a06-b137-fca359f0a31c",
+        "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+        "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+        "9a3c7881-064c-45cb-b26e-7565581756f2",
+        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "6c806ccd-7517-4636-8710-a783506e00e7",
+        "4f096757-6ff2-4a06-b137-fca359f0a31c",
+        "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+        "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+        "9a3c7881-064c-45cb-b26e-7565581756f2",
+        "1edbfcf1-b7a3-4626-a170-3b44c2b747e2",
+        "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb"
+      ],
+      "kpis": {
+        "subordinate_reports": {
+          "market_opportunity_analyst": {
+            "agent": "market_opportunity_analyst",
+            "title": "Market Opportunity Analyst",
+            "decisions": [
+              "insurance_agency: TEST (score=7.42/10)",
+              "real_estate: ACTIVATE (score=7.5/10)",
+              "home_services: ACTIVATE (score=7.92/10)",
+              "mortgage: PAUSE (score=5.25/10)"
+            ],
+            "directives_issued": [],
+            "kpis": {
+              "ranked_verticals": [
+                {
+                  "industry": "home_services",
+                  "score": 7.92,
+                  "recommendation": "ACTIVATE"
+                },
+                {
+                  "industry": "real_estate",
+                  "score": 7.5,
+                  "recommendation": "ACTIVATE"
+                },
+                {
+                  "industry": "insurance_agency",
+                  "score": 7.42,
+                  "recommendation": "TEST"
+                },
+                {
+                  "industry": "mortgage",
+                  "score": 5.25,
+                  "recommendation": "PAUSE"
+                }
+              ],
+              "activate": [
+                "home_services",
+                "real_estate"
+              ],
+              "test": [
+                "insurance_agency"
+              ],
+              "pause": [
+                "mortgage"
+              ],
+              "reject": []
+            },
+            "escalations": [],
+            "warnings": []
+          },
+          "productization_director": {
+            "agent": "productization_director",
+            "title": "Productization Director",
+            "decisions": [
+              "Universal core snapshot 'universal_core' v1.0.0 is the single shared foundation for all 3 productized industry packs."
+            ],
+            "directives_issued": [],
+            "kpis": {
+              "universal_core_version": "1.0.0",
+              "industries_productized": [
+                {
+                  "industry": "insurance_agency",
+                  "snapshot_id": "insurance_agency_pack",
+                  "version": "1.0.0"
+                },
+                {
+                  "industry": "real_estate",
+                  "snapshot_id": "real_estate_pack",
+                  "version": "1.0.0"
+                },
+                {
+                  "industry": "home_services",
+                  "snapshot_id": "home_services_pack",
+                  "version": "1.0.0"
+                }
+              ],
+              "avg_implementation_hours": 11.33
+            },
+            "escalations": [],
+            "warnings": []
+          },
+          "sales_director": {
+            "agent": "sales_director",
+            "title": "Sales Director",
+            "decisions": [
+              "Opened opportunity f32f9163-4cd5-4643-8f2e-111c9c41668b for Summit Insurance Group (insurance_agency).",
+              "Opened opportunity bb2f25e1-8d5c-455e-9bde-d452774f1416 for Coastal Realty Partners (real_estate).",
+              "Opened opportunity ed4ded95-c461-4f7e-abe6-6acc3e27898b for Ironclad HVAC (home_services)."
+            ],
+            "directives_issued": [
+              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+              "6c806ccd-7517-4636-8710-a783506e00e7"
+            ],
+            "kpis": {
+              "opportunities_by_stage": {
+                "Target Account": 3,
+                "Contacted": 0,
+                "Engaged": 0,
+                "Discovery Booked": 0,
+                "Discovery Completed": 0,
+                "Qualified": 0,
+                "Demo Booked": 0,
+                "Demo Completed": 0,
+                "Proposal Sent": 0,
+                "Verbal Commitment": 0,
+                "Payment Pending": 0,
+                "Closed Won": 0,
+                "Onboarding": 0,
+                "Implementation": 0,
+                "Quality Assurance": 0,
+                "Live": 0,
+                "Expansion Opportunity": 0,
+                "Nurture": 0,
+                "Closed Lost": 0
+              },
+              "pipeline_value": 66491,
+              "close_rate": null
+            },
+            "escalations": [],
+            "warnings": []
+          },
+          "client_onboarding_director": {
+            "agent": "client_onboarding_director",
+            "title": "Client Onboarding Director",
+            "decisions": [
+              "Tenant 'tenant_summit_insurance' provisioned end-to-end and is now 'LIVE' at location 'loc_8c1a8eff0e1a'."
+            ],
+            "directives_issued": [
+              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+              "6c806ccd-7517-4636-8710-a783506e00e7",
+              "4f096757-6ff2-4a06-b137-fca359f0a31c",
+              "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+              "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+              "9a3c7881-064c-45cb-b26e-7565581756f2",
+              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+              "6c806ccd-7517-4636-8710-a783506e00e7",
+              "4f096757-6ff2-4a06-b137-fca359f0a31c",
+              "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+              "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+              "9a3c7881-064c-45cb-b26e-7565581756f2",
+              "1edbfcf1-b7a3-4626-a170-3b44c2b747e2"
+            ],
+            "kpis": {
+              "onboarding_live_count": 1,
+              "onboarding_blocked_count": 1
+            },
+            "escalations": [
+              "Tenant 'tenant_ironclad_hvac' is BLOCKED during onboarding: Missing required client configuration fields: ['branding', 'domain', 'phone_numbers', 'email', 'calendars', 'users', 'services', 'service_areas', 'pricing', 'disclosures', 'integrations', 'escalation_contacts']"
+            ],
+            "warnings": []
+          },
+          "client_success_retention_director": {
+            "agent": "client_success_retention_director",
+            "title": "Client Success and Retention Director",
+            "decisions": [],
+            "directives_issued": [
+              "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb"
+            ],
+            "kpis": {
+              "clients_at_risk": [
+                {
+                  "tenant_id": "tenant_legacy_realty",
+                  "risk_signals": [
+                    "low_adoption",
+                    "low_appointment_volume",
+                    "low_engagement",
+                    "failed_automations"
+                  ]
+                }
+              ],
+              "clients_healthy": [
+                "tenant_summit_insurance"
+              ],
+              "expansion_opportunities": [
+                "tenant_summit_insurance"
+              ]
+            },
+            "escalations": [
+              "Tenant 'tenant_legacy_realty' is at churn risk: ['low_adoption', 'low_appointment_volume', 'low_engagement', 'failed_automations']"
+            ],
+            "warnings": [
+              "Tenant 'tenant_legacy_realty': testimonial requested but permission/compliance approval not yet granted \u2014 request withheld."
+            ]
+          },
+          "revenue_operations_analyst": {
+            "agent": "revenue_operations_analyst",
+            "title": "Revenue Operations Analyst",
+            "decisions": [
+              "Contracted revenue and cash collected are tracked as two separate figures ($0.00 contracted vs $0.00 collected) and must never be reported as one number."
+            ],
+            "directives_issued": [],
+            "kpis": {
+              "leads_generated": 480,
+              "qualified_appointments": 120,
+              "show_rate": 0.75,
+              "proposal_rate": 0.6667,
+              "close_rate": 0.55,
+              "contracted_revenue": 0,
+              "invoiced_revenue": 0,
+              "cash_collected": 0,
+              "refunds": 0,
+              "net_cash_collected": 0,
+              "monthly_recurring_revenue": 0,
+              "accounts_receivable": 0,
+              "modeled_90_day_scenario": {
+                "scenario": "target",
+                "is_guaranteed": false,
+                "recurring_months_modeled": 3,
+                "premium": {
+                  "clients": 25,
+                  "setup_fee": 20000,
+                  "monthly_fee": 3500,
+                  "setup_revenue": 500000,
+                  "recurring_revenue": 262500,
+                  "modeled_value": 762500
+                },
+                "standardized": {
+                  "clients": 50,
+                  "setup_fee": 2500,
+                  "monthly_fee": 997,
+                  "setup_revenue": 125000,
+                  "recurring_revenue": 149550,
+                  "modeled_value": 274550
+                },
+                "combined_modeled_90_day_value": 1037050
+              }
+            },
+            "escalations": [],
+            "warnings": [
+              "Scenario 'target' combined modeled 90-day value of $1,037,050.00 is a planning input, not a guaranteed result."
+            ]
+          }
+        },
+        "contracted_revenue": 0,
+        "cash_collected": 0,
+        "monthly_recurring_revenue": 0
+      },
+      "escalations": [
+        "[client_onboarding_director] Tenant 'tenant_ironclad_hvac' is BLOCKED during onboarding: Missing required client configuration fields: ['branding', 'domain', 'phone_numbers', 'email', 'calendars', 'users', 'services', 'service_areas', 'pricing', 'disclosures', 'integrations', 'escalation_contacts']",
+        "[client_success_retention_director] Tenant 'tenant_legacy_realty' is at churn risk: ['low_adoption', 'low_appointment_volume', 'low_engagement', 'failed_automations']"
+      ],
+      "warnings": [
+        "[client_success_retention_director] Tenant 'tenant_legacy_realty': testimonial requested but permission/compliance approval not yet granted \u2014 request withheld.",
+        "[revenue_operations_analyst] Scenario 'target' combined modeled 90-day value of $1,037,050.00 is a planning input, not a guaranteed result."
+      ]
+    },
+    "cmo": {
+      "agent": "cmo",
+      "title": "Chief Marketing Officer",
+      "decisions": [
+        "Published campaign 'Insurance Recruiting - LinkedIn Outbound' on channel 'outbound' (dry-run unless live-authorized).",
+        "Published campaign 'Home Services Database Reactivation' on channel 'database_reactivation' (dry-run unless live-authorized)."
+      ],
+      "directives_issued": [
+        "14d49147-e2c1-4609-8158-774c47cd19be",
+        "57eea8d3-aa7d-4737-920a-dac1904bf5eb"
+      ],
+      "kpis": {
+        "campaigns_published": [
+          "Insurance Recruiting - LinkedIn Outbound",
+          "Home Services Database Reactivation"
+        ],
+        "leads_generated_by_channel": {
+          "outbound": 180,
+          "referral": 90,
+          "webinar": 60,
+          "database_reactivation": 150
+        },
+        "total_leads_generated": 480
+      },
+      "escalations": [],
+      "warnings": []
+    },
+    "coo": {
+      "agent": "coo",
+      "title": "Chief Operating Officer",
+      "decisions": [],
+      "directives_issued": [],
+      "kpis": {
+        "implementation_capacity_used_pct": 0.7,
+        "avg_time_to_launch_days": 10.4,
+        "qa_pass_rate": 0.5
+      },
+      "escalations": [
+        "QA failed for tenant 'tenant_ironclad_hvac' \u2014 launch blocked until resolved."
+      ],
+      "warnings": []
+    },
+    "cfo": {
+      "agent": "cfo",
+      "title": "Chief Financial Officer",
+      "decisions": [
+        "Accounts receivable stands at $0.00 (invoiced $20,000.00 minus collected $23,500.00)."
+      ],
+      "directives_issued": [
+        "b22548f1-1b58-4d32-a1a5-0ea9bd41e5b3",
+        "bc8fca35-a841-46d6-bcc0-e0adca03cad1",
+        "edf4cc1c-a324-4be3-85f2-818b2e0d6dbb",
+        "49c6cdf7-0757-46bd-9903-b3f6d2deb072"
+      ],
+      "kpis": {
+        "accounts_below_margin": [
+          "tenant_thin_margin_client"
+        ],
+        "average_gross_margin_pct": 0.3952,
+        "contracted_revenue": 30500,
+        "invoiced_revenue": 20000,
+        "cash_collected": 23500,
+        "refunds": 0,
+        "net_cash_collected": 23500,
+        "monthly_recurring_revenue": 3500,
+        "accounts_receivable": 0.0
+      },
+      "escalations": [
+        "Tenant 'tenant_thin_margin_client' gross margin -3.5% is below the required 50.0% threshold."
+      ],
+      "warnings": []
+    },
+    "cto": {
+      "agent": "cto",
+      "title": "Chief Technology Officer",
+      "decisions": [],
+      "directives_issued": [],
+      "kpis": {
+        "snapshot_validation_failures": [
+          {
+            "tenant_id": "tenant_ironclad_hvac",
+            "missing_fields": [
+              "branding",
+              "domain",
+              "phone_numbers",
+              "email",
+              "calendars",
+              "users",
+              "services",
+              "service_areas",
+              "pricing",
+              "disclosures",
+              "integrations",
+              "escalation_contacts"
+            ]
+          }
+        ],
+        "usage_over_cap_accounts": [],
+        "tenant_isolation_violations_blocked": 1
+      },
+      "escalations": [
+        "Tenant 'tenant_ironclad_hvac' snapshot cannot be validated \u2014 missing: ['branding', 'domain', 'phone_numbers', 'email', 'calendars', 'users', 'services', 'service_areas', 'pricing', 'disclosures', 'integrations', 'escalation_contacts']"
+      ],
+      "warnings": []
+    },
+    "cco": {
+      "agent": "cco",
+      "title": "Chief Client Officer",
+      "decisions": [],
+      "directives_issued": [],
+      "kpis": {
+        "clients_requiring_executive_intervention": [
+          "tenant_legacy_realty"
+        ],
+        "net_revenue_retention_signal": 0.5
+      },
+      "escalations": [
+        "EXECUTIVE ESCALATION: tenant 'tenant_legacy_realty' has 4 concurrent risk signals (['low_adoption', 'low_appointment_volume', 'low_engagement', 'failed_automations']) \u2014 requires CCO-level intervention plan, not just a team alert."
+      ],
+      "warnings": []
+    },
+    "ghl_action_log": [
+      {
+        "action_id": "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "kind": "create_opportunity",
+        "payload": {
+          "location_id": "demo_agency_master",
+          "pipeline_name": "Revenue OS Sales Pipeline",
+          "stage": "Target Account",
+          "value": 30500
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.180276,
+        "result": {
+          "status": "SIMULATED",
+          "opportunity_id": "opp_ccf578cc0154"
+        }
+      },
+      {
+        "action_id": "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "kind": "create_opportunity",
+        "payload": {
+          "location_id": "demo_agency_master",
+          "pipeline_name": "Revenue OS Sales Pipeline",
+          "stage": "Target Account",
+          "value": 30500
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1803036,
+        "result": {
+          "status": "SIMULATED",
+          "opportunity_id": "opp_8bafc7c6430a"
+        }
+      },
+      {
+        "action_id": "6c806ccd-7517-4636-8710-a783506e00e7",
+        "kind": "create_opportunity",
+        "payload": {
+          "location_id": "demo_agency_master",
+          "pipeline_name": "Revenue OS Sales Pipeline",
+          "stage": "Target Account",
+          "value": 5491
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1803272,
+        "result": {
+          "status": "SIMULATED",
+          "opportunity_id": "opp_1c13f273a97b"
+        }
+      },
+      {
+        "action_id": "4f096757-6ff2-4a06-b137-fca359f0a31c",
+        "kind": "create_location",
+        "payload": {
+          "client_name": "Summit Insurance Group",
+          "industry": "insurance_agency",
+          "plan_id": "ai_revenue_operating_system"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1805458,
+        "result": {
+          "status": "SIMULATED",
+          "location_id": "loc_8c1a8eff0e1a"
+        }
+      },
+      {
+        "action_id": "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+        "kind": "apply_snapshot",
+        "payload": {
+          "location_id": "loc_8c1a8eff0e1a",
+          "snapshot_id": "universal_core",
+          "version": "1.0.0"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1808417,
+        "result": {
+          "status": "SIMULATED",
+          "applied": true
+        }
+      },
+      {
+        "action_id": "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+        "kind": "apply_snapshot",
+        "payload": {
+          "location_id": "loc_8c1a8eff0e1a",
+          "snapshot_id": "insurance_agency_pack",
+          "version": "1.0.0"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1808536,
+        "result": {
+          "status": "SIMULATED",
+          "applied": true
+        }
+      },
+      {
+        "action_id": "9a3c7881-064c-45cb-b26e-7565581756f2",
+        "kind": "create_users",
+        "payload": {
+          "location_id": "loc_8c1a8eff0e1a",
+          "users": [
+            {
+              "email": "admin@summitinsurance.example.com",
+              "role": "client_admin"
+            }
+          ]
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1808755,
+        "result": {
+          "status": "SIMULATED",
+          "created": 1
+        }
+      },
+      {
+        "action_id": "1edbfcf1-b7a3-4626-a170-3b44c2b747e2",
+        "kind": "create_location",
+        "payload": {
+          "client_name": "Ironclad HVAC",
+          "industry": "home_services",
+          "plan_id": "ai_growth_system"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.181218,
+        "result": {
+          "status": "SIMULATED",
+          "location_id": "loc_90b6d7135679"
+        }
+      },
+      {
+        "action_id": "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb",
+        "kind": "send_notification",
+        "payload": {
+          "location_id": "loc_demo_2",
+          "channel": "internal_alert",
+          "to": "client_success_team",
+          "template": "retention_intervention_trigger"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1813655,
+        "result": {
+          "status": "SIMULATED",
+          "sent": true
+        }
+      },
+      {
+        "action_id": "14d49147-e2c1-4609-8158-774c47cd19be",
+        "kind": "publish_campaign",
+        "payload": {
+          "location_id": "demo_agency_master",
+          "campaign_name": "Insurance Recruiting - LinkedIn Outbound"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1815026,
+        "result": {
+          "status": "SIMULATED",
+          "published": true
+        }
+      },
+      {
+        "action_id": "57eea8d3-aa7d-4737-920a-dac1904bf5eb",
+        "kind": "publish_campaign",
+        "payload": {
+          "location_id": "demo_agency_master",
+          "campaign_name": "Home Services Database Reactivation"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.181512,
+        "result": {
+          "status": "SIMULATED",
+          "published": true
+        }
+      },
+      {
+        "action_id": "b22548f1-1b58-4d32-a1a5-0ea9bd41e5b3",
+        "kind": "create_billing_event",
+        "payload": {
+          "location_id": "unknown",
+          "event_type": "contract_signed",
+          "amount": 30500,
+          "currency": "USD"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1815796,
+        "result": {
+          "status": "SIMULATED",
+          "billing_event_id": "bill_a55a5c85ebc1"
+        }
+      },
+      {
+        "action_id": "bc8fca35-a841-46d6-bcc0-e0adca03cad1",
+        "kind": "create_billing_event",
+        "payload": {
+          "location_id": "unknown",
+          "event_type": "invoice_sent",
+          "amount": 20000,
+          "currency": "USD"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1815946,
+        "result": {
+          "status": "SIMULATED",
+          "billing_event_id": "bill_7040f821c61a"
+        }
+      },
+      {
+        "action_id": "edf4cc1c-a324-4be3-85f2-818b2e0d6dbb",
+        "kind": "create_billing_event",
+        "payload": {
+          "location_id": "unknown",
+          "event_type": "payment_collected",
+          "amount": 20000,
+          "currency": "USD"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.1816077,
+        "result": {
+          "status": "SIMULATED",
+          "billing_event_id": "bill_de138b9c6250"
+        }
+      },
+      {
+        "action_id": "49c6cdf7-0757-46bd-9903-b3f6d2deb072",
+        "kind": "create_billing_event",
+        "payload": {
+          "location_id": "unknown",
+          "event_type": "payment_collected",
+          "amount": 3500,
+          "currency": "USD"
+        },
+        "dry_run": true,
+        "timestamp": 1788843285.181621,
+        "result": {
+          "status": "SIMULATED",
+          "billing_event_id": "bill_2b81ecf48b87"
+        }
+      }
+    ]
+  }
+}
