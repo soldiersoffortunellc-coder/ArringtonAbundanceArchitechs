@@ -1,0 +1,15 @@
+{
+  "pipeline_key": "community_programs",
+  "pipeline_name": "Community Programs",
+  "ghl_pipeline_id": "PLACEHOLDER_GHL_PIPELINE_ID",
+  "stages": [
+    {"key": "new_inquiry", "name": "New Inquiry", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "eligibility_review", "name": "Eligibility Review", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "consultation", "name": "Consultation", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "documentation", "name": "Documentation", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "program_placement", "name": "Program Placement", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "active_participant", "name": "Active Participant", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "follow_up", "name": "Follow-Up", "ghl_stage_id": "PLACEHOLDER"}
+  ],
+  "note": "PLACEHOLDER values — see licensed_agent_recruiting.json note. Belongs to open_doors_global_development_foundation; keep separated from insurance-sales pipelines per the cross-brand-mixing rule."
+}

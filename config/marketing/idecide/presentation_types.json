@@ -1,0 +1,70 @@
+{
+  "_note": "Configurable presentation strategies. Keep nonprofit, financial-services, and recruiting presentations separated unless explicitly approved (cross_brand_mixing_requires_approval in content_pillars.json).",
+  "presentation_types": [
+    {
+      "id": "licensed_agent_recruiting",
+      "business": "open_doors_financial_group",
+      "pipeline_key": "licensed_agent_recruiting",
+      "viewer_paths": [
+        {"key": "already_licensed", "label": "I am already licensed", "routes_to_stage": "qualified"},
+        {"key": "currently_studying", "label": "I am currently studying", "routes_to_stage": "new_lead"},
+        {"key": "need_help_getting_licensed", "label": "I need help getting licensed", "routes_to_stage": "new_lead"},
+        {"key": "considering_transfer", "label": "I am considering transferring agencies", "routes_to_stage": "contacted"},
+        {"key": "want_part_time_income", "label": "I want part-time income", "routes_to_stage": "new_lead"},
+        {"key": "want_to_build_agency", "label": "I want to build an agency", "routes_to_stage": "qualified"},
+        {"key": "want_leadership_ownership", "label": "I want leadership and ownership", "routes_to_stage": "qualified"},
+        {"key": "schedule_interview", "label": "I want to schedule an interview", "routes_to_stage": "interview_booked"}
+      ]
+    },
+    {
+      "id": "consumer_financial_education",
+      "business": "open_doors_financial_group",
+      "pipeline_key": "consumer_financial_education",
+      "individualized_recommendation_blocked": true,
+      "individualized_recommendation_note": "Presentation/agents may educate but must NOT provide individualized product recommendations without licensed-agent fact-finding review.",
+      "viewer_paths": [
+        {"key": "life_insurance_education", "label": "Life insurance education", "routes_to_stage": "new_inquiry"},
+        {"key": "annuity_education", "label": "Annuity education", "routes_to_stage": "new_inquiry"},
+        {"key": "retirement_income", "label": "Retirement income", "routes_to_stage": "new_inquiry"},
+        {"key": "iul_education", "label": "IUL education", "routes_to_stage": "new_inquiry"},
+        {"key": "whole_life_education", "label": "Whole-life education", "routes_to_stage": "new_inquiry"},
+        {"key": "family_protection", "label": "Family protection", "routes_to_stage": "new_inquiry"},
+        {"key": "business_owner_planning", "label": "Business-owner planning", "routes_to_stage": "new_inquiry"},
+        {"key": "legacy_planning", "label": "Legacy planning", "routes_to_stage": "new_inquiry"},
+        {"key": "schedule_strategy_appointment", "label": "Schedule a financial strategy appointment", "routes_to_stage": "appointment_booked"}
+      ]
+    },
+    {
+      "id": "agent_onboarding_training",
+      "business": "open_doors_financial_group",
+      "pipeline_key": "licensed_agent_recruiting",
+      "viewer_paths": [
+        {"key": "contracting", "label": "Contracting", "routes_to_stage": "contracting"},
+        {"key": "licensing", "label": "Licensing", "routes_to_stage": "licensing_transfer"},
+        {"key": "technology_setup", "label": "Technology setup", "routes_to_stage": "onboarding"},
+        {"key": "ghl_training", "label": "GHL training", "routes_to_stage": "onboarding"},
+        {"key": "lead_management", "label": "Lead management", "routes_to_stage": "onboarding"},
+        {"key": "sales_process_training", "label": "Sales-process training", "routes_to_stage": "onboarding"},
+        {"key": "compliance_training", "label": "Compliance training", "routes_to_stage": "onboarding"},
+        {"key": "leadership_development", "label": "Leadership development", "routes_to_stage": "activated"},
+        {"key": "request_support", "label": "Request support", "routes_to_stage": "onboarding"}
+      ]
+    },
+    {
+      "id": "open_doors_community_programs",
+      "business": "open_doors_global_development_foundation",
+      "pipeline_key": "community_programs",
+      "viewer_paths": [
+        {"key": "veteran_housing", "label": "Veteran housing", "routes_to_stage": "new_inquiry"},
+        {"key": "affordable_housing", "label": "Affordable housing", "routes_to_stage": "new_inquiry"},
+        {"key": "workforce_development", "label": "Workforce development", "routes_to_stage": "new_inquiry"},
+        {"key": "youth_mentorship", "label": "Youth mentorship", "routes_to_stage": "new_inquiry"},
+        {"key": "financial_literacy", "label": "Financial literacy", "routes_to_stage": "new_inquiry"},
+        {"key": "community_partnership", "label": "Community partnership", "routes_to_stage": "consultation"},
+        {"key": "volunteer_inquiry", "label": "Volunteer inquiry", "routes_to_stage": "consultation"},
+        {"key": "sponsor_donor_inquiry", "label": "Sponsor or donor inquiry", "routes_to_stage": "consultation"},
+        {"key": "program_application", "label": "Program application", "routes_to_stage": "eligibility_review"}
+      ]
+    }
+  ]
+}

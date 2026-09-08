@@ -1,0 +1,19 @@
+{
+  "pipeline_key": "licensed_agent_recruiting",
+  "pipeline_name": "Licensed Agent Recruiting",
+  "ghl_pipeline_id": "PLACEHOLDER_GHL_PIPELINE_ID",
+  "stages": [
+    {"key": "new_lead", "name": "New Lead", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "contacted", "name": "Contacted", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "qualified", "name": "Qualified", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "interview_booked", "name": "Interview Booked", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "interview_completed", "name": "Interview Completed", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "licensing_transfer", "name": "Licensing/Transfer", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "contracting", "name": "Contracting", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "onboarding", "name": "Onboarding", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "activated", "name": "Activated", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "nurture", "name": "Nurture", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "disqualified", "name": "Disqualified", "ghl_stage_id": "PLACEHOLDER"}
+  ],
+  "note": "PLACEHOLDER ghl_pipeline_id/ghl_stage_id values are not real. This pipeline must be created once in the GHL UI (or shipped in the agency snapshot) — GHL's public API does not support pipeline creation. Fill in the real IDs after creation."
+}

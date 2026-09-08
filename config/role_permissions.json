@@ -3,7 +3,7 @@
     "owner": ["*"],
     "ceo_agent": ["view_all", "approve_strategy", "authorize_live_mode", "escalate", "override_agent_decision"],
     "cro_agent": ["view_revenue", "approve_offer", "approve_pricing_recommendation", "route_opportunity", "approve_campaign"],
-    "cmo_agent": ["view_marketing", "publish_campaign_dry_run", "manage_funnels", "manage_content_calendar"],
+    "cmo_agent": ["view_marketing", "publish_campaign_dry_run", "manage_funnels", "manage_content_calendar", "submit_campaign_for_review", "view_marketing_queue"],
     "coo_agent": ["view_fulfillment", "assign_implementation_capacity", "approve_snapshot_release", "manage_fulfillment_checklist"],
     "cfo_agent": ["view_financials", "approve_margin_exception", "manage_billing_dry_run", "lock_pricing_change"],
     "cto_agent": ["manage_ghl_integration", "manage_snapshot_technical_config", "manage_api_credentials", "manage_tenant_provisioning"],
@@ -11,7 +11,12 @@
     "sales_rep": ["view_own_pipeline", "update_own_opportunities", "request_proposal_generation"],
     "fulfillment_specialist": ["view_assigned_onboarding", "update_onboarding_checklist", "run_qa_tests"],
     "client_admin": ["view_own_account", "request_support", "view_own_reports"],
-    "client_user": ["view_own_dashboard"]
+    "client_user": ["view_own_dashboard"],
+
+    "executive_approver": ["approve_campaign_content", "reject_campaign_content", "request_campaign_revision", "pause_campaign", "view_marketing_queue"],
+    "compliance_reviewer": ["review_compliance", "reject_campaign_content", "request_campaign_revision", "flag_compliance_risk", "view_marketing_queue"],
+    "content_operator": ["operate_content_pipeline", "submit_campaign_for_review", "view_marketing_queue"],
+    "read_only_analyst": ["view_marketing_analytics_readonly", "view_marketing_queue"]
   },
   "action_catalog": [
     "view_all", "approve_strategy", "authorize_live_mode", "escalate", "override_agent_decision",
@@ -24,6 +29,11 @@
     "view_own_pipeline", "update_own_opportunities", "request_proposal_generation",
     "view_assigned_onboarding", "update_onboarding_checklist", "run_qa_tests",
     "view_own_account", "request_support", "view_own_reports",
-    "view_own_dashboard"
+    "view_own_dashboard",
+    "submit_campaign_for_review", "view_marketing_queue",
+    "approve_campaign_content", "reject_campaign_content", "request_campaign_revision", "pause_campaign",
+    "review_compliance", "flag_compliance_risk",
+    "operate_content_pipeline",
+    "view_marketing_analytics_readonly"
   ]
 }

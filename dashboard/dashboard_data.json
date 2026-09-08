@@ -28,7 +28,7 @@
     {
       "name": "cmo",
       "title": "Chief Marketing Officer",
-      "mission": "Drive top-of-funnel demand across outbound, inbound, referral, webinar, and database-reactivation channels.",
+      "mission": "Drive top-of-funnel demand across outbound, inbound, referral, webinar, and database-reactivation channels; own the complete AI Media & Marketing Division; never publish without satisfying every approval requirement.",
       "kpis_owned": [
         "campaigns_published",
         "leads_generated_by_channel",
@@ -153,6 +153,72 @@
         "support_burden"
       ],
       "reports_to": "cro"
+    },
+    {
+      "name": "brand_voice_content_strategist",
+      "title": "Brand Voice & Content Strategist",
+      "mission": "Structure Coach Rashon's authentic voice into hooks, scripts, captions, and platform-adapted variants \u2014 never fabricating facts, credentials, results, or testimonials.",
+      "kpis_owned": [
+        "scripts_drafted",
+        "unresolved_fields_count",
+        "platforms_covered"
+      ],
+      "reports_to": "cmo"
+    },
+    {
+      "name": "ai_video_production_director",
+      "title": "AI Video Production Director",
+      "mission": "Convert approved scripts into structured, tracked video-generation jobs \u2014 never using a likeness/voice without documented authorization.",
+      "kpis_owned": [
+        "jobs_submitted",
+        "jobs_failed",
+        "jobs_completed",
+        "total_cost_estimate"
+      ],
+      "reports_to": "cmo"
+    },
+    {
+      "name": "marketing_compliance_officer",
+      "title": "Marketing Compliance Officer",
+      "mission": "Review every script, caption, claim, and CTA; assign risk; block unsupported claims; require human approval for regulated content. Not legal, tax, or regulatory advice.",
+      "kpis_owned": [
+        "reviews_completed",
+        "prohibited_blocked",
+        "human_approval_required_count"
+      ],
+      "reports_to": "cmo"
+    },
+    {
+      "name": "social_distribution_director",
+      "title": "Social Distribution Director",
+      "mission": "Prepare approved content per platform for GHL Social Planner (or an authorized alternative), preventing duplicate publishing.",
+      "kpis_owned": [
+        "posts_scheduled",
+        "duplicates_prevented",
+        "posts_by_status"
+      ],
+      "reports_to": "cmo"
+    },
+    {
+      "name": "lead_conversion_director",
+      "title": "Lead-Conversion Director",
+      "mission": "Connect every campaign to the correct GHL destination (pipeline, calendar, workflow) and route leads by intent, location, license status, and lead score.",
+      "kpis_owned": [
+        "leads_routed",
+        "attributions_recorded"
+      ],
+      "reports_to": "cmo"
+    },
+    {
+      "name": "marketing_analytics_officer",
+      "title": "Marketing Analytics Officer",
+      "mission": "Track real performance data, generate weekly reports, and recommend future content based on evidence only \u2014 never inventing unavailable data.",
+      "kpis_owned": [
+        "metrics_collected",
+        "recommendations_generated",
+        "data_quality_breakdown"
+      ],
+      "reports_to": "cmo"
     }
   ],
   "cycle_result": {
@@ -185,25 +251,25 @@
         "Coordinated 6 revenue subordinate agents this cycle: market_opportunity_analyst, productization_director, sales_director, client_onboarding_director, client_success_retention_director, revenue_operations_analyst."
       ],
       "directives_issued": [
-        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
-        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
-        "6c806ccd-7517-4636-8710-a783506e00e7",
-        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
-        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
-        "6c806ccd-7517-4636-8710-a783506e00e7",
-        "4f096757-6ff2-4a06-b137-fca359f0a31c",
-        "970b5b5f-0d59-47f8-a592-5d04a58c1560",
-        "e1b343f1-7285-4b41-8a98-4e370cb70a67",
-        "9a3c7881-064c-45cb-b26e-7565581756f2",
-        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
-        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
-        "6c806ccd-7517-4636-8710-a783506e00e7",
-        "4f096757-6ff2-4a06-b137-fca359f0a31c",
-        "970b5b5f-0d59-47f8-a592-5d04a58c1560",
-        "e1b343f1-7285-4b41-8a98-4e370cb70a67",
-        "9a3c7881-064c-45cb-b26e-7565581756f2",
-        "1edbfcf1-b7a3-4626-a170-3b44c2b747e2",
-        "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb"
+        "83554724-d6c0-41ab-8c9d-841757822826",
+        "27ce9c19-3f65-403c-a76d-2509cc603431",
+        "3dd6a5f6-dc98-486d-ab07-45bb656e765f",
+        "83554724-d6c0-41ab-8c9d-841757822826",
+        "27ce9c19-3f65-403c-a76d-2509cc603431",
+        "3dd6a5f6-dc98-486d-ab07-45bb656e765f",
+        "75e2b3e1-e425-4dd1-b7a0-90fd54c18fb8",
+        "91710a6e-2327-4a28-8980-1ebe504f7928",
+        "6604ac6b-1d6f-4524-be86-6762f9c8ff23",
+        "71c4ae79-fba5-4b8d-a5ec-ee9b599120bc",
+        "83554724-d6c0-41ab-8c9d-841757822826",
+        "27ce9c19-3f65-403c-a76d-2509cc603431",
+        "3dd6a5f6-dc98-486d-ab07-45bb656e765f",
+        "75e2b3e1-e425-4dd1-b7a0-90fd54c18fb8",
+        "91710a6e-2327-4a28-8980-1ebe504f7928",
+        "6604ac6b-1d6f-4524-be86-6762f9c8ff23",
+        "71c4ae79-fba5-4b8d-a5ec-ee9b599120bc",
+        "8d8cc96a-bf68-488e-a7c1-98dd76ebb678",
+        "b2869718-3953-4bc0-94ee-d627aa792dc4"
       ],
       "kpis": {
         "subordinate_reports": {
@@ -290,14 +356,14 @@
             "agent": "sales_director",
             "title": "Sales Director",
             "decisions": [
-              "Opened opportunity f32f9163-4cd5-4643-8f2e-111c9c41668b for Summit Insurance Group (insurance_agency).",
-              "Opened opportunity bb2f25e1-8d5c-455e-9bde-d452774f1416 for Coastal Realty Partners (real_estate).",
-              "Opened opportunity ed4ded95-c461-4f7e-abe6-6acc3e27898b for Ironclad HVAC (home_services)."
+              "Opened opportunity 0e9fb990-8d88-4ffb-9540-636d2996f69c for Summit Insurance Group (insurance_agency).",
+              "Opened opportunity c09a5cd1-048f-443c-9bf3-a35be5d42762 for Coastal Realty Partners (real_estate).",
+              "Opened opportunity 1dfdce92-643c-4af2-92ce-429b5283f5e5 for Ironclad HVAC (home_services)."
             ],
             "directives_issued": [
-              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
-              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
-              "6c806ccd-7517-4636-8710-a783506e00e7"
+              "83554724-d6c0-41ab-8c9d-841757822826",
+              "27ce9c19-3f65-403c-a76d-2509cc603431",
+              "3dd6a5f6-dc98-486d-ab07-45bb656e765f"
             ],
             "kpis": {
               "opportunities_by_stage": {
@@ -331,24 +397,24 @@
             "agent": "client_onboarding_director",
             "title": "Client Onboarding Director",
             "decisions": [
-              "Tenant 'tenant_summit_insurance' provisioned end-to-end and is now 'LIVE' at location 'loc_8c1a8eff0e1a'."
+              "Tenant 'tenant_summit_insurance' provisioned end-to-end and is now 'LIVE' at location 'loc_fafd6f0555fd'."
             ],
             "directives_issued": [
-              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
-              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
-              "6c806ccd-7517-4636-8710-a783506e00e7",
-              "4f096757-6ff2-4a06-b137-fca359f0a31c",
-              "970b5b5f-0d59-47f8-a592-5d04a58c1560",
-              "e1b343f1-7285-4b41-8a98-4e370cb70a67",
-              "9a3c7881-064c-45cb-b26e-7565581756f2",
-              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
-              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
-              "6c806ccd-7517-4636-8710-a783506e00e7",
-              "4f096757-6ff2-4a06-b137-fca359f0a31c",
-              "970b5b5f-0d59-47f8-a592-5d04a58c1560",
-              "e1b343f1-7285-4b41-8a98-4e370cb70a67",
-              "9a3c7881-064c-45cb-b26e-7565581756f2",
-              "1edbfcf1-b7a3-4626-a170-3b44c2b747e2"
+              "83554724-d6c0-41ab-8c9d-841757822826",
+              "27ce9c19-3f65-403c-a76d-2509cc603431",
+              "3dd6a5f6-dc98-486d-ab07-45bb656e765f",
+              "75e2b3e1-e425-4dd1-b7a0-90fd54c18fb8",
+              "91710a6e-2327-4a28-8980-1ebe504f7928",
+              "6604ac6b-1d6f-4524-be86-6762f9c8ff23",
+              "71c4ae79-fba5-4b8d-a5ec-ee9b599120bc",
+              "83554724-d6c0-41ab-8c9d-841757822826",
+              "27ce9c19-3f65-403c-a76d-2509cc603431",
+              "3dd6a5f6-dc98-486d-ab07-45bb656e765f",
+              "75e2b3e1-e425-4dd1-b7a0-90fd54c18fb8",
+              "91710a6e-2327-4a28-8980-1ebe504f7928",
+              "6604ac6b-1d6f-4524-be86-6762f9c8ff23",
+              "71c4ae79-fba5-4b8d-a5ec-ee9b599120bc",
+              "8d8cc96a-bf68-488e-a7c1-98dd76ebb678"
             ],
             "kpis": {
               "onboarding_live_count": 1,
@@ -364,7 +430,7 @@
             "title": "Client Success and Retention Director",
             "decisions": [],
             "directives_issued": [
-              "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb"
+              "b2869718-3953-4bc0-94ee-d627aa792dc4"
             ],
             "kpis": {
               "clients_at_risk": [
@@ -462,8 +528,8 @@
         "Published campaign 'Home Services Database Reactivation' on channel 'database_reactivation' (dry-run unless live-authorized)."
       ],
       "directives_issued": [
-        "14d49147-e2c1-4609-8158-774c47cd19be",
-        "57eea8d3-aa7d-4737-920a-dac1904bf5eb"
+        "d8c49db5-c3f0-4ace-aad2-c92cfbec6a7c",
+        "7b07e2aa-4e84-4b05-8acc-5b323aa897e6"
       ],
       "kpis": {
         "campaigns_published": [
@@ -503,10 +569,10 @@
         "Accounts receivable stands at $0.00 (invoiced $20,000.00 minus collected $23,500.00)."
       ],
       "directives_issued": [
-        "b22548f1-1b58-4d32-a1a5-0ea9bd41e5b3",
-        "bc8fca35-a841-46d6-bcc0-e0adca03cad1",
-        "edf4cc1c-a324-4be3-85f2-818b2e0d6dbb",
-        "49c6cdf7-0757-46bd-9903-b3f6d2deb072"
+        "0ab2861a-eea8-44a2-8f24-cd7a15659902",
+        "ae32f150-53ce-4d84-97ad-f2ed7979b206",
+        "01237c8e-35e1-4056-a82b-e670687f4777",
+        "6915c227-0eaa-4adb-84c4-45f5310f4184"
       ],
       "kpis": {
         "accounts_below_margin": [
@@ -577,7 +643,7 @@
     },
     "ghl_action_log": [
       {
-        "action_id": "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "action_id": "83554724-d6c0-41ab-8c9d-841757822826",
         "kind": "create_opportunity",
         "payload": {
           "location_id": "demo_agency_master",
@@ -586,14 +652,14 @@
           "value": 30500
         },
         "dry_run": true,
-        "timestamp": 1788843285.180276,
+        "timestamp": 1788862351.510471,
         "result": {
           "status": "SIMULATED",
-          "opportunity_id": "opp_ccf578cc0154"
+          "opportunity_id": "opp_71ff7e4c0fac"
         }
       },
       {
-        "action_id": "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "action_id": "27ce9c19-3f65-403c-a76d-2509cc603431",
         "kind": "create_opportunity",
         "payload": {
           "location_id": "demo_agency_master",
@@ -602,14 +668,14 @@
           "value": 30500
         },
         "dry_run": true,
-        "timestamp": 1788843285.1803036,
+        "timestamp": 1788862351.5104988,
         "result": {
           "status": "SIMULATED",
-          "opportunity_id": "opp_8bafc7c6430a"
+          "opportunity_id": "opp_57907656af8d"
         }
       },
       {
-        "action_id": "6c806ccd-7517-4636-8710-a783506e00e7",
+        "action_id": "3dd6a5f6-dc98-486d-ab07-45bb656e765f",
         "kind": "create_opportunity",
         "payload": {
           "location_id": "demo_agency_master",
@@ -618,14 +684,14 @@
           "value": 5491
         },
         "dry_run": true,
-        "timestamp": 1788843285.1803272,
+        "timestamp": 1788862351.5105152,
         "result": {
           "status": "SIMULATED",
-          "opportunity_id": "opp_1c13f273a97b"
+          "opportunity_id": "opp_140cae763fe9"
         }
       },
       {
-        "action_id": "4f096757-6ff2-4a06-b137-fca359f0a31c",
+        "action_id": "75e2b3e1-e425-4dd1-b7a0-90fd54c18fb8",
         "kind": "create_location",
         "payload": {
           "client_name": "Summit Insurance Group",
@@ -633,47 +699,47 @@
           "plan_id": "ai_revenue_operating_system"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1805458,
+        "timestamp": 1788862351.5106375,
         "result": {
           "status": "SIMULATED",
-          "location_id": "loc_8c1a8eff0e1a"
+          "location_id": "loc_fafd6f0555fd"
         }
       },
       {
-        "action_id": "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+        "action_id": "91710a6e-2327-4a28-8980-1ebe504f7928",
         "kind": "apply_snapshot",
         "payload": {
-          "location_id": "loc_8c1a8eff0e1a",
+          "location_id": "loc_fafd6f0555fd",
           "snapshot_id": "universal_core",
           "version": "1.0.0"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1808417,
+        "timestamp": 1788862351.5107415,
         "result": {
           "status": "SIMULATED",
           "applied": true
         }
       },
       {
-        "action_id": "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+        "action_id": "6604ac6b-1d6f-4524-be86-6762f9c8ff23",
         "kind": "apply_snapshot",
         "payload": {
-          "location_id": "loc_8c1a8eff0e1a",
+          "location_id": "loc_fafd6f0555fd",
           "snapshot_id": "insurance_agency_pack",
           "version": "1.0.0"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1808536,
+        "timestamp": 1788862351.5107486,
         "result": {
           "status": "SIMULATED",
           "applied": true
         }
       },
       {
-        "action_id": "9a3c7881-064c-45cb-b26e-7565581756f2",
+        "action_id": "71c4ae79-fba5-4b8d-a5ec-ee9b599120bc",
         "kind": "create_users",
         "payload": {
-          "location_id": "loc_8c1a8eff0e1a",
+          "location_id": "loc_fafd6f0555fd",
           "users": [
             {
               "email": "admin@summitinsurance.example.com",
@@ -682,14 +748,14 @@
           ]
         },
         "dry_run": true,
-        "timestamp": 1788843285.1808755,
+        "timestamp": 1788862351.5107622,
         "result": {
           "status": "SIMULATED",
           "created": 1
         }
       },
       {
-        "action_id": "1edbfcf1-b7a3-4626-a170-3b44c2b747e2",
+        "action_id": "8d8cc96a-bf68-488e-a7c1-98dd76ebb678",
         "kind": "create_location",
         "payload": {
           "client_name": "Ironclad HVAC",
@@ -697,14 +763,14 @@
           "plan_id": "ai_growth_system"
         },
         "dry_run": true,
-        "timestamp": 1788843285.181218,
+        "timestamp": 1788862351.5108607,
         "result": {
           "status": "SIMULATED",
-          "location_id": "loc_90b6d7135679"
+          "location_id": "loc_a1d8189ae2d7"
         }
       },
       {
-        "action_id": "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb",
+        "action_id": "b2869718-3953-4bc0-94ee-d627aa792dc4",
         "kind": "send_notification",
         "payload": {
           "location_id": "loc_demo_2",
@@ -713,42 +779,42 @@
           "template": "retention_intervention_trigger"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1813655,
+        "timestamp": 1788862351.5109253,
         "result": {
           "status": "SIMULATED",
           "sent": true
         }
       },
       {
-        "action_id": "14d49147-e2c1-4609-8158-774c47cd19be",
+        "action_id": "d8c49db5-c3f0-4ace-aad2-c92cfbec6a7c",
         "kind": "publish_campaign",
         "payload": {
           "location_id": "demo_agency_master",
           "campaign_name": "Insurance Recruiting - LinkedIn Outbound"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1815026,
+        "timestamp": 1788862351.5110002,
         "result": {
           "status": "SIMULATED",
           "published": true
         }
       },
       {
-        "action_id": "57eea8d3-aa7d-4737-920a-dac1904bf5eb",
+        "action_id": "7b07e2aa-4e84-4b05-8acc-5b323aa897e6",
         "kind": "publish_campaign",
         "payload": {
           "location_id": "demo_agency_master",
           "campaign_name": "Home Services Database Reactivation"
         },
         "dry_run": true,
-        "timestamp": 1788843285.181512,
+        "timestamp": 1788862351.511007,
         "result": {
           "status": "SIMULATED",
           "published": true
         }
       },
       {
-        "action_id": "b22548f1-1b58-4d32-a1a5-0ea9bd41e5b3",
+        "action_id": "0ab2861a-eea8-44a2-8f24-cd7a15659902",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -757,14 +823,14 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1815796,
+        "timestamp": 1788862351.5110557,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_a55a5c85ebc1"
+          "billing_event_id": "bill_9f84530a181b"
         }
       },
       {
-        "action_id": "bc8fca35-a841-46d6-bcc0-e0adca03cad1",
+        "action_id": "ae32f150-53ce-4d84-97ad-f2ed7979b206",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -773,14 +839,14 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1815946,
+        "timestamp": 1788862351.5110648,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_7040f821c61a"
+          "billing_event_id": "bill_c87f5534fdff"
         }
       },
       {
-        "action_id": "edf4cc1c-a324-4be3-85f2-818b2e0d6dbb",
+        "action_id": "01237c8e-35e1-4056-a82b-e670687f4777",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -789,14 +855,14 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788843285.1816077,
+        "timestamp": 1788862351.5110736,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_de138b9c6250"
+          "billing_event_id": "bill_74c961f23ea4"
         }
       },
       {
-        "action_id": "49c6cdf7-0757-46bd-9903-b3f6d2deb072",
+        "action_id": "6915c227-0eaa-4adb-84c4-45f5310f4184",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -805,10 +871,10 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788843285.181621,
+        "timestamp": 1788862351.5110817,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_2b81ecf48b87"
+          "billing_event_id": "bill_cea8d86cc847"
         }
       }
     ]

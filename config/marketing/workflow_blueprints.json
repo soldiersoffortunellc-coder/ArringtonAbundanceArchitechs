@@ -1,0 +1,141 @@
+{
+  "_note": "GHL's public API does not support creating pipelines, workflows, or a generic 'publish campaign' call (confirmed in docs/12-live-ghl-connection.md). Every blueprint below with implementation:'ghl_manual_or_snapshot' must be built once by hand in the GHL UI or shipped inside a snapshot — this codebase cannot create it via API. Blueprints with implementation:'python_code' are real, tested code in this repo. 'hybrid' means part GHL config, part code (a GHL workflow calls a webhook this repo handles).",
+  "workflows": [
+    {
+      "id": "daily_content_idea_generation",
+      "name": "Daily content-idea generation",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/brand_voice_content_strategist.py",
+      "trigger": "scheduled_daily",
+      "actions": ["Pull content pillar rotation + content mix targets", "Propose N campaign ideas respecting content_mix.json ratios", "Create CampaignBrief drafts in IDEA state"]
+    },
+    {
+      "id": "weekly_content_calendar_generation",
+      "name": "Weekly content-calendar generation",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/cmo.py",
+      "trigger": "scheduled_weekly",
+      "actions": ["CMO reviews the week's IDEA-state briefs", "Balances across businesses/pillars/platforms per content_mix.json", "Approves which ideas advance to BRIEF_CREATED"]
+    },
+    {
+      "id": "script_drafting",
+      "name": "Script drafting",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/brand_voice_content_strategist.py",
+      "trigger": "brief_created",
+      "actions": ["Structure hook/body/CTA from brief facts", "Adapt per-platform caption variants", "Mark unsupplied facts NEEDS_INPUT", "Advance to SCRIPT_DRAFTED"]
+    },
+    {
+      "id": "brand_review",
+      "name": "Brand review",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/cmo.py",
+      "trigger": "script_drafted",
+      "actions": ["CMO checks voice/pillar/CTA fit", "Advance to COMPLIANCE_REVIEW or back to REVISION_REQUIRED"]
+    },
+    {
+      "id": "compliance_review",
+      "name": "Compliance review",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/marketing/compliance.py",
+      "trigger": "brand_review_passed",
+      "actions": ["Scan for prohibited phrases/claim categories", "Assign risk level", "Route to REVISION_REQUIRED or HUMAN_APPROVAL_REQUIRED"]
+    },
+    {
+      "id": "human_approval_notification",
+      "name": "Human-approval notification",
+      "implementation": "hybrid",
+      "code_ref": "src/csuite/marketing/approval_queue.py",
+      "trigger": "state_entered_human_approval_required",
+      "actions": ["Enqueue in ApprovalQueue", "GHL side (manual config): notify executive approver via SMS/email/internal notification workflow"]
+    },
+    {
+      "id": "video_generation_submission",
+      "name": "Video-generation submission",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/ai_video_production_director.py",
+      "trigger": "state_entered_approved",
+      "actions": ["Submit VideoGenerationJob via AvatarVideoAdapter (dry-run/mock unless live-authorized)", "Advance to VIDEO_GENERATING"]
+    },
+    {
+      "id": "video_completion_webhook_or_polling",
+      "name": "Video completion (webhook or polling)",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/marketing/webhooks.py",
+      "trigger": "provider_webhook_or_poll",
+      "actions": ["Verify signature/idempotency", "Update VideoGenerationJob status/asset URL", "Advance to VIDEO_REVIEW on success, FAILED + retry logic on failure"]
+    },
+    {
+      "id": "video_review",
+      "name": "Video review",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/ai_video_production_director.py",
+      "trigger": "video_generation_completed",
+      "actions": ["Human/agent reviews final asset against script + disclosures", "Advance to SCHEDULED or REVISION_REQUIRED"]
+    },
+    {
+      "id": "social_scheduling",
+      "name": "Social scheduling",
+      "implementation": "hybrid",
+      "code_ref": "src/csuite/agents/marketing/social_distribution_director.py",
+      "trigger": "state_entered_scheduled",
+      "actions": ["Build per-platform SocialPost/PublishingJob", "Dedupe against recent posts", "Hand off to GHL Social Planner (or documented SocialPlatformAdapter) — dry-run unless live-authorized"]
+    },
+    {
+      "id": "publishing_confirmation",
+      "name": "Publishing confirmation",
+      "implementation": "hybrid",
+      "code_ref": "src/csuite/agents/marketing/social_distribution_director.py",
+      "trigger": "provider_publish_result",
+      "actions": ["Record platform post ID/URL/timestamp or error", "Advance to PUBLISHED or FAILED"]
+    },
+    {
+      "id": "failed_job_recovery",
+      "name": "Failed-job recovery",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/providers/avatar_video_adapter.py",
+      "trigger": "job_failed",
+      "actions": ["Exponential-backoff retry up to configured max attempts", "Dead-letter + manual-recovery flag once exhausted"]
+    },
+    {
+      "id": "comment_dm_keyword_lead_capture",
+      "name": "Comment and DM keyword lead capture",
+      "implementation": "hybrid",
+      "code_ref": "src/csuite/marketing/webhooks.py",
+      "trigger": "ghl_native_or_platform_webhook",
+      "actions": ["GHL side (manual config): native keyword-comment/DM automation where supported", "This repo: normalize + sanitize inbound text as UNTRUSTED DATA ONLY, never executed", "Tag + route contact via LeadConversionDirector"]
+    },
+    {
+      "id": "appointment_attribution",
+      "name": "Appointment attribution",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/lead_conversion_director.py",
+      "trigger": "ghl_appointment_booked_webhook",
+      "actions": ["Link appointment to originating campaign/CTA via LeadAttribution", "Update PerformanceMetric"]
+    },
+    {
+      "id": "weekly_analytics_report",
+      "name": "Weekly analytics report",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/marketing_analytics_officer.py",
+      "trigger": "scheduled_weekly",
+      "actions": ["Aggregate PerformanceMetric by campaign/pillar/platform", "Flag estimated/delayed/unavailable data", "Produce executive report"]
+    },
+    {
+      "id": "monthly_content_optimization",
+      "name": "Monthly content optimization",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/agents/marketing/marketing_analytics_officer.py",
+      "trigger": "scheduled_monthly",
+      "actions": ["Rank hooks/formats/CTAs/platforms/times by actual conversion evidence", "Produce OptimizationRecommendation records for approval — never auto-applied"]
+    },
+    {
+      "id": "emergency_pause_and_global_kill_switch",
+      "name": "Emergency pause and global kill switch",
+      "implementation": "python_code",
+      "code_ref": "src/csuite/platform/controls.py",
+      "trigger": "manual",
+      "actions": ["GlobalControls.pause_publishing(reason) blocks every publish-directing agent immediately", "resume_publishing() re-enables", "Distinct from the full-system pause used by the Revenue OS"]
+    }
+  ]
+}

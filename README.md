@@ -3,7 +3,18 @@
 A duplicatable, scalable, salable **AI Revenue Operating System** built on
 top of GoHighLevel (GHL), directed by a **C-Suite AI Agent System**: 7
 C-suite-level agents (CEO, CRO, CMO, COO, CFO, CTO, CCO) directing 6 revenue
-subordinate agents under the CRO — **13 task-oriented agents in total**.
+subordinate agents under the CRO **and** 6 AI Media & Marketing Division
+subordinates under the CMO — **19 task-oriented agents in total**.
+
+The **AI Media & Marketing Division** (see
+[`docs/13-media-marketing-audit-and-plan.md`](docs/13-media-marketing-audit-and-plan.md))
+creates, compliance-reviews, approves, publishes, tracks, and improves
+AI-clone marketing videos for Rashon Arrington's businesses (Open Doors
+Financial Group, Open Doors Global Development Foundation, and the Coach
+Rashon personal brand) through GHL — with mandatory human approval on
+every AI-clone post's first 30 days and every regulated claim, and an
+optional iDecide interactive-presentation layer in the middle of the
+funnel.
 
 This is installed business infrastructure, not a generic CRM: industry-
 specific Revenue Operating Systems for insurance agencies, real estate, and
@@ -44,10 +55,13 @@ marketplace app), and exactly which endpoints are wired up:
 ## Quickstart
 
 ```bash
-# Run one full dry-run operating cycle against realistic synthetic data
+# Run one full dry-run operating cycle against realistic synthetic data (19 agents)
 python3 scripts/run_demo.py
 
-# Run the full test suite (66 tests, zero external dependencies)
+# Walk one sample campaign through the Media & Marketing pipeline to the human-approval gate
+python3 scripts/run_marketing_demo.py
+
+# Run the full test suite (155 tests, zero external dependencies)
 python3 -m unittest discover -s tests -t .
 
 # View the executive command center (must be served over HTTP, not file://)
@@ -56,30 +70,39 @@ python3 -m http.server 8000
 ```
 
 No dependencies beyond the Python 3.10+ standard library are required to
-run the agents, the demo, or the tests.
+run the agents, the demos, or the tests.
 
 ## Repository layout
 
 ```
 config/                  All configurable data: pricing, financial scenarios, pipeline
                           stages, onboarding states, role permissions, AI usage limits,
-                          and the 3-layer snapshot specs (universal core + 3 industry packs).
+                          the 3-layer snapshot specs (universal core + 3 industry packs),
+                          and marketing/ (content pillars, content mix, brand profiles,
+                          prohibited claims, disclosures, workflow blueprints, iDecide config).
 src/csuite/
   agents/                 The 7 C-suite agents (ceo, cro, cmo, coo, cfo, cto, cco)
   agents/revenue/         The 6 revenue subordinates the CRO directs
+  agents/marketing/       The 6 Media & Marketing subordinates the CMO directs
   ghl/                    GHLAdapter (the single directed interface onto GoHighLevel),
                           snapshot assembly, and the SaaS provisioning workflow
+  marketing/              Campaign state machine, in-memory store, compliance engine,
+                          content-strategy loader, lead scoring, approval queue, webhooks
+  providers/              AvatarVideoAdapter, VoiceAdapter, SocialPlatformAdapter,
+                          StorageAdapter, AnalyticsAdapter, IDecideAdapter — all
+                          dry-run/mock by default, same convention as GHLAdapter
   onboarding/             The client onboarding state machine
   pipeline/               The sales pipeline model
   platform/               Tenant isolation, role permissions, AI usage limits,
-                          global pause, safe offboarding, billing ledger
+                          global pause + scoped publishing pause, safe offboarding, billing ledger
   revenue/                90-day financial model, margin/profitability calculator,
                           market opportunity scoring model
-  orchestrator.py          RevenueOperatingSystem — wires all 13 agents together
-scripts/run_demo.py       Runs one full cycle end-to-end, writes dashboard_data.json
+  orchestrator.py          RevenueOperatingSystem — wires all 19 agents together
+scripts/run_demo.py               Runs one full Revenue OS cycle, writes dashboard_data.json
+scripts/run_marketing_demo.py     Walks a sample campaign to the human-approval gate
 dashboard/                Executive command-center (static HTML, reads dashboard_data.json)
-tests/                    66 tests covering every item in the required test list
-docs/                     The 20 requested deliverables (see mapping below)
+tests/                    155 tests; tests/marketing/ and tests/providers/ cover the new division
+docs/                     The requested deliverables (see mapping below)
 ```
 
 ## Deliverables index
@@ -108,6 +131,10 @@ docs/                     The 20 requested deliverables (see mapping below)
 | 20 | Capacity and hiring requirements | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |
 | — | Risks and assumptions | [`docs/11-risks-and-assumptions.md`](docs/11-risks-and-assumptions.md) |
 | — | Live GHL connection (auth model, wired endpoints, how to connect) | [`docs/12-live-ghl-connection.md`](docs/12-live-ghl-connection.md) |
+| — | **AI Media & Marketing Division** — audit + implementation plan | [`docs/13-media-marketing-audit-and-plan.md`](docs/13-media-marketing-audit-and-plan.md) |
+| — | Media & Marketing architecture + Mermaid diagram | [`docs/14-media-marketing-architecture.md`](docs/14-media-marketing-architecture.md) |
+| — | iDecide integration (capability matrix, adapter, models) | [`docs/15-idecide-integration.md`](docs/15-idecide-integration.md) |
+| — | Media & Marketing setup, checklists, troubleshooting, deployment, rollback | [`docs/16-media-marketing-setup-and-checklist.md`](docs/16-media-marketing-setup-and-checklist.md) |
 
 ## Operating rules this codebase enforces in code, not just policy
 
@@ -128,6 +155,27 @@ docs/                     The 20 requested deliverables (see mapping below)
   onboarding** instead of launching a broken account.
 - **A minimum of 5 (this build ships 7) distinct C-suite agents** exist and
   are enforced by `tests/test_agent_roster.py`.
+- **Every AI-clone video's script must clear compliance review, and every
+  AI-clone post in its first 30 days requires human approval regardless of
+  risk level** — enforced in `ComplianceEngine`, not just documented policy.
+- **Blocked phrases (e.g. "guaranteed returns", "risk-free wealth",
+  "instant approval") are hard-blocked outright**, not just flagged.
+- **A permission check succeeding is never confused with an approval** —
+  `ApprovalQueue` still requires the campaign to actually be sitting in
+  `HUMAN_APPROVAL_REQUIRED`; the RBAC check and the state-machine
+  transition are two independent gates.
+- **No avatar video or synthetic voice is ever generated without a
+  documented `ConsentAuthorization`** — `AvatarVideoAdapter`/`VoiceAdapter`
+  raise `ConsentRequiredError` otherwise.
+- **Duplicate social posts (same platform + identical content) are
+  structurally rejected**, not just discouraged.
+- **Publishing has its own scoped kill switch** (`GlobalControls
+  .pause_publishing()`), independent of the full-system pause, so marketing
+  can be halted without stopping revenue operations and vice versa.
+- **Every inbound comment/DM/webhook payload is treated as untrusted data**
+  — sanitized and pattern-matched against a literal keyword allow-list,
+  never evaluated, executed, or treated as an instruction
+  (`tests/marketing/test_webhook_authentication.py::TestPromptInjectionResistance`).
 
 ## What this is not (yet)
 

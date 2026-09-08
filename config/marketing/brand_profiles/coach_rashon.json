@@ -1,0 +1,49 @@
+{
+  "brand_id": "coach_rashon",
+  "display_name": "Coach Rashon",
+  "legal_name_on_camera": "Rashon Arrington",
+  "_provenance_note": "Fields under 'verified_facts' are exactly what the business owner stated directly in this system's setup conversation. Fields under 'user_provided_unverified' or with a NEEDS_INPUT placeholder are not yet confirmed and must be filled in / approved by the owner before use in any published content. Nothing here was invented.",
+
+  "verified_facts": {
+    "role": "Business owner and primary on-camera identity across all three businesses",
+    "associated_businesses": [
+      "open_doors_financial_group",
+      "open_doors_global_development_foundation",
+      "coach_rashon_personal_brand"
+    ],
+    "personal_brand_topics": [
+      "leadership", "entrepreneurship", "faith", "family", "motivation",
+      "veteran experience", "business development", "ownership and legacy"
+    ]
+  },
+
+  "user_provided_unverified": {
+    "military_service_details": "NEEDS_INPUT — branch, role, years, and exactly how it may be referenced were not specified",
+    "specific_credentials_licenses": "NEEDS_INPUT — exact license numbers/states/carrier appointments were not specified",
+    "specific_results_or_numbers": "NEEDS_INPUT — no performance numbers, income figures, or client outcomes were supplied; none may be used until supplied and compliance-approved"
+  },
+
+  "voice_profile": {
+    "tone_descriptors": [
+      "executive_but_relatable", "motivational_and_direct", "powerful_without_exaggeration",
+      "faith_conscious_not_forced", "strong_leadership_and_coaching_energy",
+      "clear_and_conversational", "confident_but_compliant"
+    ],
+    "recurring_themes": [
+      "ownership", "service", "duplication", "education", "legacy", "leadership", "community_impact"
+    ],
+    "explicit_non_goals": [
+      "must never sound like a generic AI assistant",
+      "must never force faith into every single message",
+      "must never exaggerate power/confidence into unsupported claims"
+    ]
+  },
+
+  "approved_ctas": [
+    "Comment AGENT", "DM WEALTH", "Book a strategy call", "Register for an event",
+    "Apply to join the agency", "Request financial education"
+  ],
+
+  "prohibited_claims_ref": "config/marketing/prohibited_claims.json",
+  "disclosures_ref": "config/marketing/disclosure_requirements.json"
+}

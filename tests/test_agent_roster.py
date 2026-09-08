@@ -23,9 +23,13 @@ class TestAgentRoster(unittest.TestCase):
     def test_cro_directs_six_revenue_subordinates(self):
         self.assertEqual(len(self.ros.cro.subordinates), 6)
 
-    def test_full_roster_is_thirteen_task_oriented_agents(self):
+    def test_cmo_directs_six_media_marketing_subordinates(self):
+        self.assertEqual(len(self.ros.cmo.subordinates), 6)
+
+    def test_full_roster_is_nineteen_task_oriented_agents(self):
+        # 7 C-suite + 6 revenue subordinates (under CRO) + 6 media/marketing subordinates (under CMO)
         roster = self.ros.agent_roster()
-        self.assertEqual(len(roster), 13)
+        self.assertEqual(len(roster), 19)
 
     def test_run_cycle_produces_a_report_from_every_c_suite_agent(self):
         result = self.ros.run_cycle({})

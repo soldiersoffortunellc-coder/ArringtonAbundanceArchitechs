@@ -3,3 +3,11 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 .venv/
+.env
+
+# real, filled-in copies of the *.template.json config files — never commit real GHL/iDecide IDs
+config/marketing/ghl_marketing_config.json
+config/marketing/idecide/field_map.json
+
+# local dry-run storage backend for StorageAdapter
+.local_storage/

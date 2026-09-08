@@ -1,0 +1,33 @@
+{
+  "brand_id": "open_doors_financial_group",
+  "display_name": "Open Doors Financial Group",
+  "_provenance_note": "See coach_rashon.json for the provenance convention. Product/license/carrier specifics below are NEEDS_INPUT until supplied — this system does not fabricate them.",
+
+  "verified_facts": {
+    "focus_areas": [
+      "licensed_agent_recruiting", "insurance_career_development", "financial_education",
+      "life_insurance", "annuities", "iul", "properly_designed_whole_life_and_wealth_strategies"
+    ],
+    "on_camera_identity": "coach_rashon"
+  },
+
+  "user_provided_unverified": {
+    "carrier_appointments": "NEEDS_INPUT",
+    "state_licensing_footprint": "NEEDS_INPUT",
+    "specific_product_names_and_terms": "NEEDS_INPUT",
+    "compliance_reviewer_of_record": "NEEDS_INPUT — required before any HIGH-risk content is approved"
+  },
+
+  "content_pillars_ref": [
+    "licensed_agent_recruiting", "insurance_career_education", "financial_education",
+    "life_insurance_education", "annuity_education", "iul_whole_life_education", "client_education_faq"
+  ],
+
+  "approved_ctas": [
+    "Comment AGENT", "DM WEALTH", "Book a strategy call", "Apply to join the agency", "Request financial education"
+  ],
+
+  "requires_compliance_review": true,
+  "prohibited_claims_ref": "config/marketing/prohibited_claims.json",
+  "disclosures_ref": "config/marketing/disclosure_requirements.json"
+}

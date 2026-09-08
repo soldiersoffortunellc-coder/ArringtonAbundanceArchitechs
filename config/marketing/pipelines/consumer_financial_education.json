@@ -1,0 +1,18 @@
+{
+  "pipeline_key": "consumer_financial_education",
+  "pipeline_name": "Consumer Financial Education",
+  "ghl_pipeline_id": "PLACEHOLDER_GHL_PIPELINE_ID",
+  "stages": [
+    {"key": "new_inquiry", "name": "New Inquiry", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "contacted", "name": "Contacted", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "appointment_booked", "name": "Appointment Booked", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "fact_finder", "name": "Fact Finder", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "recommendation", "name": "Recommendation", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "application", "name": "Application", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "underwriting", "name": "Underwriting", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "issued", "name": "Issued", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "follow_up", "name": "Follow-Up", "ghl_stage_id": "PLACEHOLDER"},
+    {"key": "nurture", "name": "Nurture", "ghl_stage_id": "PLACEHOLDER"}
+  ],
+  "note": "PLACEHOLDER values — see licensed_agent_recruiting.json note. The Recommendation/Application/Underwriting/Issued stages must only be reached through a licensed human agent's fact-finding process, never an automated AI recommendation."
+}

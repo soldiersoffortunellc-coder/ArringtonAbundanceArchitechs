@@ -1,0 +1,26 @@
+{
+  "_note": "Configurable disclosures keyed by dimension. SnapshotAssembler-style layering: a piece of content may need more than one. Real carrier/agency/state text must be supplied by compliance/legal — placeholders below are NOT approved legal language.",
+  "by_platform": {
+    "all": ["ai_clone_disclosure: This video uses an AI-generated likeness/voice authorized by the person depicted."],
+    "facebook": [], "instagram": [], "tiktok": [], "youtube_shorts": [], "linkedin": []
+  },
+  "by_product": {
+    "life_insurance": ["PLACEHOLDER: state-specific life insurance marketing disclosure — supply real text before use"],
+    "annuity": ["PLACEHOLDER: annuity marketing disclosure — supply real text before use"],
+    "iul": ["PLACEHOLDER: IUL illustration/marketing disclosure — supply real text before use"],
+    "whole_life": ["PLACEHOLDER: whole life marketing disclosure — supply real text before use"]
+  },
+  "by_campaign_type": {
+    "recruiting": ["PLACEHOLDER: recruiting/income-opportunity disclosure — supply real text before use"],
+    "consumer_education": []
+  },
+  "by_carrier": {
+    "_note": "Populate one entry per carrier once known: { \"carrier_id\": [\"disclosure text\"] }"
+  },
+  "by_agency": {
+    "_note": "Populate one entry per agency once known."
+  },
+  "by_state": {
+    "_note": "Populate one entry per state once known, e.g. resident-producer/license disclosures."
+  }
+}

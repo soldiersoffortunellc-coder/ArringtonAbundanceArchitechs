@@ -1,0 +1,35 @@
+{
+  "brand_id": "open_doors_global_development_foundation",
+  "display_name": "Open Doors Global Development Foundation",
+  "_provenance_note": "See coach_rashon.json for the provenance convention.",
+
+  "verified_facts": {
+    "focus_areas": [
+      "affordable_housing", "veteran_services", "workforce_development",
+      "youth_mentorship", "financial_literacy", "community_development"
+    ],
+    "on_camera_identity": "coach_rashon",
+    "entity_type": "nonprofit_foundation"
+  },
+
+  "user_provided_unverified": {
+    "501c3_status_and_ein": "NEEDS_INPUT",
+    "program_eligibility_criteria": "NEEDS_INPUT",
+    "partner_and_sponsor_names": "NEEDS_INPUT",
+    "compliance_reviewer_of_record": "NEEDS_INPUT"
+  },
+
+  "content_pillars_ref": [
+    "veterans_and_service", "affordable_housing_community_development",
+    "workforce_development", "client_education_faq"
+  ],
+
+  "approved_ctas": [
+    "Register for an event", "Request financial education"
+  ],
+
+  "cross_brand_mixing_rule": "Nonprofit messaging must not be combined with insurance-sales or recruiting messaging in the same campaign without explicit owner approval (see config/marketing/content_pillars.json).",
+  "requires_compliance_review": true,
+  "prohibited_claims_ref": "config/marketing/prohibited_claims.json",
+  "disclosures_ref": "config/marketing/disclosure_requirements.json"
+}

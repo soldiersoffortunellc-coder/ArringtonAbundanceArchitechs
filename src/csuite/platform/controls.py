@@ -19,11 +19,18 @@ class SystemPausedError(Exception):
     pass
 
 
+class PublishingPausedError(Exception):
+    """Raised by the Media & Marketing Division's scoped kill switch — distinct from SystemPausedError
+    so publishing can be halted without pausing the whole Revenue OS, and vice versa."""
+
+
 @dataclass
 class GlobalControls:
     paused: bool = False
     pause_reason: str | None = None
     offboarded_tenants: list = field(default_factory=list)
+    publishing_paused: bool = False
+    publishing_pause_reason: str | None = None
 
     def pause(self, reason: str) -> None:
         self.paused = True
@@ -37,6 +44,24 @@ class GlobalControls:
         """Call at the top of any write-directing agent action."""
         if self.paused:
             raise SystemPausedError(f"System is globally paused: {self.pause_reason}")
+
+    def pause_publishing(self, reason: str) -> None:
+        """The Media & Marketing Division's own emergency stop: blocks every publish-directing
+        agent action (social scheduling/publishing, video submission) without touching revenue
+        operations. A full guard() pause also blocks publishing (it blocks everything); this is
+        the narrower, publishing-only control requested alongside it."""
+        self.publishing_paused = True
+        self.publishing_pause_reason = reason
+
+    def resume_publishing(self) -> None:
+        self.publishing_paused = False
+        self.publishing_pause_reason = None
+
+    def guard_publishing(self) -> None:
+        """Call at the top of any action that would submit a video job or schedule/publish a post."""
+        self.guard()  # a full system pause also blocks publishing
+        if self.publishing_paused:
+            raise PublishingPausedError(f"Publishing is paused: {self.publishing_pause_reason}")
 
     def safe_offboard(self, tenant_registry: TenantRegistry, tenant_id: str, confirm: bool = False) -> dict:
         if not confirm:

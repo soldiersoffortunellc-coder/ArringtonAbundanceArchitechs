@@ -1,0 +1,58 @@
+{
+  "_note": "Copy to ghl_marketing_config.json (git-ignored) and fill in real values. Every PLACEHOLDER must be replaced or validation (src/csuite/marketing/content_strategy.py::validate_ghl_marketing_config) will flag it as missing. Do not fabricate IDs.",
+  "agency_id": "PLACEHOLDER_AGENCY_ID",
+  "location_id": "PLACEHOLDER_LOCATION_ID",
+  "api_token_env_var": "GHL_ACCESS_TOKEN",
+  "timezone": "PLACEHOLDER_IANA_TIMEZONE (e.g. America/Chicago)",
+  "default_publishing_windows": {
+    "facebook": ["PLACEHOLDER e.g. 08:00-09:00", "PLACEHOLDER e.g. 18:00-19:30"],
+    "instagram": ["PLACEHOLDER"],
+    "tiktok": ["PLACEHOLDER"],
+    "youtube_shorts": ["PLACEHOLDER"],
+    "linkedin": ["PLACEHOLDER"]
+  },
+  "pipeline_ids": {
+    "licensed_agent_recruiting": "PLACEHOLDER — see config/marketing/pipelines/licensed_agent_recruiting.json",
+    "consumer_financial_education": "PLACEHOLDER — see config/marketing/pipelines/consumer_financial_education.json",
+    "community_programs": "PLACEHOLDER — see config/marketing/pipelines/community_programs.json"
+  },
+  "calendar_ids": {
+    "strategy_call": "PLACEHOLDER",
+    "recruiting_interview": "PLACEHOLDER",
+    "financial_education_appointment": "PLACEHOLDER",
+    "community_consultation": "PLACEHOLDER"
+  },
+  "workflow_ids": {
+    "_note": "One entry per workflow blueprint in config/marketing/workflow_blueprints.json, once built in GHL.",
+    "comment_dm_keyword_capture": "PLACEHOLDER",
+    "human_approval_notification": "PLACEHOLDER",
+    "appointment_attribution": "PLACEHOLDER"
+  },
+  "form_urls": {"financial_education_request": "PLACEHOLDER", "agency_application": "PLACEHOLDER"},
+  "funnel_urls": {"recruiting_landing_page": "PLACEHOLDER", "education_landing_page": "PLACEHOLDER"},
+  "tags": {
+    "ai_clone_content": "PLACEHOLDER_TAG_ID",
+    "recruiting_lead": "PLACEHOLDER_TAG_ID",
+    "consumer_lead": "PLACEHOLDER_TAG_ID",
+    "community_lead": "PLACEHOLDER_TAG_ID",
+    "high_intent": "PLACEHOLDER_TAG_ID"
+  },
+  "custom_fields": {
+    "_note": "See config/marketing/idecide/field_map.template.json for the iDecide-specific fields.",
+    "lead_source_campaign_id": "PLACEHOLDER_FIELD_ID",
+    "requested_service": "PLACEHOLDER_FIELD_ID",
+    "license_status": "PLACEHOLDER_FIELD_ID"
+  },
+  "social_account_mappings": {
+    "facebook": "PLACEHOLDER_GHL_SOCIAL_ACCOUNT_ID",
+    "instagram": "PLACEHOLDER_GHL_SOCIAL_ACCOUNT_ID",
+    "tiktok": "PLACEHOLDER (verify GHL Social Planner TikTok support for this account before use)",
+    "youtube_shorts": "PLACEHOLDER (verify GHL Social Planner YouTube support before use)",
+    "linkedin": "PLACEHOLDER (verify GHL Social Planner LinkedIn support before use)"
+  },
+  "assigned_users": {
+    "primary_owner": "PLACEHOLDER_GHL_USER_ID",
+    "compliance_reviewer": "PLACEHOLDER_GHL_USER_ID",
+    "content_operator": "PLACEHOLDER_GHL_USER_ID"
+  }
+}

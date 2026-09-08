@@ -1,0 +1,21 @@
+{
+  "_note": "Configurable content pillars. Never combine nonprofit, insurance-sales, and personal-brand messaging in one campaign unless explicitly approved (see 'cross_brand_mixing_requires_approval').",
+  "cross_brand_mixing_requires_approval": true,
+  "pillars": [
+    {"id": "licensed_agent_recruiting", "name": "Licensed-Agent Recruiting", "business": "open_doors_financial_group"},
+    {"id": "insurance_career_education", "name": "Insurance Career Education", "business": "open_doors_financial_group"},
+    {"id": "financial_education", "name": "Financial Education", "business": "open_doors_financial_group"},
+    {"id": "life_insurance_education", "name": "Life Insurance Education", "business": "open_doors_financial_group"},
+    {"id": "annuity_education", "name": "Annuity Education", "business": "open_doors_financial_group"},
+    {"id": "iul_whole_life_education", "name": "IUL and Whole-Life Education", "business": "open_doors_financial_group"},
+    {"id": "leadership_development", "name": "Leadership Development", "business": "coach_rashon"},
+    {"id": "entrepreneurship", "name": "Entrepreneurship", "business": "coach_rashon"},
+    {"id": "veterans_and_service", "name": "Veterans and Service", "business": "open_doors_global_development_foundation"},
+    {"id": "affordable_housing_community_development", "name": "Affordable Housing and Community Development", "business": "open_doors_global_development_foundation"},
+    {"id": "workforce_development", "name": "Workforce Development", "business": "open_doors_global_development_foundation"},
+    {"id": "faith_family_legacy", "name": "Faith, Family, and Legacy", "business": "coach_rashon"},
+    {"id": "motivation_and_discipline", "name": "Motivation and Discipline", "business": "coach_rashon"},
+    {"id": "event_promotion", "name": "Event Promotion", "business": "configurable_per_campaign"},
+    {"id": "client_education_faq", "name": "Client Education and FAQs", "business": "open_doors_financial_group"}
+  ]
+}

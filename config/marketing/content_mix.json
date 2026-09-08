@@ -1,0 +1,14 @@
+{
+  "_note": "All percentages below are DEFAULT, EDITABLE configuration — never hard-coded into business logic. Loaded by src/csuite/marketing/content_strategy.py.",
+  "production_mix": {
+    "ai_clone_content_pct": 0.70,
+    "authentic_live_recorded_pct": 0.30
+  },
+  "topic_mix": {
+    "education_pct": 0.40,
+    "recruiting_pct": 0.25,
+    "leadership_and_motivation_pct": 0.15,
+    "community_impact_pct": 0.10,
+    "direct_promotion_pct": 0.10
+  }
+}

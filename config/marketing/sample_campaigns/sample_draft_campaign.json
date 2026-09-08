@@ -1,0 +1,53 @@
+{
+  "campaign_id": "camp_9b24db117f98",
+  "state": "HUMAN_APPROVAL_REQUIRED",
+  "business": "open_doors_financial_group",
+  "brand_id": "coach_rashon",
+  "pillar_id": "leadership_development",
+  "script": {
+    "hook": "Ownership beats income. Build something that outlasts you.",
+    "body": "Ownership beats income. Build something that outlasts you.",
+    "cta_text": "DM WEALTH",
+    "unresolved_fields": []
+  },
+  "compliance_review": {
+    "risk_level": "LOW",
+    "requires_human_approval": true,
+    "required_disclosures": [
+      "ai_clone_disclosure: This video uses an AI-generated likeness/voice authorized by the person depicted.",
+      "PLACEHOLDER: recruiting/income-opportunity disclosure \u2014 supply real text before use"
+    ]
+  },
+  "audit_trail": [
+    {
+      "previous_state": "IDEA",
+      "new_state": "BRIEF_CREATED",
+      "actor": "cmo_agent",
+      "reason": "Weekly content calendar: leadership pillar slot"
+    },
+    {
+      "previous_state": "BRIEF_CREATED",
+      "new_state": "SCRIPT_DRAFTED",
+      "actor": "brand_voice_content_strategist",
+      "reason": "Initial draft complete"
+    },
+    {
+      "previous_state": "SCRIPT_DRAFTED",
+      "new_state": "BRAND_REVIEW",
+      "actor": "cmo_agent",
+      "reason": "Submitted for brand review"
+    },
+    {
+      "previous_state": "BRAND_REVIEW",
+      "new_state": "COMPLIANCE_REVIEW",
+      "actor": "cmo_agent",
+      "reason": "Brand review passed \u2014 voice and pillar fit confirmed"
+    },
+    {
+      "previous_state": "COMPLIANCE_REVIEW",
+      "new_state": "HUMAN_APPROVAL_REQUIRED",
+      "actor": "marketing_compliance_officer",
+      "reason": "risk=LOW; AI-clone within first 30 days"
+    }
+  ]
+}

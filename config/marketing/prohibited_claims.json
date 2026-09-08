@@ -1,0 +1,25 @@
+{
+  "_note": "Phrases/patterns that are BLOCKED outright (risk level PROHIBITED) regardless of context, plus keyword categories that trigger risk scoring. Configurable; extend, don't hard-code into compliance.py.",
+  "blocked_phrases": [
+    "guaranteed return", "guaranteed returns", "risk-free wealth", "risk free wealth",
+    "instant approval", "tax-free forever", "guaranteed income for life with no risk",
+    "no risk investment", "can't lose money", "cannot lose money", "guaranteed to make you rich",
+    "guaranteed approval", "zero risk"
+  ],
+  "claim_categories": {
+    "insurance": ["policy", "premium", "death benefit", "coverage amount", "underwriting"],
+    "investments": ["investment return", "market performance", "portfolio", "index performance"],
+    "taxes": ["tax-free", "tax free", "tax deferred", "tax deduction", "irs"],
+    "legal": ["legally guaranteed", "contractually guaranteed", "legal advice"],
+    "health": ["cures", "treats", "diagnoses", "medical condition"],
+    "earnings": ["make $", "earn $", "income of $", "six figures", "guaranteed income"],
+    "recruiting_income": ["override income", "downline income", "residual income guarantee", "passive income guaranteed"],
+    "testimonials": ["client said", "customer testimonial", "review says", "as told to me by a client"],
+    "performance": ["outperforms", "beats the market", "highest returns", "best in the industry"],
+    "guarantees": ["guarantee", "guaranteed", "promise", "assured"]
+  },
+  "requires_human_approval_categories": [
+    "insurance", "investments", "taxes", "legal", "health", "earnings",
+    "recruiting_income", "testimonials", "performance", "guarantees"
+  ]
+}

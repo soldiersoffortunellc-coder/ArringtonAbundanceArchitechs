@@ -1,0 +1,22 @@
+{
+  "_note": "PLACEHOLDER GHL custom-field IDs — copy to field_map.json (git-ignored) and fill in real field IDs after creating them in GHL. Do not fabricate IDs.",
+  "fields": {
+    "idecide_personalized_link": "PLACEHOLDER_FIELD_ID",
+    "idecide_presentation_id": "PLACEHOLDER_FIELD_ID",
+    "idecide_presentation_name": "PLACEHOLDER_FIELD_ID",
+    "idecide_presentation_version": "PLACEHOLDER_FIELD_ID",
+    "idecide_started_at": "PLACEHOLDER_FIELD_ID",
+    "idecide_completed_at": "PLACEHOLDER_FIELD_ID",
+    "idecide_completion_count": "PLACEHOLDER_FIELD_ID",
+    "idecide_final_outcome": "PLACEHOLDER_FIELD_ID",
+    "idecide_final_cta": "PLACEHOLDER_FIELD_ID",
+    "idecide_viewer_choices": "PLACEHOLDER_FIELD_ID",
+    "idecide_slides_viewed": "PLACEHOLDER_FIELD_ID",
+    "idecide_interest_category": "PLACEHOLDER_FIELD_ID",
+    "idecide_lead_score": "PLACEHOLDER_FIELD_ID",
+    "idecide_assigned_agent": "PLACEHOLDER_FIELD_ID",
+    "idecide_campaign_id": "PLACEHOLDER_FIELD_ID",
+    "idecide_last_event_id": "PLACEHOLDER_FIELD_ID",
+    "idecide_last_activity_at": "PLACEHOLDER_FIELD_ID"
+  }
+}

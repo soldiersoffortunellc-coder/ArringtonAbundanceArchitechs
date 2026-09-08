@@ -1,0 +1,24 @@
+{
+  "_note": "Configurable scoring model over ACTUAL viewer behavior events. Repeat completions are recorded but NOT auto-scored higher — the qualification agent evaluates repeat activity in context (repeat_completion_score is intentionally 0 by default).",
+  "event_scores": {
+    "started_presentation": 5,
+    "completed_presentation": 15,
+    "viewed_high_intent_section": 10,
+    "selected_specific_interest": 5,
+    "selected_book_a_call": 25,
+    "selected_join_the_agency": 25,
+    "selected_request_information": 10,
+    "scheduled_appointment": 30,
+    "repeat_completion": 0,
+    "abandoned_before_cta": -5
+  },
+  "classifications": [
+    {"min": 0, "max": 19, "label": "Cold"},
+    {"min": 20, "max": 39, "label": "Interested"},
+    {"min": 40, "max": 59, "label": "Engaged"},
+    {"min": 60, "max": 79, "label": "Qualified"},
+    {"min": 80, "max": 100, "label": "High Intent"}
+  ],
+  "score_floor": 0,
+  "score_ceiling": 100
+}
