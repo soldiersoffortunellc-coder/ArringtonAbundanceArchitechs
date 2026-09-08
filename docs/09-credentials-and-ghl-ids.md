@@ -39,7 +39,11 @@ VOICE_AI_PROVIDER_API_KEY=
 
 ## The authorization gate in code
 
-`GHLAdapter(dry_run=False, live_authorized=True)` is the only way any part
-of this system issues a real GHL call, and even then `_live_call` currently
-raises `NotImplementedError` — implementing it is future work, gated on the
-credentials above existing. See `src/csuite/ghl/adapter.py`.
+`GHLAdapter(dry_run=False, live_authorized=True, api_client=GHLApiClient())`
+is the only way any part of this system issues a real GHL call. The live
+HTTP client now exists (`src/csuite/ghl/api_client.py`) and is wired to
+real endpoints for the actions GoHighLevel's public API supports — see
+**[`docs/12-live-ghl-connection.md`](12-live-ghl-connection.md)** for
+exactly what's connected, what isn't, and the steps to authenticate with
+your own credentials (never pasted into a chat — set as an environment
+variable on your own machine).

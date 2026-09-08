@@ -17,6 +17,30 @@ unless a human explicitly constructs the system with live authorization
 Every modeled revenue number is explicitly labeled as a planning input, not
 a guaranteed outcome.
 
+## Connecting to a real GoHighLevel account
+
+Not connected yet — no credentials exist in this repo or environment.
+`src/csuite/ghl/api_client.py` is a real, working HTTPS client against
+GoHighLevel's API v2 (`https://services.leadconnectorhq.com`, Bearer auth +
+required `Version` header), and `GHLAdapter` now dispatches supported
+actions (contacts/tags, opportunities, custom fields, calendars, users,
+messages) to it in live mode — while clearly refusing the handful of
+actions GHL's public API doesn't expose (snapshot application to an
+existing location, pipeline/workflow creation, generic campaign publish,
+billing events — see `docs/12`).
+
+**To connect it yourself:** set `GHL_ACCESS_TOKEN` (a Private Integration
+Token or OAuth access token) and `GHL_LOCATION_ID` as environment variables
+on your own machine — never paste a token into a chat — then run:
+
+```bash
+python3 scripts/check_ghl_connection.py
+```
+
+Full details, the auth model (Private Integration Token vs. OAuth
+marketplace app), and exactly which endpoints are wired up:
+[`docs/12-live-ghl-connection.md`](docs/12-live-ghl-connection.md).
+
 ## Quickstart
 
 ```bash
@@ -83,6 +107,7 @@ docs/                     The 20 requested deliverables (see mapping below)
 | 19 | 90-day implementation calendar | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |
 | 20 | Capacity and hiring requirements | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |
 | — | Risks and assumptions | [`docs/11-risks-and-assumptions.md`](docs/11-risks-and-assumptions.md) |
+| — | Live GHL connection (auth model, wired endpoints, how to connect) | [`docs/12-live-ghl-connection.md`](docs/12-live-ghl-connection.md) |
 
 ## Operating rules this codebase enforces in code, not just policy
 

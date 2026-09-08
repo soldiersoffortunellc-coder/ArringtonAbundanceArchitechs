@@ -185,25 +185,25 @@
         "Coordinated 6 revenue subordinate agents this cycle: market_opportunity_analyst, productization_director, sales_director, client_onboarding_director, client_success_retention_director, revenue_operations_analyst."
       ],
       "directives_issued": [
-        "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
-        "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
-        "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958",
-        "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
-        "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
-        "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958",
-        "04daf670-3c8b-4b30-8f4a-28096f3d0767",
-        "f671681b-b857-4f57-97e2-735c0f28689f",
-        "3fb68c76-d107-48ea-963f-773d3c6e7117",
-        "20cfe830-a0f1-4c3d-8067-c66087d9f4ff",
-        "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
-        "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
-        "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958",
-        "04daf670-3c8b-4b30-8f4a-28096f3d0767",
-        "f671681b-b857-4f57-97e2-735c0f28689f",
-        "3fb68c76-d107-48ea-963f-773d3c6e7117",
-        "20cfe830-a0f1-4c3d-8067-c66087d9f4ff",
-        "574c9ce1-8e43-4c19-ac5a-30b10fc0da3f",
-        "2af338e9-036a-4a6a-97be-fcfb75cefb6e"
+        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "6c806ccd-7517-4636-8710-a783506e00e7",
+        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "6c806ccd-7517-4636-8710-a783506e00e7",
+        "4f096757-6ff2-4a06-b137-fca359f0a31c",
+        "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+        "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+        "9a3c7881-064c-45cb-b26e-7565581756f2",
+        "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+        "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+        "6c806ccd-7517-4636-8710-a783506e00e7",
+        "4f096757-6ff2-4a06-b137-fca359f0a31c",
+        "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+        "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+        "9a3c7881-064c-45cb-b26e-7565581756f2",
+        "1edbfcf1-b7a3-4626-a170-3b44c2b747e2",
+        "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb"
       ],
       "kpis": {
         "subordinate_reports": {
@@ -290,14 +290,14 @@
             "agent": "sales_director",
             "title": "Sales Director",
             "decisions": [
-              "Opened opportunity b31c15a5-1c35-4c21-bc05-12636b3a8695 for Summit Insurance Group (insurance_agency).",
-              "Opened opportunity 6c05dd40-64c5-4e35-93d3-3fa0597361f8 for Coastal Realty Partners (real_estate).",
-              "Opened opportunity 881ea1be-032c-4632-a784-8be2ae7d07ab for Ironclad HVAC (home_services)."
+              "Opened opportunity f32f9163-4cd5-4643-8f2e-111c9c41668b for Summit Insurance Group (insurance_agency).",
+              "Opened opportunity bb2f25e1-8d5c-455e-9bde-d452774f1416 for Coastal Realty Partners (real_estate).",
+              "Opened opportunity ed4ded95-c461-4f7e-abe6-6acc3e27898b for Ironclad HVAC (home_services)."
             ],
             "directives_issued": [
-              "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
-              "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
-              "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958"
+              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+              "6c806ccd-7517-4636-8710-a783506e00e7"
             ],
             "kpis": {
               "opportunities_by_stage": {
@@ -331,24 +331,24 @@
             "agent": "client_onboarding_director",
             "title": "Client Onboarding Director",
             "decisions": [
-              "Tenant 'tenant_summit_insurance' provisioned end-to-end and is now 'LIVE' at location 'loc_1b2d70f72f56'."
+              "Tenant 'tenant_summit_insurance' provisioned end-to-end and is now 'LIVE' at location 'loc_8c1a8eff0e1a'."
             ],
             "directives_issued": [
-              "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
-              "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
-              "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958",
-              "04daf670-3c8b-4b30-8f4a-28096f3d0767",
-              "f671681b-b857-4f57-97e2-735c0f28689f",
-              "3fb68c76-d107-48ea-963f-773d3c6e7117",
-              "20cfe830-a0f1-4c3d-8067-c66087d9f4ff",
-              "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
-              "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
-              "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958",
-              "04daf670-3c8b-4b30-8f4a-28096f3d0767",
-              "f671681b-b857-4f57-97e2-735c0f28689f",
-              "3fb68c76-d107-48ea-963f-773d3c6e7117",
-              "20cfe830-a0f1-4c3d-8067-c66087d9f4ff",
-              "574c9ce1-8e43-4c19-ac5a-30b10fc0da3f"
+              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+              "6c806ccd-7517-4636-8710-a783506e00e7",
+              "4f096757-6ff2-4a06-b137-fca359f0a31c",
+              "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+              "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+              "9a3c7881-064c-45cb-b26e-7565581756f2",
+              "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
+              "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
+              "6c806ccd-7517-4636-8710-a783506e00e7",
+              "4f096757-6ff2-4a06-b137-fca359f0a31c",
+              "970b5b5f-0d59-47f8-a592-5d04a58c1560",
+              "e1b343f1-7285-4b41-8a98-4e370cb70a67",
+              "9a3c7881-064c-45cb-b26e-7565581756f2",
+              "1edbfcf1-b7a3-4626-a170-3b44c2b747e2"
             ],
             "kpis": {
               "onboarding_live_count": 1,
@@ -364,7 +364,7 @@
             "title": "Client Success and Retention Director",
             "decisions": [],
             "directives_issued": [
-              "2af338e9-036a-4a6a-97be-fcfb75cefb6e"
+              "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb"
             ],
             "kpis": {
               "clients_at_risk": [
@@ -462,8 +462,8 @@
         "Published campaign 'Home Services Database Reactivation' on channel 'database_reactivation' (dry-run unless live-authorized)."
       ],
       "directives_issued": [
-        "c4dd9144-8e0a-40da-85f6-f636c28cac9e",
-        "2d906e71-be56-4e97-a4c4-09ae12613606"
+        "14d49147-e2c1-4609-8158-774c47cd19be",
+        "57eea8d3-aa7d-4737-920a-dac1904bf5eb"
       ],
       "kpis": {
         "campaigns_published": [
@@ -503,10 +503,10 @@
         "Accounts receivable stands at $0.00 (invoiced $20,000.00 minus collected $23,500.00)."
       ],
       "directives_issued": [
-        "b674b18b-6256-437d-b640-3d69ff9744a2",
-        "44e00bcf-25c3-4ca2-8eb3-7d8abbb36dc5",
-        "c18577a7-361e-406b-898b-674a814c2f17",
-        "b210e32d-724b-441b-9694-833e342d92eb"
+        "b22548f1-1b58-4d32-a1a5-0ea9bd41e5b3",
+        "bc8fca35-a841-46d6-bcc0-e0adca03cad1",
+        "edf4cc1c-a324-4be3-85f2-818b2e0d6dbb",
+        "49c6cdf7-0757-46bd-9903-b3f6d2deb072"
       ],
       "kpis": {
         "accounts_below_margin": [
@@ -577,7 +577,7 @@
     },
     "ghl_action_log": [
       {
-        "action_id": "1aa4a3b7-1b57-47d4-86fc-562d69e05d6b",
+        "action_id": "6eae2441-53cd-4d6d-a06c-48ffc2b1757e",
         "kind": "create_opportunity",
         "payload": {
           "location_id": "demo_agency_master",
@@ -586,14 +586,14 @@
           "value": 30500
         },
         "dry_run": true,
-        "timestamp": 1788841449.4585183,
+        "timestamp": 1788843285.180276,
         "result": {
           "status": "SIMULATED",
-          "opportunity_id": "opp_3332ca1ae9fc"
+          "opportunity_id": "opp_ccf578cc0154"
         }
       },
       {
-        "action_id": "c66e3b0a-0ec0-46bf-9b9c-ad38247d623f",
+        "action_id": "2f0c1643-2abf-4843-9e0c-327e740ee1f2",
         "kind": "create_opportunity",
         "payload": {
           "location_id": "demo_agency_master",
@@ -602,14 +602,14 @@
           "value": 30500
         },
         "dry_run": true,
-        "timestamp": 1788841449.458584,
+        "timestamp": 1788843285.1803036,
         "result": {
           "status": "SIMULATED",
-          "opportunity_id": "opp_873bddb8f155"
+          "opportunity_id": "opp_8bafc7c6430a"
         }
       },
       {
-        "action_id": "06c2f8d7-98b9-4a0b-9881-2dca6a7e2958",
+        "action_id": "6c806ccd-7517-4636-8710-a783506e00e7",
         "kind": "create_opportunity",
         "payload": {
           "location_id": "demo_agency_master",
@@ -618,14 +618,14 @@
           "value": 5491
         },
         "dry_run": true,
-        "timestamp": 1788841449.4586012,
+        "timestamp": 1788843285.1803272,
         "result": {
           "status": "SIMULATED",
-          "opportunity_id": "opp_9b75cfbdfbd0"
+          "opportunity_id": "opp_1c13f273a97b"
         }
       },
       {
-        "action_id": "04daf670-3c8b-4b30-8f4a-28096f3d0767",
+        "action_id": "4f096757-6ff2-4a06-b137-fca359f0a31c",
         "kind": "create_location",
         "payload": {
           "client_name": "Summit Insurance Group",
@@ -633,47 +633,47 @@
           "plan_id": "ai_revenue_operating_system"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4587262,
+        "timestamp": 1788843285.1805458,
         "result": {
           "status": "SIMULATED",
-          "location_id": "loc_1b2d70f72f56"
+          "location_id": "loc_8c1a8eff0e1a"
         }
       },
       {
-        "action_id": "f671681b-b857-4f57-97e2-735c0f28689f",
+        "action_id": "970b5b5f-0d59-47f8-a592-5d04a58c1560",
         "kind": "apply_snapshot",
         "payload": {
-          "location_id": "loc_1b2d70f72f56",
+          "location_id": "loc_8c1a8eff0e1a",
           "snapshot_id": "universal_core",
           "version": "1.0.0"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4588459,
+        "timestamp": 1788843285.1808417,
         "result": {
           "status": "SIMULATED",
           "applied": true
         }
       },
       {
-        "action_id": "3fb68c76-d107-48ea-963f-773d3c6e7117",
+        "action_id": "e1b343f1-7285-4b41-8a98-4e370cb70a67",
         "kind": "apply_snapshot",
         "payload": {
-          "location_id": "loc_1b2d70f72f56",
+          "location_id": "loc_8c1a8eff0e1a",
           "snapshot_id": "insurance_agency_pack",
           "version": "1.0.0"
         },
         "dry_run": true,
-        "timestamp": 1788841449.458853,
+        "timestamp": 1788843285.1808536,
         "result": {
           "status": "SIMULATED",
           "applied": true
         }
       },
       {
-        "action_id": "20cfe830-a0f1-4c3d-8067-c66087d9f4ff",
+        "action_id": "9a3c7881-064c-45cb-b26e-7565581756f2",
         "kind": "create_users",
         "payload": {
-          "location_id": "loc_1b2d70f72f56",
+          "location_id": "loc_8c1a8eff0e1a",
           "users": [
             {
               "email": "admin@summitinsurance.example.com",
@@ -682,14 +682,14 @@
           ]
         },
         "dry_run": true,
-        "timestamp": 1788841449.4588673,
+        "timestamp": 1788843285.1808755,
         "result": {
           "status": "SIMULATED",
           "created": 1
         }
       },
       {
-        "action_id": "574c9ce1-8e43-4c19-ac5a-30b10fc0da3f",
+        "action_id": "1edbfcf1-b7a3-4626-a170-3b44c2b747e2",
         "kind": "create_location",
         "payload": {
           "client_name": "Ironclad HVAC",
@@ -697,14 +697,14 @@
           "plan_id": "ai_growth_system"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4589617,
+        "timestamp": 1788843285.181218,
         "result": {
           "status": "SIMULATED",
-          "location_id": "loc_acbb25e95f4a"
+          "location_id": "loc_90b6d7135679"
         }
       },
       {
-        "action_id": "2af338e9-036a-4a6a-97be-fcfb75cefb6e",
+        "action_id": "886a8d2b-bf4c-4f4a-88e3-5f84fa9e23fb",
         "kind": "send_notification",
         "payload": {
           "location_id": "loc_demo_2",
@@ -713,42 +713,42 @@
           "template": "retention_intervention_trigger"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4590178,
+        "timestamp": 1788843285.1813655,
         "result": {
           "status": "SIMULATED",
           "sent": true
         }
       },
       {
-        "action_id": "c4dd9144-8e0a-40da-85f6-f636c28cac9e",
+        "action_id": "14d49147-e2c1-4609-8158-774c47cd19be",
         "kind": "publish_campaign",
         "payload": {
           "location_id": "demo_agency_master",
           "campaign_name": "Insurance Recruiting - LinkedIn Outbound"
         },
         "dry_run": true,
-        "timestamp": 1788841449.459078,
+        "timestamp": 1788843285.1815026,
         "result": {
           "status": "SIMULATED",
           "published": true
         }
       },
       {
-        "action_id": "2d906e71-be56-4e97-a4c4-09ae12613606",
+        "action_id": "57eea8d3-aa7d-4737-920a-dac1904bf5eb",
         "kind": "publish_campaign",
         "payload": {
           "location_id": "demo_agency_master",
           "campaign_name": "Home Services Database Reactivation"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4590847,
+        "timestamp": 1788843285.181512,
         "result": {
           "status": "SIMULATED",
           "published": true
         }
       },
       {
-        "action_id": "b674b18b-6256-437d-b640-3d69ff9744a2",
+        "action_id": "b22548f1-1b58-4d32-a1a5-0ea9bd41e5b3",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -757,14 +757,14 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4591277,
+        "timestamp": 1788843285.1815796,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_e32ef207edaf"
+          "billing_event_id": "bill_a55a5c85ebc1"
         }
       },
       {
-        "action_id": "44e00bcf-25c3-4ca2-8eb3-7d8abbb36dc5",
+        "action_id": "bc8fca35-a841-46d6-bcc0-e0adca03cad1",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -773,14 +773,14 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4591367,
+        "timestamp": 1788843285.1815946,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_25f657b2634d"
+          "billing_event_id": "bill_7040f821c61a"
         }
       },
       {
-        "action_id": "c18577a7-361e-406b-898b-674a814c2f17",
+        "action_id": "edf4cc1c-a324-4be3-85f2-818b2e0d6dbb",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -789,14 +789,14 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4591453,
+        "timestamp": 1788843285.1816077,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_9d586df3de85"
+          "billing_event_id": "bill_de138b9c6250"
         }
       },
       {
-        "action_id": "b210e32d-724b-441b-9694-833e342d92eb",
+        "action_id": "49c6cdf7-0757-46bd-9903-b3f6d2deb072",
         "kind": "create_billing_event",
         "payload": {
           "location_id": "unknown",
@@ -805,10 +805,10 @@
           "currency": "USD"
         },
         "dry_run": true,
-        "timestamp": 1788841449.4591565,
+        "timestamp": 1788843285.181621,
         "result": {
           "status": "SIMULATED",
-          "billing_event_id": "bill_1e368185f3df"
+          "billing_event_id": "bill_2b81ecf48b87"
         }
       }
     ]
