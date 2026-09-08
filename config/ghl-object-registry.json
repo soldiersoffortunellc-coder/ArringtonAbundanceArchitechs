@@ -1,0 +1,744 @@
+{
+  "_note": "Machine-readable, script-updated ledger of GHL objects for Open Doors Financial OS v1. Generated from config/os-v1.yaml by scripts/build_object_registry.py. Every 'id' stays empty until the object is actually created in GHL and this file is re-synced \u2014 ids are never fabricated. Reference objects by logical_name (the JSON key), never by a hard-coded id, from n8n workflows or agent tooling.",
+  "version": 1,
+  "location_logical_name": "open_doors_financial_group",
+  "objects": {
+    "insurance_sales_pipeline": {
+      "category": "pipelines",
+      "type": "pipeline",
+      "ghl_name": "01 | Insurance Sales",
+      "purpose": "Primary consumer insurance sales motion: lead through issued/placed business.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [],
+      "stages": [
+        {
+          "name": "New Lead",
+          "id": ""
+        },
+        {
+          "name": "Attempting Contact",
+          "id": ""
+        },
+        {
+          "name": "Contacted",
+          "id": ""
+        },
+        {
+          "name": "Qualified",
+          "id": ""
+        },
+        {
+          "name": "Appointment Scheduled",
+          "id": ""
+        },
+        {
+          "name": "Appointment Confirmed",
+          "id": ""
+        },
+        {
+          "name": "Discovery Completed",
+          "id": ""
+        },
+        {
+          "name": "Illustration / Proposal",
+          "id": ""
+        },
+        {
+          "name": "Application Started",
+          "id": ""
+        },
+        {
+          "name": "Application Submitted",
+          "id": ""
+        },
+        {
+          "name": "Underwriting",
+          "id": ""
+        },
+        {
+          "name": "Requirements Outstanding",
+          "id": ""
+        },
+        {
+          "name": "Approved",
+          "id": ""
+        },
+        {
+          "name": "Issued",
+          "id": ""
+        },
+        {
+          "name": "Placed / Paid",
+          "id": ""
+        },
+        {
+          "name": "Client",
+          "id": ""
+        },
+        {
+          "name": "Not Now",
+          "id": ""
+        },
+        {
+          "name": "Lost",
+          "id": ""
+        }
+      ]
+    },
+    "agent_recruiting_pipeline": {
+      "category": "pipelines",
+      "type": "pipeline",
+      "ghl_name": "02 | Agent Recruiting",
+      "purpose": "Prospective licensed/unlicensed agent recruiting funnel.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [],
+      "stages": [
+        {
+          "name": "New Prospect",
+          "id": ""
+        },
+        {
+          "name": "Contact Attempted",
+          "id": ""
+        },
+        {
+          "name": "Engaged",
+          "id": ""
+        },
+        {
+          "name": "Qualified",
+          "id": ""
+        },
+        {
+          "name": "Opportunity Presentation",
+          "id": ""
+        },
+        {
+          "name": "Interview Scheduled",
+          "id": ""
+        },
+        {
+          "name": "Interview Completed",
+          "id": ""
+        },
+        {
+          "name": "Decision Pending",
+          "id": ""
+        },
+        {
+          "name": "Joining",
+          "id": ""
+        },
+        {
+          "name": "Not Now",
+          "id": ""
+        },
+        {
+          "name": "Declined",
+          "id": ""
+        }
+      ]
+    },
+    "licensing_pipeline": {
+      "category": "pipelines",
+      "type": "pipeline",
+      "ghl_name": "03 | Licensing",
+      "purpose": "Tracks an unlicensed recruit through pre-licensing coursework to contracting-ready.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "agent_recruiting_pipeline"
+      ],
+      "stages": [
+        {
+          "name": "Licensing Candidate",
+          "id": ""
+        },
+        {
+          "name": "Course Enrolled",
+          "id": ""
+        },
+        {
+          "name": "Course In Progress",
+          "id": ""
+        },
+        {
+          "name": "Pre-License Complete",
+          "id": ""
+        },
+        {
+          "name": "Exam Scheduled",
+          "id": ""
+        },
+        {
+          "name": "Exam Passed",
+          "id": ""
+        },
+        {
+          "name": "License Application",
+          "id": ""
+        },
+        {
+          "name": "License Approved",
+          "id": ""
+        },
+        {
+          "name": "Ready for Contracting",
+          "id": ""
+        },
+        {
+          "name": "Stalled",
+          "id": ""
+        }
+      ]
+    },
+    "agent_onboarding_pipeline": {
+      "category": "pipelines",
+      "type": "pipeline",
+      "ghl_name": "04 | Agent Onboarding",
+      "purpose": "New agent from contracting through activation and leadership track.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "agent_recruiting_pipeline",
+        "licensing_pipeline"
+      ],
+      "stages": [
+        {
+          "name": "New Agent",
+          "id": ""
+        },
+        {
+          "name": "Contracting Started",
+          "id": ""
+        },
+        {
+          "name": "Carrier Contracting",
+          "id": ""
+        },
+        {
+          "name": "CRM Setup",
+          "id": ""
+        },
+        {
+          "name": "Training Started",
+          "id": ""
+        },
+        {
+          "name": "Fast Start",
+          "id": ""
+        },
+        {
+          "name": "First Appointments",
+          "id": ""
+        },
+        {
+          "name": "First Application",
+          "id": ""
+        },
+        {
+          "name": "First Issued Business",
+          "id": ""
+        },
+        {
+          "name": "Activated",
+          "id": ""
+        },
+        {
+          "name": "Leadership Track",
+          "id": ""
+        }
+      ]
+    },
+    "annuity_rollover_pipeline": {
+      "category": "pipelines",
+      "type": "pipeline",
+      "ghl_name": "05 | Annuity / Rollover",
+      "purpose": "Annuity and retirement-account-rollover sales motion.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [],
+      "stages": [
+        {
+          "name": "New Opportunity",
+          "id": ""
+        },
+        {
+          "name": "Qualified",
+          "id": ""
+        },
+        {
+          "name": "Discovery",
+          "id": ""
+        },
+        {
+          "name": "Statements Requested",
+          "id": ""
+        },
+        {
+          "name": "Statements Received",
+          "id": ""
+        },
+        {
+          "name": "Analysis",
+          "id": ""
+        },
+        {
+          "name": "Recommendation Meeting",
+          "id": ""
+        },
+        {
+          "name": "Application",
+          "id": ""
+        },
+        {
+          "name": "Transfer Initiated",
+          "id": ""
+        },
+        {
+          "name": "Transfer Pending",
+          "id": ""
+        },
+        {
+          "name": "Issued",
+          "id": ""
+        },
+        {
+          "name": "Funded",
+          "id": ""
+        },
+        {
+          "name": "Client",
+          "id": ""
+        },
+        {
+          "name": "Lost",
+          "id": ""
+        }
+      ]
+    },
+    "ibc_debt_action_pipeline": {
+      "category": "pipelines",
+      "type": "pipeline",
+      "ghl_name": "06 | IBC / Debt Action",
+      "purpose": "Infinite Banking Concept / debt strategy sales and implementation motion.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [],
+      "stages": [
+        {
+          "name": "New Prospect",
+          "id": ""
+        },
+        {
+          "name": "Qualified",
+          "id": ""
+        },
+        {
+          "name": "Cash Flow Discovery",
+          "id": ""
+        },
+        {
+          "name": "Debt Analysis",
+          "id": ""
+        },
+        {
+          "name": "Strategy Design",
+          "id": ""
+        },
+        {
+          "name": "Presentation Scheduled",
+          "id": ""
+        },
+        {
+          "name": "Presentation Completed",
+          "id": ""
+        },
+        {
+          "name": "Illustration",
+          "id": ""
+        },
+        {
+          "name": "Application",
+          "id": ""
+        },
+        {
+          "name": "Underwriting",
+          "id": ""
+        },
+        {
+          "name": "Approved",
+          "id": ""
+        },
+        {
+          "name": "Placed",
+          "id": ""
+        },
+        {
+          "name": "Implementation",
+          "id": ""
+        },
+        {
+          "name": "Annual Review",
+          "id": ""
+        },
+        {
+          "name": "Not Now",
+          "id": ""
+        },
+        {
+          "name": "Lost",
+          "id": ""
+        }
+      ]
+    },
+    "insurance_discovery_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "Insurance Discovery",
+      "purpose": "First insurance discovery/needs-analysis appointment.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "insurance_sales_pipeline"
+      ]
+    },
+    "ibc_debt_strategy_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "IBC / Debt Strategy",
+      "purpose": "IBC/debt strategy consultation appointment.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "ibc_debt_action_pipeline"
+      ]
+    },
+    "annuity_rollover_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "Annuity / Rollover",
+      "purpose": "Annuity/rollover discovery and recommendation appointments.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "annuity_rollover_pipeline"
+      ]
+    },
+    "agent_opportunity_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "Agent Opportunity",
+      "purpose": "Recruiting opportunity-presentation appointment.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "agent_recruiting_pipeline"
+      ]
+    },
+    "agent_onboarding_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "Agent Onboarding",
+      "purpose": "New-agent onboarding/training sessions.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "agent_onboarding_pipeline"
+      ]
+    },
+    "leadership_interview_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "Leadership Interview",
+      "purpose": "Leadership-track recruiting interviews.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "agent_recruiting_pipeline"
+      ]
+    },
+    "client_annual_review_calendar": {
+      "category": "calendars",
+      "type": "calendar",
+      "ghl_name": "Client Annual Review",
+      "purpose": "Existing-client annual policy/strategy review.",
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "insurance_sales_pipeline",
+        "annuity_rollover_pipeline",
+        "ibc_debt_action_pipeline"
+      ]
+    },
+    "contact_classification": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Client / Recruit / Partner Classification",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_lead_source": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Lead Source",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_lead_category": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Lead Category",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_state": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "State",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_licensed_status": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Licensed Status",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_license_states": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "License State(s)",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_recruiting_status": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Recruiting Status",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": [
+        "agent_recruiting_pipeline"
+      ]
+    },
+    "contact_insurance_interest": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Insurance Interest",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_annuity_interest": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Annuity Interest",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_ibc_interest": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "IBC Interest",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_annual_income_range": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Annual Income Range",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_liquid_assets_range": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Liquid Assets Range",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_retirement_assets_range": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Retirement Assets Range",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_appointment_readiness": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Appointment Readiness",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_consent_status": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Consent / Communication Status",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_assigned_advisor": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Assigned Advisor",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "contact_assigned_recruiter": {
+      "category": "contact_fields",
+      "type": "custom_field",
+      "ghl_name": "Assigned Recruiter",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_product_lane": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Product Lane",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_estimated_annual_premium": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Estimated Annual Premium",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_estimated_rollover_amount": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Estimated Rollover Amount",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_expected_revenue": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Expected Revenue",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_probability": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Probability",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_case_status": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Case Status",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_carrier": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Carrier",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_application_date": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Application Date",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_approval_date": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Approval Date",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_issue_date": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Issue Date",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    },
+    "opportunity_placed_date": {
+      "category": "opportunity_fields",
+      "type": "custom_field",
+      "ghl_name": "Placed Date",
+      "purpose": null,
+      "id": "",
+      "deployment_status": "NOT_CREATED",
+      "dependencies": []
+    }
+  },
+  "tag_taxonomy": {
+    "prefixes": {
+      "SRC |": "Lead source (e.g. 'SRC | Facebook Ad', 'SRC | Referral')",
+      "INT |": "Expressed interest (e.g. 'INT | Life Insurance', 'INT | Annuity', 'INT | IBC')",
+      "STATUS |": "Lifecycle/status marker (e.g. 'STATUS | Hot Lead', 'STATUS | Do Not Contact')",
+      "AGENT |": "Recruiting/agent-track marker (e.g. 'AGENT | Licensed', 'AGENT | In Training')",
+      "CLIENT |": "Client-relationship marker (e.g. 'CLIENT | Active', 'CLIENT | Annual Review Due')",
+      "CAMPAIGN |": "Campaign attribution (e.g. 'CAMPAIGN | Q1-Recruiting')",
+      "COMPLIANCE |": "Compliance-relevant marker (e.g. 'COMPLIANCE | Replacement Review Required')"
+    },
+    "deployment_status": "NOT_CREATED",
+    "tags": {}
+  }
+}

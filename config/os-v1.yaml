@@ -1,0 +1,403 @@
+# =============================================================================
+# Open Doors Financial OS v1 — Canonical Data Model (SOURCE OF TRUTH)
+# =============================================================================
+# STATUS: PROPOSED. Nothing below has been created in GoHighLevel.
+# deployment_status values used throughout this file:
+#   NOT_CREATED | PENDING_APPROVAL | CREATING | CREATED | VERIFIED | CONFLICT
+#
+# Every object the system creates gets a logical_name (the key). The rest of
+# the codebase (n8n workflows, agent tools, dashboards) must reference objects
+# by logical_name through config/ghl-object-registry.json — never a
+# hard-coded GHL id. This file is the human-authored proposal;
+# ghl-object-registry.json is the machine-readable, script-updated ledger of
+# what has actually been created and its real ids.
+#
+# No secrets live in this file. GHL ids are not secrets, but until an id is
+# real it stays "" — never fabricated.
+# =============================================================================
+
+version: 1
+location_logical_name: open_doors_financial_group   # maps to $GHL_LOCATION_ID at runtime — never hard-coded here
+
+pipelines:
+  insurance_sales_pipeline:
+    type: pipeline
+    name: "01 | Insurance Sales"
+    purpose: "Primary consumer insurance sales motion: lead through issued/placed business."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: []
+    stages:
+      - New Lead
+      - Attempting Contact
+      - Contacted
+      - Qualified
+      - Appointment Scheduled
+      - Appointment Confirmed
+      - Discovery Completed
+      - Illustration / Proposal
+      - Application Started
+      - Application Submitted
+      - Underwriting
+      - Requirements Outstanding
+      - Approved
+      - Issued
+      - Placed / Paid
+      - Client
+      - Not Now
+      - Lost
+
+  agent_recruiting_pipeline:
+    type: pipeline
+    name: "02 | Agent Recruiting"
+    purpose: "Prospective licensed/unlicensed agent recruiting funnel."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: []
+    stages:
+      - New Prospect
+      - Contact Attempted
+      - Engaged
+      - Qualified
+      - Opportunity Presentation
+      - Interview Scheduled
+      - Interview Completed
+      - Decision Pending
+      - Joining
+      - Not Now
+      - Declined
+
+  licensing_pipeline:
+    type: pipeline
+    name: "03 | Licensing"
+    purpose: "Tracks an unlicensed recruit through pre-licensing coursework to contracting-ready."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [agent_recruiting_pipeline]
+    stages:
+      - Licensing Candidate
+      - Course Enrolled
+      - Course In Progress
+      - Pre-License Complete
+      - Exam Scheduled
+      - Exam Passed
+      - License Application
+      - License Approved
+      - Ready for Contracting
+      - Stalled
+
+  agent_onboarding_pipeline:
+    type: pipeline
+    name: "04 | Agent Onboarding"
+    purpose: "New agent from contracting through activation and leadership track."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [agent_recruiting_pipeline, licensing_pipeline]
+    stages:
+      - New Agent
+      - Contracting Started
+      - Carrier Contracting
+      - CRM Setup
+      - Training Started
+      - Fast Start
+      - First Appointments
+      - First Application
+      - First Issued Business
+      - Activated
+      - Leadership Track
+
+  annuity_rollover_pipeline:
+    type: pipeline
+    name: "05 | Annuity / Rollover"
+    purpose: "Annuity and retirement-account-rollover sales motion."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: []
+    stages:
+      - New Opportunity
+      - Qualified
+      - Discovery
+      - Statements Requested
+      - Statements Received
+      - Analysis
+      - Recommendation Meeting
+      - Application
+      - Transfer Initiated
+      - Transfer Pending
+      - Issued
+      - Funded
+      - Client
+      - Lost
+
+  ibc_debt_action_pipeline:
+    type: pipeline
+    name: "06 | IBC / Debt Action"
+    purpose: "Infinite Banking Concept / debt strategy sales and implementation motion."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: []
+    stages:
+      - New Prospect
+      - Qualified
+      - Cash Flow Discovery
+      - Debt Analysis
+      - Strategy Design
+      - Presentation Scheduled
+      - Presentation Completed
+      - Illustration
+      - Application
+      - Underwriting
+      - Approved
+      - Placed
+      - Implementation
+      - Annual Review
+      - Not Now
+      - Lost
+
+calendars:
+  insurance_discovery_calendar:
+    type: calendar
+    name: "Insurance Discovery"
+    purpose: "First insurance discovery/needs-analysis appointment."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [insurance_sales_pipeline]
+
+  ibc_debt_strategy_calendar:
+    type: calendar
+    name: "IBC / Debt Strategy"
+    purpose: "IBC/debt strategy consultation appointment."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [ibc_debt_action_pipeline]
+
+  annuity_rollover_calendar:
+    type: calendar
+    name: "Annuity / Rollover"
+    purpose: "Annuity/rollover discovery and recommendation appointments."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [annuity_rollover_pipeline]
+
+  agent_opportunity_calendar:
+    type: calendar
+    name: "Agent Opportunity"
+    purpose: "Recruiting opportunity-presentation appointment."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [agent_recruiting_pipeline]
+
+  agent_onboarding_calendar:
+    type: calendar
+    name: "Agent Onboarding"
+    purpose: "New-agent onboarding/training sessions."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [agent_onboarding_pipeline]
+
+  leadership_interview_calendar:
+    type: calendar
+    name: "Leadership Interview"
+    purpose: "Leadership-track recruiting interviews."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [agent_recruiting_pipeline]
+
+  client_annual_review_calendar:
+    type: calendar
+    name: "Client Annual Review"
+    purpose: "Existing-client annual policy/strategy review."
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [insurance_sales_pipeline, annuity_rollover_pipeline, ibc_debt_action_pipeline]
+
+contact_fields:
+  contact_classification:
+    type: custom_field
+    object: contact
+    name: "Client / Recruit / Partner Classification"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_lead_source:
+    type: custom_field
+    object: contact
+    name: "Lead Source"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_lead_category:
+    type: custom_field
+    object: contact
+    name: "Lead Category"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_state:
+    type: custom_field
+    object: contact
+    name: "State"
+    id: ""
+    deployment_status: NOT_CREATED
+    note: "Check for an existing native/standard GHL field before creating — do not duplicate (Phase 5 rule)."
+  contact_licensed_status:
+    type: custom_field
+    object: contact
+    name: "Licensed Status"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_license_states:
+    type: custom_field
+    object: contact
+    name: "License State(s)"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_recruiting_status:
+    type: custom_field
+    object: contact
+    name: "Recruiting Status"
+    id: ""
+    deployment_status: NOT_CREATED
+    dependencies: [agent_recruiting_pipeline]
+  contact_insurance_interest:
+    type: custom_field
+    object: contact
+    name: "Insurance Interest"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_annuity_interest:
+    type: custom_field
+    object: contact
+    name: "Annuity Interest"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_ibc_interest:
+    type: custom_field
+    object: contact
+    name: "IBC Interest"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_annual_income_range:
+    type: custom_field
+    object: contact
+    name: "Annual Income Range"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_liquid_assets_range:
+    type: custom_field
+    object: contact
+    name: "Liquid Assets Range"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_retirement_assets_range:
+    type: custom_field
+    object: contact
+    name: "Retirement Assets Range"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_appointment_readiness:
+    type: custom_field
+    object: contact
+    name: "Appointment Readiness"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_consent_status:
+    type: custom_field
+    object: contact
+    name: "Consent / Communication Status"
+    id: ""
+    deployment_status: NOT_CREATED
+    note: "Check for existing native GHL consent fields before creating — do not duplicate (Phase 5 rule)."
+  contact_assigned_advisor:
+    type: custom_field
+    object: contact
+    name: "Assigned Advisor"
+    id: ""
+    deployment_status: NOT_CREATED
+  contact_assigned_recruiter:
+    type: custom_field
+    object: contact
+    name: "Assigned Recruiter"
+    id: ""
+    deployment_status: NOT_CREATED
+
+opportunity_fields:
+  opportunity_product_lane:
+    type: custom_field
+    object: opportunity
+    name: "Product Lane"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_estimated_annual_premium:
+    type: custom_field
+    object: opportunity
+    name: "Estimated Annual Premium"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_estimated_rollover_amount:
+    type: custom_field
+    object: opportunity
+    name: "Estimated Rollover Amount"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_expected_revenue:
+    type: custom_field
+    object: opportunity
+    name: "Expected Revenue"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_probability:
+    type: custom_field
+    object: opportunity
+    name: "Probability"
+    id: ""
+    deployment_status: NOT_CREATED
+    note: "Check whether GHL's native opportunity probability/win-likelihood field already covers this — do not duplicate."
+  opportunity_case_status:
+    type: custom_field
+    object: opportunity
+    name: "Case Status"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_carrier:
+    type: custom_field
+    object: opportunity
+    name: "Carrier"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_application_date:
+    type: custom_field
+    object: opportunity
+    name: "Application Date"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_approval_date:
+    type: custom_field
+    object: opportunity
+    name: "Approval Date"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_issue_date:
+    type: custom_field
+    object: opportunity
+    name: "Issue Date"
+    id: ""
+    deployment_status: NOT_CREATED
+  opportunity_placed_date:
+    type: custom_field
+    object: opportunity
+    name: "Placed Date"
+    id: ""
+    deployment_status: NOT_CREATED
+
+# Tag taxonomy — PROPOSED structure only. The exhaustive tag list is a Phase 5
+# deliverable produced AFTER discovery confirms what tags already exist in the
+# account (to avoid proposing duplicates). Prefixes below are fixed; specific
+# tag values are illustrative starting points, not a final list.
+tag_taxonomy:
+  prefixes:
+    "SRC |": "Lead source (e.g. 'SRC | Facebook Ad', 'SRC | Referral')"
+    "INT |": "Expressed interest (e.g. 'INT | Life Insurance', 'INT | Annuity', 'INT | IBC')"
+    "STATUS |": "Lifecycle/status marker (e.g. 'STATUS | Hot Lead', 'STATUS | Do Not Contact')"
+    "AGENT |": "Recruiting/agent-track marker (e.g. 'AGENT | Licensed', 'AGENT | In Training')"
+    "CLIENT |": "Client-relationship marker (e.g. 'CLIENT | Active', 'CLIENT | Annual Review Due')"
+    "CAMPAIGN |": "Campaign attribution (e.g. 'CAMPAIGN | Q1-Recruiting')"
+    "COMPLIANCE |": "Compliance-relevant marker (e.g. 'COMPLIANCE | Replacement Review Required')"
+  deployment_status: NOT_CREATED

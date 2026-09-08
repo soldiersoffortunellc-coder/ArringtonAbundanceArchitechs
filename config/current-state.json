@@ -1,0 +1,51 @@
+{
+  "phase": "PHASE_2_DISCOVERY",
+  "generated_at": 1788893100.2865493,
+  "connection": {
+    "status": "FAIL"
+  },
+  "tasks": {
+    "pipelines": {
+      "status": "BLOCKED",
+      "label": "Pipelines & stages"
+    },
+    "custom_fields": {
+      "status": "BLOCKED",
+      "label": "Custom fields"
+    },
+    "custom_values": {
+      "status": "BLOCKED",
+      "label": "Custom values"
+    },
+    "tags": {
+      "status": "BLOCKED",
+      "label": "Tags"
+    },
+    "calendars": {
+      "status": "BLOCKED",
+      "label": "Calendars"
+    },
+    "users": {
+      "status": "BLOCKED",
+      "label": "Users"
+    },
+    "contacts_sample": {
+      "status": "BLOCKED",
+      "label": "Contacts (schema sample, limit=1 \u2014 not a bulk export)"
+    },
+    "forms": {
+      "status": "BLOCKED",
+      "label": "Forms"
+    },
+    "surveys": {
+      "status": "BLOCKED",
+      "label": "Surveys"
+    },
+    "workflows": {
+      "status": "BLOCKED",
+      "label": "Workflows (read-only list, if exposed)"
+    }
+  },
+  "conflicts": [],
+  "blocked_reason": "Discovery requires a passing Phase 1 connection test. Connection status: FAIL. Missing required environment variable(s): GHL_LOCATION_ID, GHL_PRIVATE_INTEGRATION_TOKEN, GHL_API_VERSION"
+}

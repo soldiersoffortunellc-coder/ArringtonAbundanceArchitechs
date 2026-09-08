@@ -11,3 +11,13 @@ config/marketing/idecide/field_map.json
 
 # local dry-run storage backend for StorageAdapter
 .local_storage/
+
+# Open Doors Financial OS v1 — runtime logs (never commit; README.md in /logs is tracked)
+logs/*.log
+logs/*.jsonl
+logs/**/*.log
+logs/**/*.jsonl
+
+# Open Doors Financial OS v1 — real, filled-in current-state / registry snapshots may contain
+# location-specific data; the template/example versions in git are safe, generated live copies are not
+config/current-state.local.json

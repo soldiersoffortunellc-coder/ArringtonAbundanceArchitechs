@@ -1,3 +1,11 @@
+> **New: [Open Doors Financial OS v1](ARCHITECTURE.md)** — a separate,
+> GHL/n8n-native operating-system build for Open Doors Financial Group
+> specifically, living alongside the system below in this same repo. Start
+> at [`ARCHITECTURE.md`](ARCHITECTURE.md) and [`BUILD-STATUS.md`](BUILD-STATUS.md)
+> for that build's current state (first execution: repo bootstrap + a
+> blocked-on-credentials connection/discovery attempt — nothing has been
+> created in GHL yet).
+
 # White-Label AI Revenue Operating System — C-Suite AI Agent System
 
 A duplicatable, scalable, salable **AI Revenue Operating System** built on
