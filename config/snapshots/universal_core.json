@@ -1,0 +1,35 @@
+{
+  "snapshot_id": "universal_core",
+  "version": "1.0.0",
+  "layer": "universal_core",
+  "description": "The one core snapshot every client is built on, regardless of industry. Industry packs and client config layer on top of this.",
+  "components": {
+    "contact_structure": {
+      "custom_fields": ["lead_source", "acquisition_campaign", "industry_vertical", "lifecycle_stage", "risk_flag"],
+      "tags": ["new-lead", "missed-call", "reactivation-candidate", "hot-lead", "do-not-contact"]
+    },
+    "opportunity_framework": {
+      "pipeline_ref": "config/sales_pipeline.json",
+      "custom_fields": ["deal_source", "estimated_value", "loss_reason"]
+    },
+    "calendar_framework": ["general_consultation", "support_call"],
+    "workflows": [
+      "missed_call_recovery",
+      "basic_nurture_sequence",
+      "appointment_reminder_sequence",
+      "no_show_follow_up",
+      "review_request_sequence",
+      "support_ticket_routing"
+    ],
+    "reporting_fields": ["speed_to_lead_seconds", "appointment_show_rate", "review_count", "nps_score"],
+    "attribution_fields": ["utm_source", "utm_medium", "utm_campaign", "referral_partner_id"],
+    "support_workflow": "internal_support_escalation"
+  },
+  "requires_manual_or_api_configuration": [
+    "A2P 10DLC phone registration (manual, carrier-side)",
+    "domain + DNS verification for email sending",
+    "Voice AI phone number porting/purchase",
+    "payment processor connection for client billing",
+    "SaaS Configurator plan mapping (per GHL agency account)"
+  ]
+}

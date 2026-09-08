@@ -1,0 +1,26 @@
+{
+  "snapshot_id": "real_estate_pack",
+  "version": "1.0.0",
+  "layer": "industry_pack",
+  "industry": "real_estate",
+  "extends": "universal_core",
+  "problems_solved": [
+    "slow_response_to_internet_leads", "missed_calls", "generic_follow_up",
+    "long_sales_cycles", "database_neglect", "inconsistent_showing_follow_up",
+    "weak_seller_nurture", "poor_referral_generation"
+  ],
+  "components": {
+    "pipelines": ["buyer_pipeline", "seller_pipeline", "investor_pipeline"],
+    "funnels": ["home_valuation_funnel", "open_house_funnel"],
+    "workflows": [
+      "missed_call_text_back", "ai_lead_qualification", "open_house_workflow",
+      "long_term_nurture", "database_reactivation", "post_closing_follow_up",
+      "review_and_referral_workflow"
+    ],
+    "calendars": ["showing_calendar"],
+    "ai_agents": ["voice_ai_lead_qualifier"],
+    "presentations": ["idecide_buyer_presentation", "idecide_seller_presentation", "idecide_agent_recruiting_presentation"],
+    "dashboards": ["listing_pipeline_dashboard", "agent_production_dashboard"],
+    "disclosures": ["fair_housing_disclosure", "listing_agreement_disclaimer"]
+  }
+}

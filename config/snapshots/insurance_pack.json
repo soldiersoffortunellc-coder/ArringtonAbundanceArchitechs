@@ -1,0 +1,31 @@
+{
+  "snapshot_id": "insurance_agency_pack",
+  "version": "1.0.0",
+  "layer": "industry_pack",
+  "industry": "insurance_agency",
+  "extends": "universal_core",
+  "problems_solved": [
+    "slow_lead_response", "inconsistent_recruiting", "unlicensed_recruit_follow_up",
+    "licensed_agent_attraction", "missed_appointments", "inactive_agent_reactivation",
+    "poor_onboarding", "inconsistent_training", "lead_leakage", "weak_client_follow_up",
+    "lack_of_pipeline_visibility"
+  ],
+  "components": {
+    "pipelines": ["recruiting_pipeline", "consumer_sales_pipeline"],
+    "funnels": ["licensed_agent_recruiting_funnel", "licensing_interest_funnel", "consumer_financial_education_funnel"],
+    "presentations": ["career_presentation", "idecide_recruiting_presentation"],
+    "calendars": ["interview_calendar", "policy_review_calendar"],
+    "ai_agents": ["ai_recruiting_conversation_agent", "voice_ai_recruiting_agent"],
+    "workflows": [
+      "candidate_scoring", "appointment_reminders", "no_show_recovery",
+      "licensing_follow_up", "contracting_workflow", "agent_onboarding",
+      "training_delivery", "inactive_agent_reactivation"
+    ],
+    "dashboards": ["recruiting_activity_dashboard", "agent_production_dashboard"],
+    "disclosures": ["insurance_marketing_compliance_disclosure", "licensing_disclaimer"],
+    "compliance_review_controls": [
+      "all consumer-facing financial-education content requires compliance sign-off before publish",
+      "no guaranteed-earnings language permitted in recruiting funnels"
+    ]
+  }
+}

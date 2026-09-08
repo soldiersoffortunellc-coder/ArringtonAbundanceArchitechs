@@ -1,0 +1,80 @@
+{
+  "_note": "All prices are DEFAULT/CONFIGURABLE placeholders. Do not publish externally until explicitly approved by the business owner.",
+  "currency": "USD",
+  "tiers": [
+    {
+      "id": "starter_saas",
+      "name": "Starter SaaS",
+      "setup_fee": { "min": 0, "max": 997, "optional": true },
+      "monthly_fee": { "min": 497, "max": 997 },
+      "includes": [
+        "white_labeled_crm",
+        "basic_pipeline",
+        "calendar",
+        "forms",
+        "basic_workflows",
+        "missed_call_text_back",
+        "reputation_management",
+        "standard_onboarding"
+      ],
+      "target_segment": "solo operators / very small teams testing the platform"
+    },
+    {
+      "id": "ai_growth_system",
+      "name": "AI Growth System",
+      "setup_fee": { "min": 2500, "max": 7500 },
+      "monthly_fee": { "min": 997, "max": 2500 },
+      "includes": [
+        "industry_snapshot",
+        "ai_conversation_agent",
+        "voice_ai",
+        "advanced_workflows",
+        "lead_qualification",
+        "appointment_booking",
+        "database_reactivation",
+        "reporting",
+        "monthly_optimization"
+      ],
+      "target_segment": "small businesses with real lead flow needing conversion help"
+    },
+    {
+      "id": "ai_revenue_operating_system",
+      "name": "AI Revenue Operating System",
+      "setup_fee": { "min": 10000, "max": 25000 },
+      "monthly_fee": { "min": 2500, "max": 5000 },
+      "includes": [
+        "complete_industry_system",
+        "custom_implementation",
+        "idecide_presentation",
+        "ai_receptionist",
+        "ai_lead_qualification",
+        "custom_pipeline",
+        "recruiting_or_sales_automation",
+        "database_reactivation_campaign",
+        "executive_reporting",
+        "team_training",
+        "priority_support"
+      ],
+      "target_segment": "established agency/business owners who need a full revenue infrastructure build"
+    },
+    {
+      "id": "enterprise_agency_license",
+      "name": "Enterprise / Agency License",
+      "setup_fee": { "min": 25000, "max": 100000 },
+      "monthly_fee": { "min": 5000, "max": 15000 },
+      "per_location_or_per_agent_pricing": "optional, contract-defined",
+      "includes": [
+        "multiple_locations_or_subaccounts",
+        "snapshot_deployment",
+        "central_reporting",
+        "role_based_permissions",
+        "custom_integrations",
+        "compliance_controls",
+        "team_onboarding",
+        "dedicated_success_management",
+        "white_label_or_licensing_rights_per_contract"
+      ],
+      "target_segment": "multi-location businesses, franchises, agencies reselling the system"
+    }
+  ]
+}
