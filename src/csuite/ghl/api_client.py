@@ -99,6 +99,14 @@ class GHLApiClient:
             "Version": self.version,
             "Content-Type": "application/json",
             "Accept": "application/json",
+            # Cloudflare's bot-protection in front of services.leadconnectorhq.com blocks
+            # Python's default urllib User-Agent outright (403, error_code 1010,
+            # "browser_signature_banned") before the request ever reaches GHL's own API —
+            # confirmed by comparing identical requests with/without this header, and by
+            # the egress proxy log showing no relay failure / policy block on this host.
+            # A browser-like User-Agent clears that check; GHL's application layer then
+            # evaluates auth normally. See docs/12-live-ghl-connection.md.
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36",
         }
 
     def request(self, method: str, path: str, json_body: dict | None = None, query: dict | None = None) -> dict:

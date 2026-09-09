@@ -56,13 +56,30 @@ class TestConnectionTestMockedNetwork(unittest.TestCase):
         self.assertTrue(report["location_resolved"])
         self.assertEqual(report["location_name"], "Open Doors Financial Group")
 
-    def test_401_reports_fail_with_scope_hint_not_generic_error(self):
+    def test_401_reports_fail_as_invalid_token_not_a_scope_issue(self):
         with patch.dict(os.environ, REQUIRED_ENV, clear=True):
             with patch.object(conn_test.GHLApiClient, "get", side_effect=GHLApiError(401, "GET", "https://x/locations/loc_test_123", "Unauthorized")):
                 report = conn_test.run_connection_test()
         self.assertEqual(report["connection_status"], "FAIL")
         self.assertEqual(report["http_status"], 401)
+        self.assertIn("invalid/expired", report["error"].lower())
+
+    def test_403_reports_fail_with_scope_hint(self):
+        with patch.dict(os.environ, REQUIRED_ENV, clear=True):
+            with patch.object(conn_test.GHLApiClient, "get", side_effect=GHLApiError(403, "GET", "https://x/locations/loc_test_123", "Forbidden")):
+                report = conn_test.run_connection_test()
+        self.assertEqual(report["connection_status"], "FAIL")
+        self.assertEqual(report["http_status"], 403)
         self.assertIn("scope", report["error"].lower())
+
+    def test_cloudflare_bot_block_is_distinguished_from_a_real_auth_failure(self):
+        cf_body = '{"error_code":1010,"error_name":"browser_signature_banned","cloudflare_error":true}'
+        with patch.dict(os.environ, REQUIRED_ENV, clear=True):
+            with patch.object(conn_test.GHLApiClient, "get", side_effect=GHLApiError(403, "GET", "https://x/locations/loc_test_123", cf_body)):
+                report = conn_test.run_connection_test()
+        self.assertEqual(report["connection_status"], "FAIL")
+        self.assertIn("cloudflare", report["error"].lower())
+        self.assertNotIn("insufficient private integration scopes", report["error"].lower())
 
     def test_404_reports_fail_location_not_found(self):
         with patch.dict(os.environ, REQUIRED_ENV, clear=True):

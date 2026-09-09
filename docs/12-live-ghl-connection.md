@@ -1,5 +1,22 @@
 # 12 — Connecting to a Real GoHighLevel Account
 
+## Confirmed finding: Cloudflare blocks the default Python User-Agent
+
+The first real live call attempted against `services.leadconnectorhq.com`
+(from Open Doors Financial OS v1's connection test) got a **403 before
+reaching GHL's own application layer at all**:
+```
+error_code 1010, error_name "browser_signature_banned", cloudflare_error: true
+```
+This is Cloudflare's bot-management sitting in front of GHL's API,
+rejecting Python's default `urllib` User-Agent string outright — not a
+credentials, scope, or org-egress-policy issue (confirmed by comparing an
+identical request with a browser-like `User-Agent` header, which cleared
+Cloudflare and reached GHL's actual auth logic instead). **Fixed**:
+`GHLApiClient._headers()` now sends a browser-like `User-Agent` on every
+request. If you ever see this specific error shape again, it's this — not
+your token.
+
 ## Current status: not connected
 
 No GoHighLevel credentials exist anywhere in this environment, this

@@ -71,10 +71,20 @@ def run_connection_test() -> dict:
         report["http_status"] = exc.status_code
         # Truncate the response body defensively — GHL error bodies don't echo
         # the token, but keep this bounded regardless.
-        report["error"] = (exc.response_body or "")[:500]
-        if exc.status_code in (401, 403):
+        body = exc.response_body or ""
+        report["error"] = body[:500]
+        if "cloudflare_error" in body or "browser_signature_banned" in body:
             report["error"] += (
-                " — likely an invalid token or insufficient Private Integration scopes. "
+                " — this is Cloudflare's bot-protection rejecting the HTTP client "
+                "(edge layer, before GHL's own API/auth logic ran), NOT an invalid token "
+                "or scope issue. If this recurs, verify GHLApiClient is sending a "
+                "browser-like User-Agent header (see docs/12-live-ghl-connection.md)."
+            )
+        elif exc.status_code == 401:
+            report["error"] += " — the token was rejected by GHL itself (invalid/expired Private Integration Token)."
+        elif exc.status_code == 403:
+            report["error"] += (
+                " — the token authenticated but lacks a required scope for this call. "
                 "Check the exact scopes granted to this token in GHL Settings > Private "
                 "Integrations rather than requesting broader access."
             )
