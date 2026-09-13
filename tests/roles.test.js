@@ -27,4 +27,11 @@ describe('role permissions', () => {
     assert.equal(canViewRawContactData(ROLES.SUCCESS_DIRECTOR), true);
     assert.equal(canViewRawContactData(ROLES.REV_OPS_ANALYST), false);
   });
+
+  test('CTO owns engineering and the live technical build, but not pricing or offer strategy', () => {
+    assert.equal(can(ROLES.CTO, 'own:repo_engineering'), true);
+    assert.equal(can(ROLES.CTO, 'own:live_ghl_technical_build'), true);
+    assert.equal(can(ROLES.CTO, 'approve:pricing'), false);
+    assert.equal(can(ROLES.CTO, 'authorize:live_activation'), false);
+  });
 });

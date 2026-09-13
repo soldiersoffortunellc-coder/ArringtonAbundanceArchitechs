@@ -21,6 +21,23 @@ an architecture designed to expand into additional verticals later.
 > `config/offers/offer-ladder.json` is a draft target range pending your
 > approval — see `docs/03-offer-ladder.md`.
 
+## Org chart
+
+```
+Owner
+  ├─ Chief Revenue Officer (Revenue division)
+  │    └─ 6 subordinate revenue agents — docs/10-revenue-agent-definitions.md
+  └─ Chief Technology Officer (Technology division)
+       — owns the live GHL technical build + this repo's engineering
+       — docs/22-chief-technology-officer.md, config/agents/chief-technology-officer.json
+```
+
+The CTO is deployed two places: as a versioned config/doc in this repo
+(same treatment as every other role), and as an operating brief
+(`config/agents/cto-cowork-operating-brief.md`) meant to be pasted into
+the live Cowork session doing the GHL build — this repo cannot reach into
+that session directly.
+
 ## Repository audit (start here)
 
 `docs/00-audit-and-roadmap.md` — what existed before this work (a single
@@ -52,6 +69,7 @@ reuses, what it builds now, and what it deliberately postpones per the
 | 20 | 90-day implementation calendar | `docs/19-implementation-calendar.md` |
 | — | Capacity and hiring requirements | `docs/20-capacity-and-hiring.md` |
 | — | Risks and assumptions | `docs/21-risks-and-assumptions.md` |
+| — | Chief Technology Officer (Technology division) | `docs/22-chief-technology-officer.md`, `config/agents/chief-technology-officer.json`, `config/agents/cto-cowork-operating-brief.md` |
 
 ## Code layout
 

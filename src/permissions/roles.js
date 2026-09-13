@@ -11,6 +11,7 @@ export const ROLES = Object.freeze({
   ONBOARDING_DIRECTOR: 'client_onboarding_director',
   SUCCESS_DIRECTOR: 'client_success_retention_director',
   REV_OPS_ANALYST: 'revenue_operations_analyst',
+  CTO: 'chief_technology_officer',
 });
 
 const PERMISSIONS = {
@@ -28,6 +29,10 @@ const PERMISSIONS = {
     'view:client_health', 'view:churn_risk', 'edit:interventions', 'approve:testimonial_use',
   ],
   [ROLES.REV_OPS_ANALYST]: ['view:full_rollup', 'edit:revenue_ledger'],
+  [ROLES.CTO]: [
+    'own:repo_engineering', 'own:live_ghl_technical_build', 'edit:platform_gap_registry',
+    'approve:workaround_pattern', 'view:full_rollup',
+  ],
 };
 
 export function can(role, permission) {
