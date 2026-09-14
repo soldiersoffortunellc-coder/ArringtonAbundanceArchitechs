@@ -1,0 +1,86 @@
+{
+  "client_id": "open_doors_financial_group",
+  "client_name": "Coach Shonough / Open Doors Financial Group (ODFG)",
+  "industry": "insurance_agency",
+  "spec_doc": "docs/13-client-implementation-open-doors-financial-group.md",
+  "branding": {
+    "primary_color": "#1B3A5C",
+    "secondary_color": "#C8962E",
+    "tagline": "Money is like water — its power isn't found in its storage, it's found in its movement.",
+    "logo_asset": "REQUIRED — obtain final logo file from client"
+  },
+  "domain": {
+    "primary_domain": "REQUIRED — obtain from client (site not yet on a GHL-hosted or client-owned domain per this spec)",
+    "dns_verified": false
+  },
+  "phone_numbers": {
+    "primary_business_line": "813-993-5742",
+    "ghl_provisioned_number": "REQUIRED — obtain from GHL agency dashboard once purchased/ported",
+    "a2p_10dlc_registered": false
+  },
+  "email": {
+    "primary_contact_email": "opendoorsfinancial.rashon@gmail.com",
+    "sending_domain_verified": false
+  },
+  "calendars": {
+    "general_consultation": "REQUIRED — create in GHL or migrate from existing Calendly link (https://calendly.com/opendoorsfinancialrashon/new-meeting)",
+    "interview_calendar": "REQUIRED — create in GHL for the recruiting funnel",
+    "support_call": "REQUIRED — create in GHL for Foundation/partnership conversations"
+  },
+  "users": [
+    {
+      "name": "Rashon Arrington (Coach Shonough)",
+      "role": "owner",
+      "email": "opendoorsfinancial.rashon@gmail.com"
+    }
+  ],
+  "services": [
+    "financial_protection_strategy",
+    "indexed_universal_life",
+    "whole_life",
+    "term_life",
+    "fixed_indexed_annuities",
+    "agent_recruiting_and_licensing",
+    "foundation_mentorship_partnership",
+    "kingdom_brothers_real_estate"
+  ],
+  "service_areas": [
+    "Lakeland, FL",
+    "Central Florida",
+    "Florida (licensed state)",
+    "agent recruiting: nationwide inquiry, licensing requirements vary by state"
+  ],
+  "pricing": {
+    "note": "Insurance and financial-strategy pricing is carrier/product-specific and determined only after a licensed conversation — not published on the public site. No SaaS/software pricing applies to this client engagement beyond the agency's own offer-ladder tier (see docs/02).",
+    "site_offer_ladder_tier": "REQUIRED — owner to confirm which offer-ladder tier (docs/02) this engagement is billed under"
+  },
+  "disclosures": {
+    "insurance_marketing_compliance_disclosure": "PLACEHOLDER — starting language only, must be replaced with Coach Shonough's E&O carrier's required disclosure text before publish: 'Insurance products offered through licensed professionals. Not all products or strategies are suitable for all individuals. This website does not constitute an offer to sell or a solicitation to buy any specific insurance or investment product.'",
+    "licensing_disclaimer": "PLACEHOLDER — 'Florida 2-14 Life licensed. Product availability and guarantees vary by carrier and are subject to the issuing carrier's claims-paying ability. Nothing on this site is a specific product recommendation.'",
+    "recruiting_no_earnings_claims": true,
+    "financial_education_content_requires_compliance_signoff": true,
+    "testimonials_require_written_permission_and_signoff": true
+  },
+  "integrations": {
+    "calendly_migration_decision": "REQUIRED — client decision: migrate booking fully into GHL native calendars, or keep Calendly and webhook bookings into GHL",
+    "idecide_account": "REQUIRED — obtain iDecide account/API access for the recruiting presentation",
+    "voice_ai_provider": "REQUIRED — obtain voice AI provider credentials for voice_ai_recruiting_agent",
+    "google_business_profile_nap_verified": false
+  },
+  "escalation_contacts": [
+    {
+      "name": "Rashon Arrington (Coach Shonough)",
+      "role": "owner / primary escalation",
+      "email": "opendoorsfinancial.rashon@gmail.com",
+      "phone": "813-993-5742"
+    }
+  ],
+  "office_address": "211 E Main St, Lakeland, FL 33801",
+  "intent_segments": [
+    "consumer",
+    "agent-licensed",
+    "agent-unlicensed",
+    "foundation",
+    "kingdom-brothers"
+  ]
+}

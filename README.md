@@ -108,6 +108,7 @@ docs/                     The 20 requested deliverables (see mapping below)
 | 20 | Capacity and hiring requirements | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |
 | — | Risks and assumptions | [`docs/11-risks-and-assumptions.md`](docs/11-risks-and-assumptions.md) |
 | — | Live GHL connection (auth model, wired endpoints, how to connect) | [`docs/12-live-ghl-connection.md`](docs/12-live-ghl-connection.md) |
+| — | Client implementation: Coach Shonough / Open Doors Financial Group (Insurance Agency Revenue OS applied to a real site) | [`docs/13-client-implementation-open-doors-financial-group.md`](docs/13-client-implementation-open-doors-financial-group.md), [`config/clients/open_doors_financial_group.json`](config/clients/open_doors_financial_group.json) |
 
 ## Operating rules this codebase enforces in code, not just policy
 
