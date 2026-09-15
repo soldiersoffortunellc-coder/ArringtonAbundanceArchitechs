@@ -108,6 +108,7 @@ docs/                     The 20 requested deliverables (see mapping below)
 | 20 | Capacity and hiring requirements | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |
 | — | Risks and assumptions | [`docs/11-risks-and-assumptions.md`](docs/11-risks-and-assumptions.md) |
 | — | Live GHL connection (auth model, wired endpoints, how to connect) | [`docs/12-live-ghl-connection.md`](docs/12-live-ghl-connection.md) |
+| — | GHL MCP server (HTTP transport, interactive Claude Code use) | [`docs/13-ghl-mcp-http-transport.md`](docs/13-ghl-mcp-http-transport.md), [`.mcp.json`](.mcp.json) |
 
 ## Operating rules this codebase enforces in code, not just policy
 
