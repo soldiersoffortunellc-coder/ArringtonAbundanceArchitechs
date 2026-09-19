@@ -23,9 +23,19 @@
     ],
     "dashboards": ["recruiting_activity_dashboard", "agent_production_dashboard"],
     "disclosures": ["insurance_marketing_compliance_disclosure", "licensing_disclaimer"],
+    "integrations": ["meta_facebook_lead_ads_recruiting_sync"],
     "compliance_review_controls": [
       "all consumer-facing financial-education content requires compliance sign-off before publish",
-      "no guaranteed-earnings language permitted in recruiting funnels"
+      "no guaranteed-earnings language permitted in recruiting funnels",
+      "no guaranteed-earnings language permitted in Meta (Facebook/Instagram) recruiting ad creative or lead forms"
     ]
+  },
+  "recruiting_pipeline_config": "config/pipelines/recruiting_pipeline.json",
+  "meta_lead_ads": {
+    "form_mapping": "config/meta_lead_ads/insurance_recruiting_form_mapping.json",
+    "attribution_custom_fields": [
+      "fb_lead_id", "fb_form_id", "fb_page_id", "fb_ad_id", "fb_campaign_name", "licensing_status"
+    ],
+    "implementation": "src/csuite/ghl/meta_recruiting.py (MetaRecruitingLeadRouter)"
   }
 }

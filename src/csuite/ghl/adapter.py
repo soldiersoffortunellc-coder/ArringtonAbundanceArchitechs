@@ -195,6 +195,15 @@ class GHLAdapter:
                 "message": payload["template"],
             })
 
+        if kind == "fb_get_integration":
+            return client.get("/ad-publishing/facebook/integration", query={"locationId": payload["location_id"]})
+
+        if kind == "fb_get_page_lead_forms":
+            return client.get(
+                f"/ad-publishing/facebook/page/{payload['page_id']}/forms",
+                query={"locationId": payload["location_id"]},
+            )
+
         raise GHLUnsupportedActionError(
             f"'{kind}' has no live implementation wired up in GHLAdapter._live_call. "
             "Add it to api_client.py / adapter.py once you've confirmed the real endpoint."
@@ -297,6 +306,28 @@ class GHLAdapter:
             "publish_campaign",
             {"location_id": location_id, "campaign_name": campaign_name},
             {"published": True},
+        )
+
+    # ---- Meta (Facebook/Instagram) Lead Ads — recruiting funnel source -----
+    # Read-only calls used to verify a recruiting page's lead forms exist and
+    # to confirm the location's Facebook integration is connected before
+    # routing leads through csuite.ghl.meta_recruiting. GHL's own Facebook
+    # integration (configured in the GHL UI) is what actually creates the
+    # contact when someone submits the ad; these calls never create contacts
+    # themselves.
+
+    def fb_get_integration(self, location_id: str) -> GHLAction:
+        return self._dispatch(
+            "fb_get_integration",
+            {"location_id": location_id},
+            {"connected": True, "pageId": "SIMULATED_PAGE_ID"},
+        )
+
+    def fb_get_page_lead_forms(self, location_id: str, page_id: str) -> GHLAction:
+        return self._dispatch(
+            "fb_get_page_lead_forms",
+            {"location_id": location_id, "page_id": page_id},
+            {"forms": []},
         )
 
     # ---- billing --------------------------------------------------------------

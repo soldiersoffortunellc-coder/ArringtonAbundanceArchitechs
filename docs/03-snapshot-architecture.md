@@ -32,7 +32,7 @@ packaged into a GHL snapshot export):
 
 | Pack | File | Key components |
 |---|---|---|
-| Insurance Agency | `insurance_pack.json` | Recruiting + consumer pipelines, licensed-agent recruiting funnel, iDecide recruiting presentation, interview calendar, AI/voice recruiting agents, candidate scoring, contracting workflow, compliance review controls |
+| Insurance Agency | `insurance_pack.json` | Recruiting + consumer pipelines, licensed-agent recruiting funnel, iDecide recruiting presentation, interview calendar, AI/voice recruiting agents, candidate scoring, contracting workflow, compliance review controls, **Meta (Facebook/Instagram) Lead Ads recruiting sync** |
 | Real Estate | `real_estate_pack.json` | Buyer/seller/investor pipelines, home-valuation funnel, missed-call text-back, showing calendar, long-term nurture, database reactivation, iDecide buyer/seller/recruiting presentations |
 | Home Services | `home_services_pack.json` | Estimate/job pipelines, AI receptionist, emergency-service routing, estimate reminders, unsold-estimate follow-up, maintenance reminders, revenue attribution dashboard |
 
@@ -57,6 +57,36 @@ one layer's data into another (`tests/test_snapshot_assignment.py`).
 industry pack via the `GHLAdapter`, and raises `SnapshotApplicationError` —
 routing the onboarding state machine to `BLOCKED` — if either apply call
 fails (`tests/test_failed_snapshot_application.py`).
+
+## Meta (Facebook/Instagram) Lead Ads recruiting sync (insurance pack)
+
+`config/pipelines/recruiting_pipeline.json` defines the 12-stage candidate
+pipeline (`New Candidate (Meta Lead)` → ... → `Active Agent` /
+`Disqualified`, the latter requiring a disqualification reason from a fixed
+vocabulary — same enforcement pattern as the sales pipeline's loss reasons).
+`config/meta_lead_ads/insurance_recruiting_form_mapping.json` maps a Meta
+Lead Ads form's raw answer keys onto this system's candidate fields
+(`full_name`, `phone`, `licensing_status`, ...) and routes the resulting
+candidate to `licensed_agent_recruiting_funnel` or
+`licensing_interest_funnel` based on their answer.
+
+Implementation: `src/csuite/pipeline/recruiting_pipeline.py`
+(`RecruitingPipeline`, kept separate from `SalesPipeline` — a candidate and
+a sales opportunity carry different fields) and
+`src/csuite/ghl/meta_recruiting.py` (`MetaRecruitingLeadRouter.ingest_lead()`
+— maps the raw lead, validates required fields, normalizes the licensing
+answer, opens a recruiting-pipeline candidate, and tags/opens an opportunity
+via `GHLAdapter`, deduping on `fb_lead_id` so a redelivered webhook never
+creates a second candidate).
+
+**Important:** GHL's own Facebook integration (connected in the GHL UI) is
+what actually receives the ad platform's webhook and creates the contact —
+there is no public API endpoint that "ingests a lead" directly.
+`GHLAdapter.fb_get_integration` / `fb_get_page_lead_forms` (both real,
+read-only GHL API v2 calls under `/ad-publishing/facebook/...`, confirmed
+against GHL's live operation registry) only verify that integration and its
+lead forms are connected; `MetaRecruitingLeadRouter` handles what happens
+*after* GHL has already created the contact.
 
 ## Versioning
 

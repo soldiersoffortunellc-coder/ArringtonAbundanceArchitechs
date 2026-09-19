@@ -1,0 +1,31 @@
+{
+  "mapping_id": "insurance_recruiting_meta_lead_form",
+  "version": "1.0.0",
+  "description": "Maps a Meta (Facebook/Instagram) Lead Ads form submission for the insurance agent recruiting funnel onto this system's internal candidate profile fields. GHL's native Facebook integration auto-creates the contact; this mapping governs how that contact is tagged and routed once ingested.",
+  "applies_to_funnels": ["licensed_agent_recruiting_funnel", "licensing_interest_funnel"],
+  "field_map": {
+    "full_name": ["full_name", "name"],
+    "email": ["email"],
+    "phone": ["phone_number", "phone"],
+    "state": ["state", "work_state"],
+    "licensing_status": ["are_you_currently_licensed?", "licensing_status", "have_a_license?"]
+  },
+  "required_fields": ["full_name", "phone", "licensing_status"],
+  "licensing_status_values": {
+    "licensed": ["yes", "licensed", "currently licensed", "true"],
+    "unlicensed": ["no", "not licensed", "unlicensed", "false", "in progress"]
+  },
+  "funnel_routing": {
+    "licensed": "licensed_agent_recruiting_funnel",
+    "unlicensed": "licensing_interest_funnel"
+  },
+  "attribution_fields_captured": [
+    "fb_lead_id",
+    "fb_form_id",
+    "fb_page_id",
+    "fb_ad_id",
+    "fb_campaign_name",
+    "platform"
+  ],
+  "compliance_note": "No guaranteed-earnings language may appear on the source ad creative or lead form per insurance_pack.json compliance_review_controls; this mapping does not enforce that (ad copy review is a human compliance step), it only ingests whatever the form collects."
+}

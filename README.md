@@ -47,7 +47,7 @@ marketplace app), and exactly which endpoints are wired up:
 # Run one full dry-run operating cycle against realistic synthetic data
 python3 scripts/run_demo.py
 
-# Run the full test suite (66 tests, zero external dependencies)
+# Run the full test suite (93 tests, zero external dependencies)
 python3 -m unittest discover -s tests -t .
 
 # View the executive command center (must be served over HTTP, not file://)
@@ -78,7 +78,7 @@ src/csuite/
   orchestrator.py          RevenueOperatingSystem — wires all 13 agents together
 scripts/run_demo.py       Runs one full cycle end-to-end, writes dashboard_data.json
 dashboard/                Executive command-center (static HTML, reads dashboard_data.json)
-tests/                    66 tests covering every item in the required test list
+tests/                    93 tests covering every item in the required test list
 docs/                     The 20 requested deliverables (see mapping below)
 ```
 
@@ -101,7 +101,7 @@ docs/                     The 20 requested deliverables (see mapping below)
 | 13 | Client-success workflow | [`docs/05-c-suite-agent-roster.md`](docs/05-c-suite-agent-roster.md) → Client Success and Retention Director |
 | 14 | Executive command-center specification | [`docs/07-executive-command-center.md`](docs/07-executive-command-center.md), [`dashboard/`](dashboard/) |
 | 15 | Sales assets | [`docs/08-sales-assets.md`](docs/08-sales-assets.md) |
-| 16 | Tests | [`tests/`](tests/) (66 passing tests) |
+| 16 | Tests | [`tests/`](tests/) (93 passing tests) |
 | 17 | Required credentials and GHL IDs | [`docs/09-credentials-and-ghl-ids.md`](docs/09-credentials-and-ghl-ids.md) |
 | 18 | Deployment plan | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |
 | 19 | 90-day implementation calendar | [`docs/10-deployment-plan-and-calendar.md`](docs/10-deployment-plan-and-calendar.md) |

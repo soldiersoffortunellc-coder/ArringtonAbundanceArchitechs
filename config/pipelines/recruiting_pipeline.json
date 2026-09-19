@@ -1,0 +1,30 @@
+{
+  "pipeline_name": "Insurance Agency Recruiting Pipeline",
+  "stages": [
+    "New Candidate (Meta Lead)",
+    "Contacted",
+    "Licensing Interest Confirmed",
+    "Interview Scheduled",
+    "Interview Completed",
+    "Candidate Scored",
+    "Offer Extended",
+    "Contracting",
+    "Onboarding",
+    "Active Agent",
+    "Inactive - Reactivation Needed",
+    "Disqualified"
+  ],
+  "terminal_stages": ["Active Agent", "Disqualified"],
+  "disqualification_reason_required_for": ["Disqualified"],
+  "disqualification_reasons": [
+    "failed_background_check",
+    "unlicensable_in_state",
+    "non_responsive",
+    "not_a_fit",
+    "chose_another_agency",
+    "failed_interview",
+    "withdrew_application",
+    "compliance_blocker",
+    "other"
+  ]
+}

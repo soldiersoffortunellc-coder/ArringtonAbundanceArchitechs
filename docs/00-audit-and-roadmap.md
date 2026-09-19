@@ -44,8 +44,19 @@ executive dashboard (`dashboard/`) plus a full test suite (`tests/`):
 - A **90-day financial model** with conservative/target/aggressive
   scenarios, matching the specified target numbers exactly.
 - An **executive command-center dashboard** (`dashboard/index.html`).
-- **66 passing tests** (`tests/`) covering every item in the required test
-  list.
+- **Meta (Facebook/Instagram) Lead Ads recruiting sync** for the insurance
+  agency pack: a 12-stage `RecruitingPipeline` (candidate model, separate
+  from the sales pipeline), a lead-form field mapping spec, and
+  `MetaRecruitingLeadRouter` (`src/csuite/ghl/meta_recruiting.py`), which
+  maps a raw Meta lead-ad submission onto a candidate, routes it to the
+  licensed-agent or licensing-interest funnel by licensing status, tags/
+  opens an opportunity via `GHLAdapter`, and rejects a redelivered webhook
+  (`fb_lead_id` dedupe) instead of double-creating a candidate. Two new
+  real, read-only `GHLAdapter` actions (`fb_get_integration`,
+  `fb_get_page_lead_forms`) back this against GHL's actual
+  `ad-publishing/facebook/*` API in live mode.
+- **93 passing tests** (`tests/`) covering every item in the required test
+  list plus the Meta recruiting sync.
 
 ## What is deliberately postponed (not built in this phase)
 

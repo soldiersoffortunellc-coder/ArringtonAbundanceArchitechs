@@ -41,6 +41,8 @@ now actually calls GHL for these actions (`_UNSUPPORTED_LIVE_ACTIONS` in
 | `create_opportunity` | `POST /opportunities/` |
 | `update_opportunity_stage` | `PUT /opportunities/{opportunityId}` |
 | `send_notification` | `POST /conversations/messages` |
+| `fb_get_integration` | `GET /ad-publishing/facebook/integration` (requires `adPublishing.readonly` scope) |
+| `fb_get_page_lead_forms` | `GET /ad-publishing/facebook/page/{pageId}/forms` (requires `adPublishing.readonly` scope) |
 
 **Not supported by GHL's public API at all** (raises
 `GHLUnsupportedActionError` with an explanation, even in live mode):
@@ -56,7 +58,12 @@ SaaS Configurator's job, a separate setup). See the docstring/comments in
    under *Settings → Private Integrations*. Simplest option if you're
    connecting this system to a sub-account **you already created manually**
    and just want it to manage contacts/opportunities/calendars/custom
-   fields/tags on that one location. Cannot create new locations.
+   fields/tags on that one location. Cannot create new locations. If you
+   also want the Meta Lead Ads recruiting sync (`fb_get_integration`,
+   `fb_get_page_lead_forms`), the PIT must be created with the
+   `adPublishing.readonly` (and `adPublishing.write` if you'll manage lead
+   forms from this system) scope checked — a PIT created without it will
+   fail those two calls even though everything else works.
 2. **OAuth marketplace app** — required for agency-level actions
    (`create_location`, or `snapshots.write` scope if GHL later exposes
    snapshot management to your app). Requires registering an app in the
