@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DoorIntro Playground</title>
+  <style>
+    :root { --bg: #f4f2ee; --panel: #ffffff; --text: #1d1b18; --muted: #6b665d; --line: #e2ddd3; --accent: #9a7a2e; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { --bg: #121110; --panel: #1b1a18; --text: #f1ede6; --muted: #a39d92; --line: #2e2b27; --accent: #d9b766; }
+    }
+    :root[data-theme="dark"] { --bg: #121110; --panel: #1b1a18; --text: #f1ede6; --muted: #a39d92; --line: #2e2b27; --accent: #d9b766; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1 { font-size: 24px; margin: 0 0 4px; }
+    p.lead { color: var(--muted); margin: 0 0 24px; }
+    form { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+    label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+    input, select { font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+    input[type="color"] { padding: 2px; height: 40px; }
+    .actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; }
+    button { font: inherit; font-weight: 600; border: 0; border-radius: 8px; padding: 10px 16px; cursor: pointer; background: var(--accent); color: #111; }
+    button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    pre { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; overflow: auto; font-size: 12.5px; margin-top: 18px; }
+  </style>
+  <script src="../dist/door-intro.js" data-auto-init="false" defer></script>
+</head>
+<body>
+  <main>
+    <h1>DoorIntro Playground</h1>
+    <p class="lead">Try branding, imagery and timing here, then copy the generated config into your site. Nothing is saved.</p>
+    <form id="cfg">
+      <label>Preset <select name="preset"><option>opendoors</option><option>neutral</option></select></label>
+      <label>Door style <select name="doorStyle"><option>classic</option><option>modern</option><option>glass</option></select></label>
+      <label>Duration (ms) <input name="duration" type="number" min="2500" max="8000" step="100" value="4500" /></label>
+      <label>Brand name <input name="brandName" placeholder="Preset default" /></label>
+      <label>Image URL <input name="imageUrl" placeholder="/images/door-intro/arrington-founders.jpg" /></label>
+      <label>Logo URL <input name="logoUrl" placeholder="Optional SVG/PNG" /></label>
+      <label>Welcome text <input name="welcomeText" placeholder="Preset default" /></label>
+      <label>Reveal text <input name="revealText" placeholder="Preset default" /></label>
+      <label>Image focal point <input name="imagePosition" value="center 35%" /></label>
+      <label>Primary color <input name="primaryColor" type="color" value="#080808" /></label>
+      <label>Accent gold <input name="accentColor" type="color" value="#c9a24a" /></label>
+      <label>Secondary gold <input name="accentColor2" type="color" value="#e8d18a" /></label>
+      <div class="actions">
+        <button type="submit">Play intro</button>
+        <button type="button" class="secondary" id="reset">Reset colors to preset</button>
+      </div>
+    </form>
+    <pre id="out" aria-live="polite"></pre>
+  </main>
+  <script>
+    (function () {
+      var form = document.getElementById('cfg');
+      var out = document.getElementById('out');
+      var touched = {};
+      form.addEventListener('input', function (e) { touched[e.target.name] = true; render(); });
+      function read() {
+        var cfg = { playMode: 'manual' };
+        new FormData(form).forEach(function (v, k) {
+          if (v === '') return;
+          if (/Color/.test(k) && !touched[k]) return;
+          cfg[k] = k === 'duration' ? Number(v) : v;
+        });
+        return cfg;
+      }
+      function render() {
+        var cfg = read();
+        delete cfg.playMode;
+        out.textContent = 'window.DoorIntroConfig = ' + JSON.stringify(cfg, null, 2) + ';';
+      }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        window.DoorIntro.destroy();
+        window.DoorIntro.init(read());
+        window.DoorIntro.play();
+      });
+      document.getElementById('reset').addEventListener('click', function () { touched = {}; render(); });
+      render();
+    })();
+  </script>
+</body>
+</html>
