@@ -1,0 +1,12 @@
+<!--
+  DoorIntro pre-paint guard (optional, recommended).
+  Paste as high as possible inside <head>. It paints the intro background
+  before the deferred door-intro.js runs, so visitors never see a flash of
+  the page before the doors appear. It does not hide or remove any content
+  (crawlers and the DOM are unaffected) and removes itself after 3 seconds
+  even if door-intro.js fails to load.
+  Set img="" to your intro image URL to preload it only when the intro will
+  play. Keep the color, storage key and URL parameter in sync with your config.
+-->
+<style>html.door-intro-pending::before{content:"";position:fixed;inset:0;z-index:2147483000;background:#080808;animation:door-intro-failsafe 0s linear 3s forwards}@keyframes door-intro-failsafe{to{visibility:hidden}}</style>
+<script>(function(){var img="";try{var q=location.search,f=/[?&]doorintro=([^&]*)/i.exec(q);if(f){if(/^(0|off|false|no)$/i.test(f[1]))return}else if(/bot\b|crawler|spider|slurp|bingpreview|facebookexternalhit/i.test(navigator.userAgent)||sessionStorage.getItem("door-intro:seen"))return;document.documentElement.className+=" door-intro-pending";if(img){var l=document.createElement("link");l.rel="preload";l.as="image";l.href=img;l.setAttribute("fetchpriority","high");document.head.appendChild(l)}}catch(e){}})();</script>

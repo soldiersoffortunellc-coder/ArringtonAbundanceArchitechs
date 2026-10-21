@@ -1,0 +1,19 @@
+{
+  "name": "door-intro",
+  "version": "1.0.0",
+  "description": "Cinematic opening-doors website entrance. Dependency-free at runtime.",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/door-intro.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node tests/react-smoke/build.mjs && node tests/run-tests.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.0",
+    "playwright": "1.56.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "terser": "5.36.0"
+  }
+}

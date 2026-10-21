@@ -146,3 +146,17 @@ for how this becomes a live, multi-tenant production system.
 
 The pre-existing `abundance-architects-site.zip` (a personal-brand static
 site unrelated to this system) is left untouched in the repository root.
+
+## Website entrance: DoorIntro
+
+[`door-intro/`](door-intro/README.md) is a reusable, dependency-free
+"opening doors" website entrance (vanilla JS, about 9 KB gzipped). It ships
+with a React/Next.js component, a WordPress plugin, a Webflow embed and an
+Open Doors Financial Group preset. [`site/`](site/) is the existing
+Arrington Abundance Architects static site, extracted from
+`abundance-architects-site.zip` (unchanged) with the intro wired in. Deploy
+it to Cloudflare Pages with output directory `site`.
+
+```bash
+cd door-intro && npm install && npm test   # build + browser tests at 375/768/1440 px
+```
