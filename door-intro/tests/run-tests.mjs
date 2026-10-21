@@ -59,7 +59,7 @@ async function newPage(opts = {}) {
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
   page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
-  await page.route('**' + PORTRAIT, (route) => portrait === 'ok'
+  if (portrait !== 'real') await page.route('**' + PORTRAIT, (route) => portrait === 'ok'
     ? route.fulfill({ status: 200, contentType: 'image/jpeg', body: fixture })
     : route.fulfill({ status: 404, body: '' }));
   if (blockScript) await page.route('**/door-intro.js', (r) => r.abort());
@@ -367,6 +367,26 @@ await test('JS API: destroy() removes everything; reset() clears the seen flag',
   await page.evaluate(() => { sessionStorage.setItem('door-intro:seen', '1'); window.DoorIntro.reset(); });
   assert.equal(await page.evaluate(() => sessionStorage.getItem('door-intro:seen')), null);
   await ctx.close();
+});
+
+await test('real founder portrait: whole photo on wide screens, full-bleed on phones', async () => {
+  for (const [viewport, fit] of [[{ width: 1440, height: 900 }, true], [{ width: 768, height: 1024 }, false], [{ width: 375, height: 812 }, false]]) {
+    const { ctx, page, errors } = await newPage({ viewport, portrait: 'real' });
+    await page.goto(ORIGIN + '/');
+    await page.waitForSelector('#door-intro.di--img-ready', { timeout: 3000 });
+    assert.equal(await page.$eval('#door-intro', (n) => n.classList.contains('di-fit-contain')), fit, `contain fit at ${viewport.width}px`);
+    const nat = await page.$eval('#door-intro .di-photo', (img) => [img.naturalWidth, img.naturalHeight]);
+    assert.deepEqual(nat, [986, 1530], 'served the optimized portrait');
+    await page.waitForSelector('#door-intro.di--revealed', { timeout: 4000 });
+    if (fit) {
+      const box = await page.$eval('#door-intro .di-photo', (img) => img.getBoundingClientRect().toJSON());
+      assert.ok(box.width < viewport.width * 0.7 && box.height >= viewport.height * 0.99, 'portrait shown at full height, not cropped');
+    }
+    if (shotsDir) { await sleep(400); await page.screenshot({ path: join(shotsDir, `${viewport.width}-real-portrait.png`) }); }
+    await waitGone(page);
+    assert.deepEqual(errors, []);
+    await ctx.close();
+  }
 });
 
 await test('playground: neutral preset, glass and modern door styles render and play', async () => {

@@ -119,6 +119,7 @@ attributes on the script tag → `DoorIntro.init(options)`.
 | `imageSrcset` / `imageSizes` | – / `100vw` | Responsive image sources. |
 | `imageAlt` | preset | Leave it empty if the image is decorative. |
 | `imagePosition` | `center 35%` | CSS `object-position`, which keeps faces in frame on phones. |
+| `imageFit` | `auto` | `cover` (full-bleed), `contain` (whole photo at full height over a blurred copy of itself) or `auto` (contain only when a tall photo would otherwise be cropped hard, for example a portrait on a widescreen display). |
 | `imageTimeout` | `1500` | Maximum time (ms) the doors wait for the image before opening anyway. |
 | `welcomeText` / `revealText` | preset | Shown on the closed doors and over the photo. Use `''` to hide. |
 | `primaryColor` / `accentColor` / `accentColor2` / `textColor` | preset | Hex colors. Door wood tones are derived from primary + accent. |
@@ -167,7 +168,12 @@ A replay link in your own markup:
 4. Optionally, add responsive versions:
    `data-image-srcset="/images/door-intro/arrington-1200.webp 1200w, /images/door-intro/arrington-2000.webp 2000w"`.
 
-Until the real photo is uploaded, the intro reveals a branded gold scene instead.
+The site currently ships the supplied executive portrait (986 × 1530, re-encoded to
+135 KB with metadata stripped). Because it is a tall photo, phones and tablets show it
+full-bleed, while widescreen displays show the whole photo over a blurred copy of
+itself (`imageFit: 'auto'`). To replace it, overwrite the file with the same name. A
+couple's photo in landscape will automatically go full-bleed everywhere.
+If an image is ever missing, the intro reveals a branded gold scene instead.
 Visitors never see a broken image.
 
 ## Changing the branding

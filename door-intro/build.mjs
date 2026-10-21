@@ -21,7 +21,9 @@ if (!src.includes(MARKER)) throw new Error('build-defaults marker missing from s
 // Where the founders portrait is expected on the Open Doors site.
 export const OPENDOORS_DEFAULTS = {
   preset: 'opendoors',
-  imageUrl: '/images/door-intro/arrington-founders.jpg'
+  imageUrl: '/images/door-intro/arrington-founders.jpg',
+  imageAlt: 'Founder of Open Doors Financial Group in an executive office',
+  imagePosition: 'center 20%'
 };
 
 function withDefaults(defaults) {

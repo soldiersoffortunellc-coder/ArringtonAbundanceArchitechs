@@ -75,6 +75,7 @@
     imageSizes: '100vw',
     imageAlt: '',
     imagePosition: 'center 35%',
+    imageFit: 'auto',              // auto | cover | contain (auto: contain for tall photos on wide screens)
     imageTimeout: 1500,
     // Copy
     welcomeText: 'Welcome',
@@ -263,6 +264,10 @@
     '.di-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:var(--di-img-pos);opacity:0;transform:scale(1.14);transition:opacity .6s ease,transform calc(var(--di-open-ms) * 2.4) cubic-bezier(.2,.7,.2,1)}',
     '.di--img-ready .di-photo{opacity:1}',
     '.di--open .di-photo{transform:scale(1.02)}',
+    /* contain fit: the whole photo at full height over a blurred copy of itself */
+    '.di-backdrop{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(36px) brightness(.4) saturate(1.1);opacity:0;transition:opacity .6s ease}',
+    '.di-fit-contain.di--img-ready .di-backdrop{opacity:1}',
+    '.di-fit-contain .di-photo{left:50%;right:auto;width:calc(100vh * var(--di-img-ar,1));max-width:100%;translate:-50% 0;object-position:center top;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}',
     '.di-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.28) 34%,rgba(0,0,0,0) 58%),radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}',
     '.di-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px}',
     '.di--no-img .di-fallback{display:flex}',
@@ -446,6 +451,11 @@
         photo.setAttribute('sizes', c.imageSizes);
       }
       photo.src = c.imageUrl;
+      if (c.imageFit !== 'cover') {
+        var backdrop = el('div', 'di-backdrop');
+        backdrop.style.backgroundImage = 'url("' + String(c.imageUrl).replace(/["\\\n]/g, encodeURIComponent) + '")';
+        scene.appendChild(backdrop);
+      }
       scene.appendChild(photo);
     } else {
       rootEl.classList.add('di--no-img');
@@ -621,6 +631,7 @@
         waitForImage(parts.photo, c.imageTimeout, function (ok) {
           if (!state) return;
           imageDone = true;
+          if (ok) applyImageFit(rootEl, parts.photo, c);
           rootEl.classList.add(ok ? 'di--img-ready' : 'di--no-img');
           begin();
         });
@@ -642,6 +653,18 @@
     if (typeof c.onStart === 'function') safeCall(c.onStart);
     dispatch('doorintro:start', { reduced: reduced });
     return true;
+  }
+
+  // Tall photos on wide screens would be cropped hard and upscaled by
+  // object-fit: cover, so show them whole over a blurred backdrop instead.
+  function applyImageFit(rootEl, photo, c) {
+    var ar = photo.naturalWidth / photo.naturalHeight;
+    if (!ar) return;
+    var fit = c.imageFit;
+    if (fit === 'auto') fit = win.innerWidth / win.innerHeight > ar * 1.25 ? 'contain' : 'cover';
+    if (fit !== 'contain') return;
+    rootEl.style.setProperty('--di-img-ar', ar.toFixed(4));
+    rootEl.classList.add('di-fit-contain');
   }
 
   function toggleSound(button) {
